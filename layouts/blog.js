@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import Container from '../components/Container'
+import Container from '@/components/Container'
 import { useRouter } from 'next/router'
 import { NotionRenderer } from 'react-notion'
-// import BLOG from '../blog.config'
 
 const BlogLayout = ({ children, blocks, frontMatter }) => {
   const router = useRouter()

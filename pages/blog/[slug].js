@@ -1,6 +1,6 @@
-import BlogLayout from '../../layouts/blog'
-import { getAllPosts, getPostBlocks } from '../../lib/notion'
-import BLOG from '../../blog.config'
+import BlogLayout from '@/layouts/blog'
+import { getAllPosts, getPostBlocks } from '@/lib/notion'
+import BLOG from '@/blog.config'
 
 const BlogPost = ({ post, blocks }) => {
   if (!post) return null

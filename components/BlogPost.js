@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import BLOG from '../blog.config'
+import BLOG from '@/blog.config'
 
 const BlogPost = ({ post }) => {
   return (

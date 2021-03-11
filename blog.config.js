@@ -4,7 +4,7 @@ const BLOG = {
   author: 'Craig Hart',
   email: 'i@craigary.net',
   link: 'https://craigary.net',
-  language: 'en-US',
+  lang: 'en-US',
   path: '/blog', // leave this empty if you want to use '/' as the blog, don't add trailing slash
   postsPerPage: 5,
   socialLink: 'https://twitter.com/craigaryhart',

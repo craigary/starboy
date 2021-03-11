@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import BLOG from '../blog.config'
+import BLOG from '@/blog.config'
 
 const NavBar = () => {
   const links = [
