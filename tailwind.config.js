@@ -5,7 +5,6 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      title: ['Oswald', ...fontFamily.sans],
       sans: ['Inter', ...fontFamily.sans]
     }
   },

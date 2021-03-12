@@ -11,7 +11,7 @@ const NavBar = () => {
   ]
   return (
     <div>
-      <ul className="flex flex-row font-title">
+      <ul className="flex flex-row font-sans">
         {links.map(link => (
           <li key={link.id} className="block ml-4 uppercase">
             <Link href={link.to}>
@@ -69,7 +69,7 @@ const Header = ({ navBarTitle }) => {
             : (
             <p className="ml-2 italic header-name" style={{ fontWeight: 'bold' }}>
             {'Craig Hart'},{' '}
-            <span style={{ fontWeight: '300' }}>
+            <span className="font-normal">
               Just another personal website.
             </span>
           </p>

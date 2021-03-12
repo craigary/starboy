@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <Container>
       <div className="welcome mb-12">
-        <h2 className="mb-8 text-2xl font-title">Hey, Welcome 👋</h2>
+        <h2 className="mb-8 text-2xl font-sans">Hey, Welcome 👋</h2>
         <div className="mt-4 leading-7">
           <p className="mb-4">
             My name is Craig Hart, a.k.a <span>craigary</span> on the internet.
@@ -26,7 +26,7 @@ const Home = () => {
         </div>
       </div>
       <div className="welcome mb-12">
-        <h2 className="mb-8 text-2xl font-title">CONTACT 📨</h2>
+        <h2 className="mb-8 text-2xl font-sans">CONTACT 📨</h2>
         <div className="mt-4 leading-7">
           <p className="mb-4">
             You can send me a DM through{' '}

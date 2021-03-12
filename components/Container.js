@@ -18,7 +18,7 @@ const Container = ({ children, layout, ...customMeta }) => {
         <meta content={meta.Description} name="description" />
       </Head>
       <Header navBarTitle={layout ? meta.Title : null} />
-      <main className="m-auto h-full max-w-3xl px-4 font-sans font-light">
+      <main className="m-auto h-full max-w-3xl px-4 font-sans">
       {children}
       <Footer />
       </main>

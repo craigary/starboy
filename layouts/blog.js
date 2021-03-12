@@ -2,13 +2,15 @@ import Image from 'next/image'
 import Container from '@/components/Container'
 import { useRouter } from 'next/router'
 import { NotionRenderer } from 'react-notion'
+import BLOG from '@/blog.config'
+import formatDate from '@/lib/formatDate'
 
 const BlogLayout = ({ children, blocks, frontMatter }) => {
   const router = useRouter()
   const dateFormat = dateString => {
     const d = new Date(dateString)
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
-    return d.toLocaleDateString('en-US', options)
+    return d.toLocaleDateString(BLOG.lang, options)
   }
   return (
     <Container
@@ -19,7 +21,7 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
       type="article"
     >
       <article>
-        <h1 className="text-xl font-sans font-bold">{frontMatter.Title}</h1>
+        <h1 className="font-sans font-bold text-2xl">{frontMatter.Title}</h1>
         <nav className="flex mt-4 mb-2">
           <div className="flex">
             <a href="https://twitter.com/craigaryhart" className="flex">
@@ -35,11 +37,11 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
           </div>
           &nbsp;/&nbsp;
           <div className="block">
-            {dateFormat(frontMatter.Date)}
+            {formatDate(frontMatter.Date, BLOG.lang)}
           </div>
         </nav>
         {children}
-        <NotionRenderer blockMap={blocks} />
+        <NotionRenderer blockMap={blocks}/>
         <p onClick={() => router.back()} className="mt-2">
           ← Back
         </p>

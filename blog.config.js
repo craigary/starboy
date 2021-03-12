@@ -6,7 +6,7 @@ const BLOG = {
   link: 'https://craigary.net',
   lang: 'en-US',
   path: '/blog', // leave this empty if you want to use '/' as the blog, don't add trailing slash
-  postsPerPage: 5,
+  postsPerPage: 7,
   showAbout: true,
   showArchive: true,
   socialLink: 'https://twitter.com/craigaryhart',
