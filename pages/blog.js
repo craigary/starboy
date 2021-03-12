@@ -7,7 +7,7 @@ import BLOG from '@/blog.config'
 export async function getStaticProps () {
   const posts = await getAllPosts()
   const postsToShow = posts
-    .filter(post => post.Status === 'Published')
+    .filter(post => post.Status === 'Published' && post.Type === 'Post')
     .slice(0, BLOG.postsPerPage)
   const totalPosts = posts.length
   const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)

@@ -13,11 +13,11 @@ const Container = ({ children, layout, ...customMeta }) => {
     <div>
       <Head>
         {/* Add more Meta Info */}
-        <title>{meta.title}</title>
+        <title>{meta.Title}</title>
         <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
+        <meta content={meta.Description} name="description" />
       </Head>
-      <Header navBarTitle={layout ? meta.title : null} />
+      <Header navBarTitle={layout ? meta.Title : null} />
       <main className="m-auto h-full max-w-3xl px-4 font-sans font-light">
       {children}
       <Footer />

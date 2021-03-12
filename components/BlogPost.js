@@ -5,12 +5,12 @@ const BlogPost = ({ post }) => {
   return (
     <article key={post.id} className="mb-4 md:mb-8">
       <header className="flex flex-col justify-between md:flex-row ">
-        <Link href={`${BLOG.path}/${post.slug}`}>
+        <Link href={`${BLOG.path}/${post.Slug}`}>
           <h2 className="text-xl font-sans font-bold">
-            <a>{post.title}</a>
+            <a>{post.Title}</a>
           </h2>
         </Link>
-        <time>{post.date}</time>
+        <time>{post.Date}</time>
       </header>
       <main>
         <p className="hidden md:block">{post.Description}</p>

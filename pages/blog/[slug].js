@@ -9,16 +9,18 @@ const BlogPost = ({ post, blocks }) => {
 }
 
 export async function getStaticPaths () {
-  const table = await getAllPosts()
+  let posts = await getAllPosts()
+  posts = posts.filter(post => post.Status === 'Published' && post.Type === 'Post')
   return {
-    paths: table.map((row) => `${BLOG.path}/${row.slug}`),
+    paths: posts.map((row) => `${BLOG.path}/${row.Slug}`),
     fallback: true
   }
 }
 
 export async function getStaticProps ({ params: { slug } }) {
-  const posts = await getAllPosts()
-  const post = posts.find((t) => t.slug === slug)
+  let posts = await getAllPosts()
+  posts = posts.filter(post => post.Status === 'Published' && post.Type === 'Post')
+  const post = posts.find((t) => t.Slug === slug)
   const blocks = await getPostBlocks(post.id)
   return {
     props: { blocks, post },

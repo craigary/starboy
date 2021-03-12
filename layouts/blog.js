@@ -13,13 +13,13 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
   return (
     <Container
       layout="blog"
-      title={frontMatter.title}
-      description={frontMatter.description}
+      title={frontMatter.Title}
+      description={frontMatter.Description}
       // date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
       <article>
-        <h1 className="text-xl font-sans font-bold">{frontMatter.title}</h1>
+        <h1 className="text-xl font-sans font-bold">{frontMatter.Title}</h1>
         <nav className="flex mt-4 mb-2">
           <div className="flex">
             <a href="https://twitter.com/craigaryhart" className="flex">
@@ -35,7 +35,7 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
           </div>
           &nbsp;/&nbsp;
           <div className="block">
-            {dateFormat(frontMatter.date)}
+            {dateFormat(frontMatter.Date)}
           </div>
         </nav>
         {children}
