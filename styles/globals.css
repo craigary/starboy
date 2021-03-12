@@ -46,6 +46,7 @@
   /* display: none */
 }
 .notion {
+  @apply text-gray-700
 }
 .notion p {
   @apply leading-7

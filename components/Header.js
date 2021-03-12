@@ -13,14 +13,14 @@ const NavBar = () => {
     <div>
       <ul className="flex flex-row font-sans">
         {links.map(link => (
-          <li key={link.id} className="block ml-4 uppercase">
+          <li key={link.id} className="block ml-4">
             <Link href={link.to}>
               <a>{link.name}</a>
             </Link>
           </li>
         ))}
-        <li className="block ml-4 uppercase">
-          <a href="https://twitter.com/craigaryhart">TWITTER</a>
+        <li className="block ml-4 ">
+          <a href="https://twitter.com/craigaryhart">Twitter</a>
         </li>
       </ul>
     </div>

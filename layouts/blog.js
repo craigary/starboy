@@ -21,8 +21,8 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
       type="article"
     >
       <article>
-        <h1 className="font-sans font-bold text-2xl">{frontMatter.Title}</h1>
-        <nav className="flex mt-4 mb-2">
+        <h1 className="font-sans font-bold text-3xl">{frontMatter.Title}</h1>
+        <nav className="flex mt-4 mb-2 items-center text-gray-600">
           <div className="flex">
             <a href="https://twitter.com/craigaryhart" className="flex">
                 <Image
@@ -35,8 +35,8 @@ const BlogLayout = ({ children, blocks, frontMatter }) => {
               <p className="ml-2">Craig Hart</p>
             </a>
           </div>
+          <div>
           &nbsp;/&nbsp;
-          <div className="block">
             {formatDate(frontMatter.Date, BLOG.lang)}
           </div>
         </nav>
