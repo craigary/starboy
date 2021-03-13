@@ -7,7 +7,7 @@ const Tags = ({ tags, handleTagClick, selectedTag }) => {
   // const ClassToReturn = `border-${color} text-${color} bg-${color}`
   if (!tags) return null
   return (
-    <ul className="flex max-w-full overflow-scroll">
+    <ul className="flex max-w-full overflow-x-auto">
       {Object.keys(tags).map(key => (
         <li
           key={key}
