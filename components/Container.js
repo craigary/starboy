@@ -17,11 +17,13 @@ const Container = ({ children, layout, ...customMeta }) => {
         <meta name="robots" content="follow, index" />
         <meta content={meta.Description} name="description" />
       </Head>
+      <div className="wrapper">
       <Header navBarTitle={layout === 'blog' ? meta.title : null} />
-      <main className="m-auto h-full max-w-3xl px-4 font-sans">
+      <main className="m-auto max-w-3xl px-4 font-sans flex-grow w-full">
       {children}
-      <Footer />
       </main>
+      <Footer />
+      </div>
     </div>
   )
 }
