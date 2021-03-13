@@ -9,10 +9,11 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
   const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
   const [selectedTag, setSelectedTag] = useState('')
-  const filteredBlogPosts = []
+  let filteredBlogPosts = []
   if (posts) {
-    posts.filter(post => {
+    filteredBlogPosts = posts.filter(post => {
       const searchContent = post.Title + post.Description + post.Tags.join(' ')
+      console.log(searchContent)
       return searchContent.toLowerCase().includes(searchValue.toLowerCase())
     })
   }
