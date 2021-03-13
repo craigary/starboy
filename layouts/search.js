@@ -3,15 +3,19 @@ import { useState } from 'react'
 import BlogPost from '@/components/BlogPost'
 import Container from '@/components/Container'
 import Tags from '@/components/Tags'
+import PropTypes from 'prop-types'
 
 const SearchLayout = ({ tags, posts, currentTag }) => {
-  const router = new useRouter()
+  const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
   const [selectedTag, setSelectedTag] = useState('')
-  const filteredBlogPosts = posts.filter(post => {
-    const searchContent = post.Title + post.Description + post.Tags.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
-  })
+  const filteredBlogPosts = []
+  if (posts) {
+    posts.filter(post => {
+      const searchContent = post.Title + post.Description + post.Tags.join(' ')
+      return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+    })
+  }
 
   const handleTagClick = key => {
     if (key === currentTag) {
@@ -61,5 +65,9 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
     </Container>
   )
 }
-
+SearchLayout.propTypes = {
+  posts: PropTypes.array.isRequired,
+  tags: PropTypes.object.isRequired,
+  currentTag: PropTypes.string
+}
 export default SearchLayout
