@@ -1,59 +1,36 @@
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import BlogPost from '@/components/BlogPost'
 import Container from '@/components/Container'
 import Tags from '@/components/Tags'
-import { getAllPosts, getAllTags } from '@/lib/notion'
-import { useState } from 'react'
 
-const SearchLayout = ({ tags, posts }) => {
-  // const [leverage, setLeverage] = useState('text')
+const SearchLayout = ({ tags, posts, currentTag }) => {
+  const router = new useRouter()
   const [searchValue, setSearchValue] = useState('')
-  const [resultsToShow, setResultsToShow] = useState([])
   const [selectedTag, setSelectedTag] = useState('')
-
-  const handleSearch = e => {
-    if (!e.target.value) {
-      setSearchValue('')
-      setResultsToShow([])
-    } else {
-      setSearchValue(e.target.value)
-      setResultsToShow(getSearchResult(searchValue))
-    }
-  }
+  const filteredBlogPosts = posts.filter(post => {
+    const searchContent = post.Title + post.Description + post.Tags.join(' ')
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  })
 
   const handleTagClick = key => {
-    if (selectedTag && selectedTag === key) {
+    if (key === currentTag) {
       setSelectedTag('')
-      setResultsToShow([])
+      router.push('/search')
     } else {
-      setSelectedTag(key)
-      const ans = getFilterResult(key)
-      setResultsToShow(ans)
+      router.push(`/tag/${encodeURIComponent(key)}`)
     }
   }
-
-  const getFilterResult = query => {
-    const noTagPost = posts.filter(post => !post)
-    if (query === 'undefined') return noTagPost
-    return posts.filter(post => post && post.Tags.includes(query))
-  }
-
-  const getSearchResult = query => {
-    return posts.filter(post => {
-      return (
-        post.Title.toLowerCase().includes(query.toLowerCase()) ||
-        post.Description.toLowerCase().includes(query.toLowerCase())
-      )
-    })
-  }
-
   return (
     <Container>
       <div className="relative">
         <input
           type="text"
-          placeholder="Search Articles"
+          placeholder={
+            currentTag ? `Search in #${currentTag}` : 'Search Articles'
+          }
           className="block w-full border px-4 py-2 rounded-md"
-          onChange={handleSearch}
+          onChange={e => setSearchValue(e.target.value)}
         />
         <svg
           className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -73,15 +50,14 @@ const SearchLayout = ({ tags, posts }) => {
       <Tags
         tags={tags}
         handleTagClick={handleTagClick}
-        selectedTag={selectedTag}
+        selectedTag={selectedTag || currentTag}
       />
-      {!resultsToShow.length && (
+      {!filteredBlogPosts.length && (
         <p className="text-gray-500">No posts found.</p>
       )}
-      {resultsToShow &&
-        resultsToShow.map(post => {
-          return <BlogPost key={post.id} post={post} />
-        })}
+      {filteredBlogPosts.map(post => (
+        <BlogPost key={post.id} post={post} />
+      ))}
     </Container>
   )
 }

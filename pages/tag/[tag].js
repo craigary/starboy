@@ -1,39 +1,33 @@
 import { getAllPosts, getAllTags } from '@/lib/notion'
+import SearchLayout from '@/layouts/search'
 
-// Move to @/page/search.js
-export async function getStaticProps (context) {
-  const { tag } = context.params // Get Current Tag
+export default function Tag ({ tags, posts, currentTag }) {
+  return (
+    <SearchLayout tags={tags} posts={posts} currentTag={currentTag}/>
+  )
+}
+
+export async function getStaticProps ({ params }) {
+  const currentTag = params.tag
   let posts = await getAllPosts()
   posts = posts.filter(
     post => post.Status === 'Published' && post.Type === 'Post'
   )
-  const postsInTag = posts.filter(post => post && post.Tags.includes(tag))
   const tags = await getAllTags()
+  const filteredPosts = posts.filter(post => post && post.Tags.includes(currentTag))
   return {
     props: {
-      tags, // all tags, don't mess with tag
-      posts,
-      postsInTag
+      tags,
+      posts: filteredPosts,
+      currentTag
     }
   }
 }
+
 export async function getStaticPaths () {
   const tags = await getAllTags()
-
   return {
-    paths: tags.map(tag => ({ params: { tag } })),
+    paths: Object.keys(tags).map(tag => ({ params: { tag } })),
     fallback: true
   }
 }
-
-const Tag = ({ tags }) => {
-  return (
-    <Tags
-      tags={tags}
-      handleTagClick={handleTagClick}
-      selectedTag={selectedTag}
-    />
-  )
-}
-
-export default Tag
