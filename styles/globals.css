@@ -1,21 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: 'Inter';
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url("/fonts/Inter-roman.var.woff2") format("woff2");
+  src: url('/fonts/Inter-roman.var.woff2') format('woff2');
 }
+
 @font-face {
   font-family: 'Inter';
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   font-style: italic;
   font-named-instance: 'Italic';
-  src: url("/fonts/Inter-italic.var.woff2") format("woff2");
+  src: url('/fonts/Inter-italic.var.woff2') format('woff2');
+}
+
+html {
+  --scrollbarBG: #ffffff00;
+  --thumbBG: #b8b8b8;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+}
+
+::selection {
+  background: rgba(45, 170, 219, 0.3);
 }
 
 .wrapper {
@@ -31,21 +55,19 @@
   position: sticky;
   z-index: 10;
   top: -1px;
-  backdrop-filter: saturate(180%) blur(20px);
-  /* transition: background-color 0.1 ease-in-out; */
-  transition: all 1s cubic-bezier(.4,0,0,1)
+  backdrop-filter: blur(5px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
+  border-bottom-color: transparent;
 }
 
 .sticky-nav-full {
-  /* max-width: 100%; */
+  @apply border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
 }
 
 .header-name {
   display: none;
   opacity: 0;
   overflow: hidden;
-  /* transform: translateY(-3rem);
-  transition: all .2s cubic-bezier(.4,0,0,1) */
 }
 
 .sticky-nav-full .header-name {
@@ -53,43 +75,85 @@
   /* opacity: 0; */
   /* display: none */
 }
-.notion {
-  @apply text-gray-700
-}
-.notion p {
-  @apply leading-7
+
+nav {
+  flex-wrap: wrap;
+  line-height: 1.5em;
 }
 
-.notion-h1,
-.notion-h2,
-.notion-h3,
-.notion-blank,
+.notion {
+  color: inherit;
+  overflow-wrap: break-word;
+}
+
+.tag-container ul::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.tag-container ul {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.notion,
 .notion-text,
-.notion-block,
-.notion-toggle {
-  padding: 8px 2px;
+.notion-quote,
+.notion-list,
+.notion-h-title {
+  @apply leading-8;
+  @apply font-sans;
+  @apply p-0;
+  @apply my-3;
+}
+.notion-bookmark {
+  @apply border-2;
+  @apply border-gray-100;
+}
+.notion-bookmark:hover {
+  @apply border-blue-400;
+}
+.notion-viewport {
+  z-index: -10;
+}
+.notion-asset-caption {
+  @apply text-center;
+}
+.notion-full-width {
+  @apply px-0;
+}
+.notion-page {
+  @apply w-auto;
+  @apply px-0;
+}
+.notion-quote {
+  padding: 0.2em 0.9em;
+}
+.notion-collection-row {
+  @apply hidden;
 }
 
 @media (min-width: 768px) {
   .sticky-nav-full {
-    max-width: 100%;
+    @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
   }
   .header-name {
     display: block;
     opacity: 0;
-    transform: translateY(-3rem);
-    transition: all .5s cubic-bezier(.4,0,0,1);
-    transition-delay: 1s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
   }
   .sticky-nav-full .header-name {
-    transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @supports not (backdrop-filter: none) {
   .sticky-nav {
     backdrop-filter: none;
-    @apply bg-opacity-100;
+    @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
   }
 }

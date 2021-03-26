@@ -1,30 +1,38 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import BLOG from '@/blog.config'
+import { useLocale } from '@/lib/locale'
 
 const NavBar = () => {
+  const locale = useLocale()
   const links = [
-    { id: 1, name: 'Blog', to: BLOG.path || '/' },
-    { id: 2, name: 'RSS', to: '/feed' },
-    { id: 3, name: 'Search', to: '/search' }
+    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
+    { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
+    { id: 2, name: locale.NAV.RSS, to: '/feed', show: true },
+    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
   ]
   return (
-    <div>
+    <div className="flex-shrink-0">
       <ul className="flex flex-row font-sans">
-        {links.map(link => (
-          <li key={link.id} className="block ml-4">
-            <Link href={link.to}>
-              <a>{link.name}</a>
-            </Link>
-          </li>
-        ))}
+        {links.map(
+          link =>
+            link.show && (
+              <li
+                key={link.id}
+                className="block ml-4 text-black dark:text-gray-300"
+              >
+                <Link href={link.to}>
+                  <a>{link.name}</a>
+                </Link>
+              </li>
+            )
+        )}
       </ul>
     </div>
   )
 }
 
-const Header = ({ navBarTitle }) => {
+const Header = ({ navBarTitle, fullWidth }) => {
   const navRef = useRef(null)
   const sentinalRef = useRef(null)
   const handler = ([entry]) => {
@@ -39,6 +47,7 @@ const Header = ({ navBarTitle }) => {
   useEffect(() => {
     const obvserver = new window.IntersectionObserver(handler)
     obvserver.observe(sentinalRef.current)
+    // Don't touch this, I have no idea how it works XD
     // return () => {
     //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
     // }
@@ -47,34 +56,39 @@ const Header = ({ navBarTitle }) => {
     <>
       <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
       <div
-        className="sticky-nav m-auto max-w-3xl w-full h-6 flex flex-row justify-between items-center mb-1 md:mb-8 px-4 py-8 bg-opacity-60"
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-1 md:mb-8 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'}`}
         id="sticky-nav"
         ref={navRef}
       >
         <div className="flex">
           <Link href="/">
             <div className="h-6">
-              <Image src="/logo.svg" width={24} height={24} alt="Craigary" />
+              {/* <Image src="/logo.svg" width={24} height={24} alt={BLOG.author} /> */}
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-labelledby="logoTitle logoDesc"
+                role="img"
+              >
+                <title id="logoTitle">{BLOG.title}</title>
+                <desc id="logoDesc">{BLOG.author}</desc>
+                <rect width="24" height="24" className="fill-current text-black dark:text-white" />
+              </svg>
             </div>
           </Link>
           {navBarTitle
             ? (
-            <p
-              className="ml-2 italic header-name"
-              style={{ fontWeight: 'bold' }}
-            >
+            <p className="ml-2 header-name font-medium text-black dark:text-gray-100">
               {navBarTitle}
             </p>
               )
             : (
-            <p
-              className="ml-2 italic header-name"
-              style={{ fontWeight: 'bold' }}
-            >
-              {'Craig Hart'},{' '}
-              <span className="font-normal">
-                Just another personal website.
-              </span>
+            <p className="ml-2 header-name font-medium text-black dark:text-gray-100">
+              {BLOG.title},{' '}
+              <span className="font-normal">{BLOG.description}</span>
             </p>
               )}
         </div>
