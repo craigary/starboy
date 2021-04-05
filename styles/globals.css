@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'IBM Plex Sans';
   font-weight: 100 900;
   font-display: optional;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url('/fonts/Inter-roman.var.woff2') format('woff2');
+  src: url('/fonts/IBMPlexSansVar-Roman.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'IBM Plex Sans';
   font-weight: 100 900;
   font-display: optional;
   font-style: italic;
   font-named-instance: 'Italic';
-  src: url('/fonts/Inter-italic.var.woff2') format('woff2');
+  src: url('/fonts/IBMPlexSansVar-Italic.woff2') format('woff2');
 }
 
 html {
@@ -70,71 +70,13 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
-.sticky-nav-full .header-name {
-  /* transform: translateY(0); */
-  /* opacity: 0; */
-  /* display: none */
+.sticky-nav-full .nav {
+  @apply text-gray-500 dark:text-gray-400;
 }
 
 nav {
   flex-wrap: wrap;
   line-height: 1.5em;
-}
-
-.notion {
-  color: inherit;
-  overflow-wrap: break-word;
-}
-
-.tag-container ul::-webkit-scrollbar {
-  width: 0 !important;
-}
-
-.tag-container ul {
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -khtml-user-select: none;
-  user-select: none;
-}
-
-.notion,
-.notion-text,
-.notion-quote,
-.notion-list,
-.notion-h-title {
-  @apply leading-8;
-  @apply font-sans;
-  @apply p-0;
-  @apply my-3;
-}
-.notion-bookmark {
-  @apply border-2;
-  @apply border-gray-100;
-}
-.notion-bookmark:hover {
-  @apply border-blue-400;
-}
-.notion-viewport {
-  z-index: -10;
-}
-.notion-asset-caption {
-  @apply text-center;
-}
-.notion-full-width {
-  @apply px-0;
-}
-.notion-page {
-  @apply w-auto;
-  @apply px-0;
-}
-.notion-quote {
-  padding: 0.2em 0.9em;
-}
-.notion-collection-row {
-  @apply hidden;
 }
 
 @media (min-width: 768px) {
@@ -156,4 +98,8 @@ nav {
     backdrop-filter: none;
     @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
   }
+}
+
+.heading {
+  @apply mb-4 text-4xl font-sans font-semibold;
 }
