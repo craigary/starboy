@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 import '@radix-ui/themes/styles.css'
 import { Toaster } from 'sonner'
 import './globals.css'
+import './theme-config.css'
 
 // core styles shared by all of react-notion-x (required)
 // import 'react-notion-x/src/styles.css'
