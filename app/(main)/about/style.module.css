@@ -1,0 +1,44 @@
+.juventus_label {
+  @apply relative ml-0.5 inline-block cursor-default px-1 font-juventus transition-all;
+}
+.juventus_label:hover {
+  @apply text-primary-foreground;
+}
+
+.juventus_label::after {
+  position: absolute;
+  height: 80%;
+  width: 0;
+  bottom: 5%;
+  left: 0;
+  content: '';
+  z-index: -1;
+  @apply bg-primary transition-all;
+}
+
+.juventus_label:hover::after {
+  width: 100%;
+  background-image: url('../../../assets/white-grit.png');
+  background-position: 0% 0%;
+  background-size: auto 800px;
+  animation: grit-move 2s steps(10) infinite;
+}
+
+@keyframes grit-move {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -800px;
+  }
+}
+
+/*
+.juventus_label:hover {
+  background-image: url('../../../assets/white-grit.png');
+  background-position: 0% 0%;
+  background-size: auto 800px;
+  animation: grit-move 2s steps(10) infinite;
+}
+
+ */
