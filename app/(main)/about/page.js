@@ -109,25 +109,25 @@ const AboutPage = async () => {
           About this site:
         </h2>
         <div>
-          <p className="mb-4">
+          <p className="mb-6 tracking-[0.015em]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
             saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
             iure nihil voluptates nisi voluptate illum similique fugit est atque
             vero numquam.
           </p>
-          <p className="mb-4">
+          <p className="mb-6 tracking-[0.015em]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
             saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
             iure nihil voluptates nisi voluptate illum similique fugit est atque
             vero numquam.
           </p>
-          <p className="mb-4">
+          <p className="mb-6 tracking-[0.015em]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
             saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
             iure nihil voluptates nisi voluptate illum similique fugit est atque
             vero numquam.
           </p>
-          <p>
+          <p className="mb-6 tracking-[0.015em]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
             saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
             iure nihil voluptates nisi voluptate illum similique fugit est atque
