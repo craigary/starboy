@@ -43,7 +43,7 @@ const Globe = () => {
         state.width = width * 2
         state.height = width * 2 * 0.4
         state.phi = phi
-        phi += 0.01
+        phi += 0.005
       }
     })
 
