@@ -89,7 +89,7 @@ export default function RootLayout({ children, params }) {
                   }}
 
                 ></div> */}
-                <div className="relative flex min-h-screen flex-col px-4 md:min-h-[calc(100vh-18px)]">
+                <div className="relative flex min-h-screen flex-col px-4 md:min-h-[calc(100vh-18px)] md:px-6">
                   <Navbar />
                   {children}
                   <div className="flex h-24 w-full shrink-0 items-center justify-center justify-self-end border-t border-border/40 text-center text-sm text-primary/60">
