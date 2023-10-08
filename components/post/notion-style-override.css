@@ -1,0 +1,29 @@
+.notion-collection-row {
+  @apply hidden;
+}
+
+.notion *::selection {
+  background: var(--accent-a6) !important;
+}
+
+.notion-page {
+  width: auto !important;
+}
+
+.notion-page,
+.notion-text {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.notion-text {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.notion-page-icon-inline {
+  display: none;
+}
+.notion-code-copy {
+  display: none;
+}

@@ -1,19 +1,38 @@
 import withPlaiceholder from '@plaiceholder/next'
-import getRedirects from './src/utils/social.mjs'
+import { Redis } from '@upstash/redis'
+
+const upstashClient = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN
+})
+
+const getSocialRedirects = async () => {
+  const response = (await upstashClient.hgetall('social-links')) || {}
+  return Object.entries(response).map(([key, value]) => ({
+    source: '/' + key,
+    destination: value,
+    permanent: true
+  }))
+}
 
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   async redirects() {
-    return [...getRedirects()]
+    try {
+      return (await getSocialRedirects()) ?? []
+    } catch {
+      return []
+    }
   },
+
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'static.pocketcasts.com',
-        port: '',
-        pathname: '/discover/images/200/**'
-      }
+    domains: [
+      'cdn.sanity.io',
+      's3.us-west-2.amazonaws.com',
+      'static.pocketcasts.com',
+      'images.unsplash.com',
+      'www.notion.so'
     ]
   }
 }
