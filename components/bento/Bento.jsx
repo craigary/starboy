@@ -1,18 +1,21 @@
 import Card from '@/components/bento/card/Card'
+import ClockCard from '@/components/bento/clock/Clock'
 import CornerCard from '@/components/bento/corner/Corner'
 import Github from '@/components/bento/github/Github'
 import LabCard from '@/components/bento/lab/Lab'
 import MapCard from '@/components/bento/map/MapCard'
 import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
+import NotionCertified from '@/components/bento/notion-certified/NotionCertified'
 import PostsCard from '@/components/bento/post/Posts'
 import ProjectCard from '@/components/bento/project/Project'
 import SocialCard from '@/components/bento/social/SocialCard'
 import SocialLinkCard from '@/components/bento/social/SocialLinkCard'
 import StatisticsCard from '@/components/bento/statistics/Statistics'
-import StoreCard from '@/components/bento/store/Store'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
+import { getMapToken } from '@/lib/get-mapkit-js-token'
+import { upstashClient } from '@/lib/upstash/client'
 import {
   IconBookmarks,
   IconBrandApplePodcast,
@@ -20,7 +23,11 @@ import {
   IconSwords
 } from '@tabler/icons-react'
 
-const Bento = () => {
+const Bento = async () => {
+  const mapToken = await getMapToken()
+
+  const existingLocationInfo = await upstashClient.hgetall('current-location')
+
   return (
     <div className="grid grid-cols-4 pt-14 md:mb-14 md:grid-cols-6 md:pt-20">
       <div className="col-span-4 md:col-span-6">
@@ -100,12 +107,16 @@ const Bento = () => {
         </Card>
       </div>
       <div className="col-span-4 grid grid-cols-3 md:col-span-6 lg:col-span-3">
-        <div className="grid grid-cols-1">
-          <StoreCard delay={0.75} />
-          <StoreCard delay={0.75} />
+        <div className="flex flex-col">
+          <NotionCertified />
+          <ClockCard delay={0.25} />
         </div>
         <div className="col-span-2 grid">
-          <MapCard delay={0.25} />
+          <MapCard
+            delay={0.25}
+            token={mapToken}
+            locationInfo={existingLocationInfo}
+          />
         </div>
         <div className="col-span-3">
           <TechStackCard delay={0.625} />
