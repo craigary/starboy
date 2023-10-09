@@ -75,3 +75,20 @@
     @apply border-border;
   }
 }
+
+/* Override React-Clock Style */
+.react-clock__face {
+  border-color: hsl(var(--primary)) !important;
+}
+
+.react-clock__hand .react-clock__hour-hand__body,
+.react-clock__hand .react-clock__minute-hand__body {
+  background-color: hsl(var(--primary)) !important;
+}
+
+/* Override Apple Map Style */
+
+.apple-map-kit-js {
+  --logo-width: 0 !important;
+  --logo-height: 0 !important;
+}
