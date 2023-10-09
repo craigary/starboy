@@ -1,18 +1,73 @@
+'use client'
 import Card from '@/components/bento/card/Card'
-import MapImg from '@/components/bento/map/MapImg'
-import { upstashClient } from '@/lib/upstash/client'
+import { useTheme } from 'next-themes'
+import { useEffect, useRef } from 'react'
+// import { upstashClient } from '@/lib/upstash/client'
 
-const MapCard = async ({ delay }) => {
-  const existingLocationInfo = await upstashClient.hgetall('current-location')
+const getMapKitAsync = async () => {
+  if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
+    await new Promise(resolve => {
+      window.initMapKit = resolve
+    })
+    delete window.initMapKit
+  }
+}
 
-  const lightImageId = existingLocationInfo['light-image-id']
-  const darkImageId = existingLocationInfo['dark-image-id']
+const MapCard = ({ delay, token, locationInfo }) => {
+  const { resolvedTheme } = useTheme()
+  const mapEl = useRef(null)
 
-  const region = existingLocationInfo.region
-  const state = existingLocationInfo.state
+  const mapInstance = useRef(null)
+
+  useEffect(() => {
+    ;(async () => {
+      await getMapKitAsync(token)
+
+      mapkit.init({
+        authorizationCallback: function (done) {
+          done(token)
+        },
+        language: 'en-US'
+      })
+
+      const lat = Number(locationInfo.coordinate.split('&')[1])
+      const long = Number(locationInfo.coordinate.split('&')[0])
+      mapInstance.current && mapInstance.current.destroy()
+      mapInstance.current = new mapkit.Map(mapEl.current, {
+        mapType:
+          resolvedTheme === 'dark'
+            ? mapkit.Map.MapTypes.MutedStandard
+            : mapkit.Map.MapTypes.Standard,
+        showsPointsOfInterest: false,
+        isRotationEnabled: false,
+        isZoomEnabled: true,
+        showsZoomControl: false,
+        showsScale: mapkit.FeatureVisibility.Hidden,
+        showsMapTypeControl: false,
+        region: new mapkit.CoordinateRegion(
+          new mapkit.Coordinate(lat, long),
+          new mapkit.CoordinateSpan(0.1, 0.11)
+        ),
+        colorScheme:
+          resolvedTheme === 'dark'
+            ? mapkit.Map.ColorSchemes.Dark
+            : mapkit.Map.ColorSchemes.Light
+      })
+    })()
+  }, [locationInfo.coordinate, resolvedTheme, token])
+
   return (
     <Card className="p-3" delay={delay}>
-      <div className="group relative h-full w-full overflow-hidden rounded-lg border">
+      <div className="relative h-full w-full overflow-hidden rounded-lg border">
+        <div className="absolute bottom-3 left-3 z-30 flex items-center justify-center rounded-md border bg-background/60 px-2 py-1">
+          <div className="mr-2 h-1.5 w-1.5 animate-pulse rounded-full bg-green-500"></div>
+          <p>
+            {locationInfo.state}, {locationInfo.region}
+          </p>
+        </div>
+        <div className="h-full w-full scale-125" ref={mapEl}></div>
+      </div>
+      {/* <div className="group relative h-full w-full overflow-hidden rounded-lg border">
         <div
           className="absolute inset-0 z-10 from-transparent via-muted/40 to-blue-400/20"
           style={{
@@ -38,7 +93,7 @@ const MapCard = async ({ delay }) => {
             {state}, {region}
           </div>
         </div>
-      </div>
+      </div> */}
     </Card>
   )
 }

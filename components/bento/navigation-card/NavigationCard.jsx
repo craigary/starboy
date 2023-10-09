@@ -1,13 +1,11 @@
 'use client'
-
 import Card from '@/components/bento/card/Card'
-
 import { cn } from '@/lib/utils'
 import Tilt from 'react-parallax-tilt'
 
 const NavigationCard = ({ delay, children, className, tiltColor }) => {
   return (
-    <Card className="relative aspect-[2/1] h-full  p-3" delay={delay}>
+    <Card className="relative aspect-[2/1] h-full p-3" delay={delay}>
       <Tilt
         glareEnable
         tiltEnable={false}
