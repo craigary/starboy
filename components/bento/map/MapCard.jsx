@@ -46,7 +46,7 @@ const MapCard = ({ delay, token, locationInfo }) => {
         showsMapTypeControl: false,
         region: new mapkit.CoordinateRegion(
           new mapkit.Coordinate(lat, long),
-          new mapkit.CoordinateSpan(0.1, 0.11)
+          new mapkit.CoordinateSpan(0.3, 0.3)
         ),
         colorScheme:
           resolvedTheme === 'dark'
