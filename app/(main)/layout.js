@@ -8,6 +8,7 @@ import localFont from 'next/font/local'
 import StyledJsxProvider from '@/components/StyledJsxProvider'
 import Navbar from '@/components/navigation/Navbar'
 import { cn } from '@/lib/utils'
+import { ScrollArea } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
 import { Toaster } from 'sonner'
 import './globals.css'
@@ -78,8 +79,8 @@ export default function RootLayout({ children, params }) {
                 className="absolute inset-0 z-0 h-full w-full animate-gradient bg-gradient-to-br from-blue-500 via-orange-400 to-purple-500"
               ></div>
 
-              <div className="relative z-30 h-screen w-0 shrink-0 overflow-hidden transition-all md:h-[calc(100vh-16px)] md:w-64 md:px-4">
-                <NavContent showCmdBtn={true} />
+              <div className="relative z-30 h-screen w-0 shrink-0 overflow-hidden transition-all md:h-[calc(100vh-16px)] md:w-64">
+                <NavContent showCmdBtn={true} delay={0.5} />
               </div>
               <div className="relative z-30 h-screen w-full overflow-hidden overflow-y-scroll bg-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
                 {/* <div
@@ -94,18 +95,24 @@ export default function RootLayout({ children, params }) {
                     maskImage:
                       'linear-gradient(to bottom, rgba(0,0,0,1) 25%, transparent)'
                   }}
-
                 ></div> */}
-                <div className="relative flex min-h-screen flex-col px-4 md:min-h-[calc(100vh-18px)] md:px-6">
-                  <Navbar />
-                  {children}
-                  <div className="flex h-24 w-full shrink-0 items-center justify-center justify-self-end border-t border-border/40 text-center text-sm text-primary/60">
-                    ©️ {new Date().getFullYear()} Crafted by{' '}
-                    <div className={cn('ml-1 text-base', windsong.className)}>
-                      Craig Hart
+                <ScrollArea
+                  size="1"
+                  type="hover"
+                  scrollbars="vertical"
+                  className="h-full"
+                >
+                  <div className="relative flex min-h-screen flex-col px-4 md:min-h-[calc(100vh-18px)] md:px-6">
+                    <Navbar />
+                    {children}
+                    <div className="flex h-24 w-full shrink-0 items-center justify-center justify-self-end border-t border-border/40 text-center text-sm text-primary/60">
+                      ©️ {new Date().getFullYear()} Crafted by{' '}
+                      <div className={cn('ml-1 text-base', windsong.className)}>
+                        Craig Hart
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollArea>
               </div>
             </main>
           </StyledJsxProvider>

@@ -18,7 +18,7 @@ const ClockCard = ({ delay }) => {
 
   return (
     <Card className="relative h-full p-3" delay={delay}>
-      <div className="relative z-10 flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-secondary/20 transition-all hover:shadow-md hover:shadow-muted/50">
+      <div className="relative z-10 flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-secondary/20 py-1 transition-all hover:shadow-md hover:shadow-muted/50">
         {isClient && (
           <div className="flex items-center">
             <ReactClock

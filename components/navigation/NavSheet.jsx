@@ -5,7 +5,7 @@ const NavSheet = ({ open, setOpen }) => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent side="left" className="py-0">
-        <NavContent showCmdBtn={false} />
+        <NavContent showCmdBtn={false} setOpen={setOpen} />
       </SheetContent>
     </Sheet>
   )
