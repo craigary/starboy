@@ -75,7 +75,7 @@ const Bento = async () => {
           className={'bg-secondary/20 transition-all hover:border-red-400'}
         >
           <p className="font-serif font-semibold md:text-base lg:text-xl">
-            AMA
+            Guestbook
           </p>
           <IconMessage
             stroke="1.5"

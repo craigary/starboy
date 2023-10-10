@@ -7,7 +7,7 @@ const Container = ({ children, className }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className={cn('mx-auto max-w-screen-md grow', className)}
+      className={cn('mx-auto w-full max-w-screen-md grow', className)}
     >
       {children}
     </motion.main>

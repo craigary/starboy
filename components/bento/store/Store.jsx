@@ -1,5 +1,4 @@
 import Card from '@/components/bento/card/Card'
-import React from 'react'
 
 const StoreCard = ({ delay }) => {
   return (

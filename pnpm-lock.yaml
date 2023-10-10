@@ -11,6 +11,9 @@ dependencies:
   '@calcom/embed-react':
     specifier: ^1.3.0
     version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
+  '@giscus/react':
+    specifier: ^2.3.0
+    version: 2.3.0(react-dom@18.2.0)(react@18.2.0)
   '@icons-pack/react-simple-icons':
     specifier: ^9.1.0
     version: 9.1.0(react@18.2.0)
@@ -1135,6 +1138,17 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
+  /@giscus/react@2.3.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-tj79B+NNBfidhPdXJqWoqRm5Jhoc6CBhXMYwBR9nwTwsrdaB/spcQXmHpKcUuOdXZtlYSwMfCFcBogMNbD+gKQ==}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      giscus: 1.3.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@humanwhocodes/config-array@0.11.11:
     resolution: {integrity: sha512-N2brEuAadi0CcdeMXUkhbZB84eskAc8MEX1By6qEchoVywSgXPIjou4rYsl0V3Hj0ZnuGycGCjdNgockbzeWNA==}
     engines: {node: '>=10.10.0'}
@@ -1217,6 +1231,16 @@ packages:
     resolution: {integrity: sha512-RLAbau/4uSzKgIKj96mI5WUtG1qtiR0Frn0Ei9zhPj8YOkHM+1Bb8SgdVvmR/aWJCFIzjo2KFnDiRZ75Xf5NdQ==}
     dependencies:
       '@lezer/common': 1.1.0
+    dev: false
+
+  /@lit-labs/ssr-dom-shim@1.1.2:
+    resolution: {integrity: sha512-jnOD+/+dSrfTWYfSXBXlo5l5f0q1UuJo3tkbMDCYA2lKUYq79jaxqtGEvnRoh049nt1vdo1+45RinipU6FGY2g==}
+    dev: false
+
+  /@lit/reactive-element@1.6.3:
+    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.1.2
     dev: false
 
   /@matejmazur/react-katex@3.1.3(katex@0.15.6)(react@18.2.0):
@@ -3201,6 +3225,10 @@ packages:
 
   /@types/speakingurl@13.0.4:
     resolution: {integrity: sha512-lJ7UUtcz0Qsx83osI4zXfXlbCMVNM540XhvnwT69SUn1zIRgc0WPU4eyxu762a0+EMGKMR4NH5D1j3Bbpakr5Q==}
+    dev: false
+
+  /@types/trusted-types@2.0.4:
+    resolution: {integrity: sha512-IDaobHimLQhjwsQ/NMwRVfa/yL7L/wriQPMhw1ZJall0KX6E1oxk29XMDeilW5qTIg5aoiqf5Udy8U/51aNoQQ==}
     dev: false
 
   /@types/unist@2.0.8:
@@ -5545,6 +5573,12 @@ packages:
       lodash.memoize: 4.1.2
     dev: false
 
+  /giscus@1.3.0:
+    resolution: {integrity: sha512-A3tVLgSmpnh2sX9uGjo9MbzmTTEJirSyFUPRvkipvy37y9rhxUYDoh9kO37QVrP7Sc7QuJ+gihB6apkO0yDyTw==}
+    dependencies:
+      lit: 2.8.0
+    dev: false
+
   /github-from-package@0.0.0:
     resolution: {integrity: sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==}
     dev: false
@@ -6448,6 +6482,28 @@ packages:
       html-escaper: 3.0.3
       htmlparser2: 8.0.2
       uhyphen: 0.2.0
+    dev: false
+
+  /lit-element@3.3.3:
+    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.1.2
+      '@lit/reactive-element': 1.6.3
+      lit-html: 2.8.0
+    dev: false
+
+  /lit-html@2.8.0:
+    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
+    dependencies:
+      '@types/trusted-types': 2.0.4
+    dev: false
+
+  /lit@2.8.0:
+    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
+    dependencies:
+      '@lit/reactive-element': 1.6.3
+      lit-element: 3.3.3
+      lit-html: 2.8.0
     dev: false
 
   /loader-runner@4.3.0:
