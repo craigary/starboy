@@ -18,12 +18,6 @@ const post = {
       }
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: { type: 'author' }
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -39,10 +33,10 @@ const post = {
       ]
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'tags',
+      title: 'Tags',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }]
+      of: [{ type: 'reference', to: { type: 'tag' } }]
     },
     {
       name: 'publishedAt',
@@ -53,20 +47,13 @@ const post = {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
-    }
-  ],
-
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage'
     },
-    prepare(selection) {
-      const { author } = selection
-      return { ...selection, subtitle: author && `by ${author}` }
+    {
+      name: 'summary',
+      title: 'Summary',
+      type: 'text'
     }
-  }
+  ]
 }
 
 export default post
