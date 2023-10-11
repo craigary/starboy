@@ -35,7 +35,7 @@ const SocialCard = () => {
 
   const getCardStyle = (index, activeIndex) => {
     const backgroundColor = `hsl(${cards[index].color})`
-    console.log(backgroundColor)
+
     const width =
       index <= activeIndex
         ? (10 - (activeIndex - index)) * 10 + '%'
