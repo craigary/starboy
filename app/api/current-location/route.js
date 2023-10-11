@@ -3,8 +3,9 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req) {
   const authorization = req.headers.get('Authorization')
+  const authCode = process.env.MAP_API_AUTH_CODE
 
-  if (!authorization || authorization !== '123456') {
+  if (!authorization || authorization !== authCode) {
     return NextResponse.json(
       { message: 'unauthorized', success: false },
       { status: 401 }
