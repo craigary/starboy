@@ -92,9 +92,3 @@
   --logo-width: 0 !important;
   --logo-height: 0 !important;
 } */
-
-/* GitComment */
-
-#comments::part(color-text-secondary) {
-  visibility: hidden;
-}
