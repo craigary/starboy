@@ -1,9 +1,9 @@
-import StackItemImage from '@/components/stack/StackItemImage'
+import MyServiceIcon from '@/components/uses/MyServiceIcon'
 import { Badge, Flex } from '@radix-ui/themes'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import Link from 'next/link'
 
-const StackList = ({ stackList }) => {
+const MyServicesList = ({ myServicesList }) => {
   const colorRef = {
     pink: 'pink', // ruby Crimson Pink  Plum
     orange: 'orange', // orange tomato
@@ -15,11 +15,11 @@ const StackList = ({ stackList }) => {
   return (
     <div className="">
       <ul className="">
-        {stackList.map(item => (
+        {myServicesList.map(item => (
           <li key={item.id} className="">
             <div className="flex items-center gap-8 rounded-md px-4 hover:bg-primary/5">
               <div className="py-6">
-                <StackItemImage item={item} />
+                <MyServiceIcon item={item} />
               </div>
               <div className="grow self-stretch border-b">
                 <div className="flex h-full items-center justify-between py-4">
@@ -46,14 +46,18 @@ const StackList = ({ stackList }) => {
                       className="hidden w-1/3 md:flex"
                     >
                       {item.platform.map(item => (
-                        <Badge key={item.id} color={colorRef[item.color]}>
-                          {item.value}
+                        <Badge
+                          size="1"
+                          key={item.id}
+                          color={colorRef[item.color]}
+                        >
+                          {item.name}
                         </Badge>
                       ))}
                     </Flex>
                   </div>
                   <p className="hidden w-14 shrink-0 text-right text-sm md:block">
-                    $20
+                    ${item.price ?? '?'}
                   </p>
                 </div>
               </div>
@@ -65,4 +69,4 @@ const StackList = ({ stackList }) => {
   )
 }
 
-export default StackList
+export default MyServicesList

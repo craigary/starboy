@@ -1,6 +1,6 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
-import StackList from '@/components/stack/StackList'
+import StackList from '@/components/uses/MyServiceList'
 import { getStackInfo } from '@/lib/notion/get-stack-info'
 
 const StackPage = async () => {

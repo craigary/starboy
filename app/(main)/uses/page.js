@@ -1,10 +1,14 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
+import MyServicesList from '@/components/uses/MyServiceList'
+import { getMyServices } from '@/lib/notion-next/get-my-services'
 
-const AboutPage = () => {
+const UsePage = async () => {
+  const data = await getMyServices()
+
   return (
     <Container>
-      <Heading title="Uses">
+      <Heading title="Use">
         <p className="leading-6 md:w-3/4 md:leading-8">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
           magnam vero est aperiam dolores. Officia ab a, atque voluptatum odit
@@ -12,9 +16,9 @@ const AboutPage = () => {
           dolorem ea! Quas, nesciunt?
         </p>
       </Heading>
-      <p>This is a uses page.</p>
+      <MyServicesList myServicesList={data} />
     </Container>
   )
 }
 
-export default AboutPage
+export default UsePage
