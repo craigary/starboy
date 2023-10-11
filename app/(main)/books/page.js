@@ -1,7 +1,7 @@
 import Heading from '@/components/Heading'
 import BookList from '@/components/books/BookList'
 import Container from '@/components/container/Container'
-import { getBooksList } from '@/lib/notion/get-books-list'
+import { getBooksList } from '@/lib/notion-next/get-books-list'
 import { IconBook } from '@tabler/icons-react'
 
 const BooksPage = async () => {
