@@ -17,7 +17,6 @@ const TechStackCard = async ({ delay }) => {
           {data.map(item => {
             const encodedSvg = encodeURIComponent(item.icon.svg)
             const imgSrc = `data:image/svg+xml,${encodedSvg}`
-
             return (
               <li key={item._id} className="">
                 <Tooltip content={item.title} my="1">

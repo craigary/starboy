@@ -3,7 +3,6 @@ import ClockCard from '@/components/bento/clock/Clock'
 import CornerCard from '@/components/bento/corner/Corner'
 import Github from '@/components/bento/github/Github'
 import LabCard from '@/components/bento/lab/Lab'
-import MapCard from '@/components/bento/map/MapCard'
 import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
 import NotionCertified from '@/components/bento/notion-certified/NotionCertified'
@@ -14,7 +13,6 @@ import SocialLinkCard from '@/components/bento/social/SocialLinkCard'
 import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
-import { getMapToken } from '@/lib/get-mapkit-js-token'
 import { upstashClient } from '@/lib/upstash/client'
 import {
   IconBookmarks,
@@ -24,7 +22,7 @@ import {
 } from '@tabler/icons-react'
 
 const Bento = async () => {
-  const mapToken = await getMapToken()
+  // const mapToken = await getMapToken()
 
   const existingLocationInfo = await upstashClient.hgetall('current-location')
 
@@ -102,7 +100,7 @@ const Bento = async () => {
       <div className="col-span-4 md:col-span-6">
         <Card className="p-3">
           <h2 className="w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-lg font-medium text-transparent">
-            Bento Box...
+            Bento Box..
           </h2>
         </Card>
       </div>
@@ -112,11 +110,11 @@ const Bento = async () => {
           <ClockCard delay={0.25} />
         </div>
         <div className="col-span-2 grid">
-          <MapCard
+          {/* <MapCard
             delay={0.25}
             token={mapToken}
             locationInfo={existingLocationInfo}
-          />
+          /> */}
         </div>
         <div className="col-span-3">
           <TechStackCard delay={0.625} />

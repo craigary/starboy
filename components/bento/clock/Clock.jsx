@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import ReactClock from 'react-clock'
-import 'react-clock/dist/Clock.css'
+// import 'react-clock/dist/Clock.css'
 
 import Card from '@/components/bento/card/Card'
 import { useIsClient } from '@uidotdev/usehooks'
