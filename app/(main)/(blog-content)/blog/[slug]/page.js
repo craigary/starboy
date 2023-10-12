@@ -1,20 +1,31 @@
 import Container from '@/components/container/Container'
 import PostWrapper from '@/components/post/PostWrapper'
-import { getPostContent } from '@/lib/notion/get-post-content'
-import { getAllPageSlug } from '@/lib/notion/get-post-list'
+import { getBlogAllSlugs } from '@/lib/sanity/get-blog-posts'
+import { getPostDetails } from '@/lib/sanity/get-post-details'
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-  return await getAllPageSlug()
+  return await getBlogAllSlugs()
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const { slug } = params
+
+  const post = await getPostDetails(slug)
+
+  return {
+    title: post.title
+  }
 }
 
 const PostDetails = async ({ params }) => {
   const { slug } = params
-  const { post, recordMap } = await getPostContent(slug)
+  const post = await getPostDetails(slug)
 
   return (
-    <Container>
-      <PostWrapper post={post} recordMap={recordMap} />
+    <Container className="max-w-2xl">
+      <PostWrapper post={post} />
     </Container>
   )
 }

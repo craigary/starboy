@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-const Container = ({ children, className }) => {
+const Container = ({ className, children }) => {
   return (
     <motion.main
       initial={{ opacity: 0, y: 20 }}
