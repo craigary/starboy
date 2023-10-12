@@ -1,5 +1,4 @@
 'use client'
-import { format } from 'date-fns'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
@@ -20,10 +19,13 @@ const PostItem = ({ post, delay = 0 }) => {
       <div className="flex shrink-0 items-center justify-end gap-2 text-primary/30">
         <p className="text-xs font-medium">
           {post.tags.map((tag, index) => (
-            <span key={index}>#{tag.value} </span>
+            <span key={index}>#{tag.title} </span>
           ))}
         </p>
-        <p className="text-xs">{format(post.date, 'yyyy-MM-dd')}</p>
+        <p className="text-xs">
+          {post.publishedAt || post._createdAt}
+          {/* {format(post.publishedAt ?? post._createdAt, 'yyyy-MM-dd')} */}
+        </p>
       </div>
     </motion.div>
   )

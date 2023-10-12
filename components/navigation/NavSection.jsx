@@ -9,7 +9,7 @@ const NavSection = ({ name, showTitle, navItems, setOpen }) => {
   const pathname = usePathname()
 
   const handleNavItemClick = () => {
-    setOpen(false)
+    setOpen && setOpen(false)
   }
   return (
     <div>

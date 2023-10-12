@@ -1,10 +1,10 @@
 import Card from '@/components/bento/card/Card'
-import { getAllPosts } from '@/lib/notion/get-post-list'
+import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
 import { Button, IconButton } from '@radix-ui/themes'
 import { IconChevronRight, IconRss } from '@tabler/icons-react'
 const PostsCard = async ({ delay }) => {
-  const posts = await getAllPosts()
-  const filteredPosts = posts.slice(0, 4)
+  const posts = await getBlogPosts(4)
+
   return (
     <Card className="h-full p-3" delay={delay}>
       <div className="flex h-full flex-col rounded-lg border transition-all hover:shadow-md hover:shadow-muted/50">
@@ -34,7 +34,7 @@ const PostsCard = async ({ delay }) => {
         </div>
         <div className="w-full grow">
           <ul className="flex h-full w-full flex-col justify-center px-2">
-            {filteredPosts.map(item => (
+            {posts.map(item => (
               <li
                 key={item.id}
                 className="cursor-default truncate border-b border-border/50 px-3 py-2 text-primary/70 last:border-b-0 hover:bg-muted/20"
