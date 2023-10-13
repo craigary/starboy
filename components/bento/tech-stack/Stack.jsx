@@ -8,9 +8,9 @@ const TechStackCard = async ({ delay }) => {
   const data = await getTechStack()
   return (
     <Card className="h-full p-3" delay={delay}>
-      <div className="relative h-full rounded-lg border bg-secondary/20 p-2">
+      <div className="relative h-full rounded border p-2">
         <CardBg />
-        <p className="text-md font-mono font-medium text-primary/40">
+        <p className="text-md font-mono text-sm font-medium text-primary/40">
           {'{/* My Tech Stack */}'}
         </p>
         <ul className="flex h-full w-full flex-nowrap items-center justify-between gap-4 py-4">
@@ -21,11 +21,11 @@ const TechStackCard = async ({ delay }) => {
               <li key={item._id} className="">
                 <Tooltip content={item.title} my="1">
                   <Image
-                    height={40}
-                    width={40}
+                    height={32}
+                    width={32}
                     alt=""
                     src={imgSrc}
-                    className="opacity-20 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
+                    className="fill-red-500 opacity-40 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
                   />
                 </Tooltip>
               </li>

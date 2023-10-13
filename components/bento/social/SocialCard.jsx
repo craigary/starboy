@@ -48,7 +48,7 @@ const SocialCard = async () => {
 
   return (
     <Card className="group relative h-full min-h-[16rem] rounded-none p-3 pb-10 shadow-[inset_0_4px_6px_0_hsl(var(--muted)/0.5)] transition-all">
-      <div className="relative flex h-full w-full flex-col rounded-lg border bg-background shadow-md shadow-muted/50">
+      <div className="relative flex h-full w-full flex-col rounded border bg-background shadow-md shadow-muted/50">
         <div
           className="relative z-10 box-content flex h-12 items-center justify-between rounded-t-lg border-b px-3
          "

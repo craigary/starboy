@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@/lib/utils'
 import { IconDeviceLaptop, IconMoon, IconSun } from '@tabler/icons-react'
 import { useIsClient } from '@uidotdev/usehooks'
 import { useTheme } from 'next-themes'
@@ -17,21 +18,36 @@ const ThemeSwitcher = () => {
   return (
     isClient && (
       <div className="relative flex items-center rounded-full border border-border/50">
-        <div
+        {/* <div
           className="absolute -z-10 h-7 w-7 rounded-full bg-background shadow transition-all dark:shadow-muted"
           style={{
             left:
               theme === 'dark' ? '1px' : theme === 'light' ? '33px' : '65px',
             top: '1px'
           }}
-        ></div>
-        <div className="mr-0.5 inline-block rounded-full p-1">
+        ></div> */}
+        <div
+          className={cn(
+            'mr-0.5 inline-block rounded-full p-1 shadow-none',
+            theme === 'dark' && 'shadow-md shadow-muted'
+          )}
+        >
           <IconMoon size="22" stroke="1" onClick={() => updateTheme('dark')} />
         </div>
-        <div className="mr-0.5 inline-block rounded-full p-1">
+        <div
+          className={cn(
+            'mr-0.5 inline-block rounded-full p-1 shadow-none',
+            theme === 'light' && 'shadow-md shadow-muted'
+          )}
+        >
           <IconSun size="22" stroke="1" onClick={() => updateTheme('light')} />
         </div>
-        <div className="inline-block rounded-full p-1">
+        <div
+          className={cn(
+            'inline-block rounded-full p-1 shadow-none',
+            theme === 'system' && 'shadow-md shadow-muted'
+          )}
+        >
           <IconDeviceLaptop
             size="22"
             stroke="1"
