@@ -14,6 +14,7 @@ import SocialLinkCard from '@/components/bento/social/SocialLinkCard'
 import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
+import { getMapToken } from '@/lib/get-mapkit-js-token'
 import { upstashClient } from '@/lib/upstash/client'
 import {
   IconBookmarks,
