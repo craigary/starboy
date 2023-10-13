@@ -16,7 +16,7 @@ const WelcomeCard = async ({ delay }) => {
       className="h-full"
       borderStyle={{ backgroundColor: `hsl(var(--border) / 0.3)` }}
     >
-      <div className="relative z-10 flex h-full w-full flex-col justify-center space-y-4 px-4 py-6 text-lg !leading-[2rem] md:py-16 lg:w-3/4 lg:text-xl">
+      <div className="relative z-10 flex h-full w-full flex-col justify-center space-y-4 px-4 py-6 text-lg !leading-[2rem] md:pb-16 md:pt-10 lg:w-3/4 lg:text-xl">
         <Image
           height={48}
           alt="Craig Hart"

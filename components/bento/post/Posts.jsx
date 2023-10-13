@@ -32,13 +32,13 @@ const PostsCard = async ({ delay }) => {
             ></div>
           </div>
         </div>
-        <div className="w-full grow">
+        <div className="relative w-full grow after:absolute after:bottom-0 after:left-4 after:h-[calc(100%+1rem)] after:w-2 after:border-x  after:border-border/70 after:content-['']">
           <ul className="flex h-full w-full flex-col justify-center px-2">
             {posts.map(item => {
               return (
                 <li
                   key={item._id}
-                  className="cursor-default truncate border-b border-border/50 px-3 py-2 text-primary/70 last:border-b-0 hover:bg-muted/20"
+                  className="cursor-default truncate border-b border-border/50 py-2 pl-4 pr-2 text-primary/70 last:border-b-0 hover:bg-muted/20"
                 >
                   {item.title}
                 </li>

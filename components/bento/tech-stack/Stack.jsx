@@ -8,7 +8,7 @@ const TechStackCard = async ({ delay }) => {
   const data = await getTechStack()
   return (
     <Card className="h-full p-3" delay={delay}>
-      <div className="relative h-full rounded-lg border bg-gradient-to-br from-muted/0 via-muted/40 to-muted/0 p-2">
+      <div className="relative h-full rounded-lg border bg-secondary/20 p-2">
         <CardBg />
         <p className="text-md font-mono font-medium text-primary/40">
           {'{/* My Tech Stack */}'}
