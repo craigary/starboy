@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -34,10 +34,9 @@
     "date-fns": "^2.30.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
-    "fast-xml-parser": "^4.3.2",
     "framer-motion": "^10.16.4",
     "highlight.js": "^11.9.0",
-    "next": "13.5.5-canary.8",
+    "next": "13.5.5-canary.13",
     "next-cloudinary": "^4.23.0",
     "next-sanity": "^5.5.4",
     "next-sanity-image": "^6.1.0",

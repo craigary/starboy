@@ -14,7 +14,7 @@ const NavSection = ({ name, showTitle, navItems, setOpen }) => {
   return (
     <div>
       {showTitle && (
-        <div className="mb-2 text-xs uppercase tracking-wider text-primary">
+        <div className="mb-2 text-xs uppercase tracking-wider text-primary/50">
           {name}
         </div>
       )}
