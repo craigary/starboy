@@ -12,19 +12,19 @@ const Card = ({ className, children, delay = 0, borderStyle }) => {
     // >
     <div className={cn('relative rounded-lg p-4', className)}>
       <div
-        className="grid-line absolute -top-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/30  [--dir:to_right] [--dot-size:5px_1px]"
+        className="grid-line absolute -top-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/20  [--dir:to_right] [--dot-size:5px_1px]"
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -bottom-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/30  [--dir:to_right] [--dot-size:5px_1px]"
+        className="grid-line absolute -bottom-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/20  [--dir:to_right] [--dot-size:5px_1px]"
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -left-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/30  [--dir:to_bottom] [--dot-size:1px_5px]"
+        className="grid-line absolute -left-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/20  [--dir:to_bottom] [--dot-size:1px_5px]"
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -right-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/30  [--dir:to_bottom] [--dot-size:1px_5px]"
+        className="grid-line absolute -right-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/20  [--dir:to_bottom] [--dot-size:1px_5px]"
         style={borderStyle}
       ></div>
       {/* <div className="grid-line absolute left-[-8px] top-0 h-px w-[calc(100%+16px)] opacity-40 [--dir:to_right] [--dot-size:5px_1px]"></div>

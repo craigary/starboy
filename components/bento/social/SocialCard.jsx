@@ -90,13 +90,13 @@ const SocialCard = async () => {
         </div>
       </div>
       <div className="absolute -bottom-4 left-0 h-4 w-full px-4 transition-all ">
-        <div className="h-full w-full rounded-b-lg border-x border-b shadow-muted/70"></div>
+        <div className="h-full w-full rounded-b border-x border-b shadow-muted/70"></div>
       </div>
       <div
         className="absolute -bottom-7 left-0 h-3 w-full px-8 transition-all
       "
       >
-        <div className="h-full w-full rounded-b-lg border-x border-b shadow-muted/70"></div>
+        <div className="h-full w-full rounded-b border-x border-b shadow-muted/70"></div>
       </div>
     </Card>
   )
