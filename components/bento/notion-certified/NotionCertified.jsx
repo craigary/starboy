@@ -15,7 +15,7 @@ const NotionCertified = ({ delay }) => {
         className="h-full"
         glareBorderRadius="calc(var(--radius) - 1px)"
       >
-        <div className="flex h-fit w-full flex-col items-center justify-start gap-3 rounded border bg-gradient-to-tr from-muted/50 to-muted/10 py-3">
+        <div className="flex h-fit w-full flex-col items-center justify-start gap-3 rounded border border-border/50 bg-gradient-to-tr from-muted/50 to-muted/10 py-3">
           <p className="mx-3 text-sm font-bold tracking-tighter">
             Notion Essentials{' '}
             <span className="text-xs font-normal">Certified</span>

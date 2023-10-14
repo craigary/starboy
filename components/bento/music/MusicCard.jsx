@@ -1,11 +1,12 @@
 import Card from '@/components/bento/card/Card'
 import ArtworkImg from '@/components/bento/music/ArtworkImg'
 import { getNowPlaying } from '@/lib/apple-music/get-now-playing'
+import { cn } from '@/lib/utils'
 import { Button, IconButton } from '@radix-ui/themes'
 import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
 import Link from 'next/link'
 
-const MusicCard = async ({ delay }) => {
+const MusicCard = async ({ delay ,className}) => {
   const result = await getNowPlaying()
   const recentPlayed = []
   if (result.status === 'success') {
@@ -15,7 +16,7 @@ const MusicCard = async ({ delay }) => {
   return (
     <Card
       delay={delay}
-      className="relative aspect-square h-auto w-full rounded-lg p-3 grayscale transition-all hover:grayscale-0"
+      className={cn("relative aspect-square h-auto w-full rounded-lg p-3 grayscale transition-all hover:grayscale-0", className)}
     >
       <div className="group relative z-20 flex h-full w-full flex-col">
         <IconMusic

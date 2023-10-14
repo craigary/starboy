@@ -29,7 +29,7 @@ const ThemeSwitcher = () => {
         <div
           className={cn(
             'mr-0.5 inline-block rounded-full p-1 shadow-none',
-            theme === 'dark' && 'shadow-md shadow-muted'
+            theme === 'dark' && 'bg-background shadow-md shadow-muted'
           )}
         >
           <IconMoon size="22" stroke="1" onClick={() => updateTheme('dark')} />
@@ -37,7 +37,7 @@ const ThemeSwitcher = () => {
         <div
           className={cn(
             'mr-0.5 inline-block rounded-full p-1 shadow-none',
-            theme === 'light' && 'shadow-md shadow-muted'
+            theme === 'light' && 'bg-background shadow-md shadow-muted'
           )}
         >
           <IconSun size="22" stroke="1" onClick={() => updateTheme('light')} />
@@ -45,7 +45,7 @@ const ThemeSwitcher = () => {
         <div
           className={cn(
             'inline-block rounded-full p-1 shadow-none',
-            theme === 'system' && 'shadow-md shadow-muted'
+            theme === 'system' && 'bg-background shadow-md shadow-muted'
           )}
         >
           <IconDeviceLaptop
