@@ -13,10 +13,10 @@ const MyServicesList = ({ myServicesList }) => {
     default: 'gray' // Gray Mauve Slate Sage Olive  Sand
   }
   return (
-    <div className="">
-      <ul className="">
+    <div>
+      <ul>
         {myServicesList.map(item => (
-          <li key={item.id} className="">
+          <li key={item.id}>
             <div className="flex items-center gap-8 rounded-md px-4 hover:bg-primary/5">
               <div className="py-6">
                 <MyServiceIcon item={item} />

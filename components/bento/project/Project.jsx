@@ -33,9 +33,7 @@ const ProjectCard = ({ delay }) => {
             <p className="bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-xl font-bold  transition-all">
               Projects
             </p>
-            <p className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className="pt-4">
             <Button variant="soft" color="gray" radius="full">

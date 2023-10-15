@@ -7,7 +7,7 @@ const SocialLinkCard = () => {
   const { items: socialLinks } = navigation.find(item => item.id === 'social')
   return (
     <Card className={'h-full p-3'}>
-      <ul className="relative flex h-full w-full flex-wrap items-center justify-around rounded border border-border/50 bg-muted/20 py-0.5 transition-all hover:bg-muted/50">
+      <ul className="relative flex h-full w-full flex-wrap items-center justify-around rounded border border-border/50 bg-muted/20 py-0.5 transition-all">
         <CardBg />
         {socialLinks.map(item => {
           const Icon = item.icon
