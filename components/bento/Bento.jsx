@@ -1,15 +1,13 @@
 import Card from '@/components/bento/card/Card'
-import ClockCard from '@/components/bento/clock/Clock'
 import CornerCard from '@/components/bento/corner/Corner'
 import LabCard from '@/components/bento/lab/Lab'
 import MapCard from '@/components/bento/map/MapCard'
 import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
 import MusicCardTiny from '@/components/bento/music/MusicCardTiny'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
-import NotionCertified from '@/components/bento/notion-certified/NotionCertified'
 import PostsCard from '@/components/bento/post/Posts'
 import ProjectCard from '@/components/bento/project/Project'
-import SocialCard from '@/components/bento/social/SocialCard'
+import QuoteCard from '@/components/bento/quote/Quote'
 import SocialLinkCard from '@/components/bento/social/SocialLinkCard'
 import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
@@ -102,24 +100,27 @@ const Bento = async () => {
           locationInfo={existingLocationInfo}
         />
       </div>
-      <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:order-2 lg:col-span-6 xl:col-span-4">
+      {/* <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:order-2 lg:col-span-6 xl:col-span-3">
         <SocialCard delay={0.5} />
-      </div>
-      <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:order-1 lg:col-span-2">
-        <div className="flex flex-col">
+      </div> */}
+      <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:order-1 lg:col-span-4">
+        {/* <div className="flex h-full flex-col">
           <NotionCertified />
           <ClockCard delay={0.25} />
-        </div>
+        </div> */}
+        <QuoteCard />
       </div>
       <div className="order-3 col-span-6 sm:col-span-3 md:col-span-8 lg:col-span-4">
-        <TechStackCard delay={0.625} />
+        <LabCard />
       </div>
+
       <div className="order-5 col-span-12 sm:col-span-6 lg:col-span-3 lg:row-span-2 xl:col-span-4 xl:row-span-2">
         <MusicCardTiny delay={0.5} className="hidden lg:block xl:hidden" />
         <MusicCardAlt delay={0.5} className="lg:hidden xl:block" />
       </div>
-      <div className="order-5 col-span-6 row-span-3 h-full sm:order-4 sm:col-span-6 sm:row-span-1  lg:order-4 lg:col-span-3 lg:row-span-2 xl:col-span-2 xl:row-span-1">
-        <LabCard />
+      <div className="order-5 col-span-6 row-span-3 h-full sm:order-4 sm:col-span-6 sm:row-span-1  lg:order-4 lg:col-span-3 lg:row-span-2 xl:col-span-4 xl:row-span-1">
+        {/* <LabCard /> */}
+        <TechStackCard delay={0.625} />
       </div>
       <div className="order-5 col-span-6 sm:row-span-2 lg:col-span-3 lg:row-span-2 xl:col-span-4">
         <StatisticsCard />

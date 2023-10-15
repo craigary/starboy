@@ -20,7 +20,6 @@ const BooksPage = async () => {
           dolorem ea! Quas, nesciunt?
         </p>
       </Heading>
-
       <BookList bookList={list} />
     </Container>
   )

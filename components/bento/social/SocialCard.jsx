@@ -48,7 +48,14 @@ const SocialCard = async () => {
 
   return (
     <Card className="group relative h-full min-h-[16rem] rounded-none p-3 pb-10 shadow-[inset_0_4px_6px_0_hsl(var(--muted)/0.5)] transition-all">
-      <div className="relative flex h-full w-full flex-col rounded border bg-background shadow-md shadow-muted/50">
+      <div
+        className="relative flex h-full w-full flex-col rounded border bg-background shadow-md shadow-muted/50"
+        style={{
+          backgroundImage: `radial-gradient(circle at right bottom, ${
+            IconColor + '22'
+          } 0%, hsl(var(--background)) 40%, hsl(var(--background)) 100%)`
+        }}
+      >
         <div
           className="relative z-10 box-content flex h-12 items-center justify-between rounded-t-lg border-b px-3
          "
@@ -78,11 +85,7 @@ const SocialCard = async () => {
         <div className="relative flex grow flex-col items-start justify-center px-3">
           <div className="py-4 text-primary/80">
             {/* <p>{post.title}</p> */}
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-              inventore accusantium culpa quia, expedita veritatis hic fugiat
-              soluta deleniti autem eum!
-            </p>
+            <p>{post.title}</p>
           </div>
           <SocialIcon color={IconColor} source={post.source}>
             <Icon size="18" />
@@ -92,10 +95,7 @@ const SocialCard = async () => {
       <div className="absolute -bottom-4 left-0 h-4 w-full px-4 transition-all ">
         <div className="h-full w-full rounded-b border-x border-b shadow-muted/70"></div>
       </div>
-      <div
-        className="absolute -bottom-7 left-0 h-3 w-full px-8 transition-all
-      "
-      >
+      <div className="absolute -bottom-7 left-0 h-3 w-full px-8 transition-all">
         <div className="h-full w-full rounded-b border-x border-b shadow-muted/70"></div>
       </div>
     </Card>
