@@ -82,7 +82,7 @@ export default function RootLayout({ children, params }) {
               <div className="relative z-30 h-screen w-0 shrink-0 overflow-hidden transition-all md:h-[calc(100vh-16px)] md:w-64">
                 <NavContent showCmdBtn={true} delay={0.5} />
               </div>
-              <div className="relative z-30 h-screen w-full overflow-hidden overflow-y-scroll bg-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
+              <div className="relative z-30 h-screen w-full overflow-hidden overflow-y-scroll bg-gradient-to-t from-secondary/20 to-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
                 {/* <div
                   className="pointer-events-none absolute top-1 z-30 h-14 w-[calc(100%-8px)] select-none opacity-95 backdrop-blur-[5px] after:absolute
                 after:left-0 after:top-0 after:bg-gradient-to-b after:from-background

@@ -112,7 +112,7 @@ module.exports = {
         'flip-in': 'flip-in .25s ease-in',
         'flip-out': 'flip-out .25s ease-in',
         gradient: 'gradient 2s ease infinite',
-        marquee: 'marquee 30s linear infinite'
+        marquee: 'marquee 35s linear infinite'
       }
     }
   },

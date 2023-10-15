@@ -1,12 +1,13 @@
 import Card from '@/components/bento/card/Card'
-import { Button } from '@radix-ui/themes'
-import { IconMicroscope, IconRocket } from '@tabler/icons-react'
 
 const LabCard = ({ delay = 0 }) => {
   return (
     <Card className="h-full grow p-3" delay={delay}>
-      <div className="relative z-10 flex h-full flex-col rounded border border-border/50 bg-muted/20 transition-all hover:bg-muted/50">
-        <div className="relative p-3">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center rounded border border-border/50 bg-background dark:bg-muted/20">
+        <p className="w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-3xl font-semibold">
+          LAB
+        </p>
+        {/* <div className="relative p-3">
           <div className="flex flex-col md:flex-row lg:flex-col">
             <IconMicroscope
               stroke="1.5"
@@ -21,7 +22,7 @@ const LabCard = ({ delay = 0 }) => {
             <IconRocket stroke="1.5" />
             Go
           </Button>
-        </div>
+        </div> */}
       </div>
     </Card>
   )
