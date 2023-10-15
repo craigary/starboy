@@ -94,7 +94,7 @@ const MusicCard = async ({ delay ,className}) => {
                     />
                   </div>
                   <div className="flex w-full grow items-center justify-between">
-                    <div className="">
+                    <div>
                       <p className="max-w-[24ch] truncate text-xs font-medium">
                         {item.attributes.name}
                       </p>

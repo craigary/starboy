@@ -96,6 +96,14 @@ module.exports = {
           '100%': {
             backgroundPosition: '0% 50%'
           }
+        },
+        'move-ltr': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-100% - var(--gap)))' }
+        },
+        marquee: {
+          '0%': { transform: 'translateX(calc(-100% - var(--gap)))' },
+          '100%': { transform: 'translateX(0)' }
         }
       },
       animation: {
@@ -103,7 +111,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'flip-in': 'flip-in .25s ease-in',
         'flip-out': 'flip-out .25s ease-in',
-        gradient: 'gradient 2s ease infinite'
+        gradient: 'gradient 2s ease infinite',
+        marquee: 'marquee 30s linear infinite'
       }
     }
   },

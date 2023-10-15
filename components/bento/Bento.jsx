@@ -4,6 +4,7 @@ import CornerCard from '@/components/bento/corner/Corner'
 import LabCard from '@/components/bento/lab/Lab'
 import MapCard from '@/components/bento/map/MapCard'
 import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
+import MusicCardTiny from '@/components/bento/music/MusicCardTiny'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
 import NotionCertified from '@/components/bento/notion-certified/NotionCertified'
 import PostsCard from '@/components/bento/post/Posts'
@@ -53,7 +54,7 @@ const Bento = async () => {
           </p>
           <IconSwords
             stroke="1.5"
-            className=" text-amber-600 opacity-60 md:text-base lg:text-xl"
+            className="text-amber-600 opacity-60 md:text-base lg:text-xl"
           />
         </NavigationCard>
         <NavigationCard
@@ -113,14 +114,14 @@ const Bento = async () => {
       <div className="order-3 col-span-6 sm:col-span-3 md:col-span-8 lg:col-span-4">
         <TechStackCard delay={0.625} />
       </div>
-      <div className="order-5 col-span-12 sm:col-span-6 lg:col-span-6 lg:row-span-3 xl:col-span-4 xl:row-span-2">
-        {/* <MusicCardTiny delay={0.5} className="hidden sm:block md:hidden " /> */}
-        <MusicCardAlt delay={0.5} className="" />
+      <div className="order-5 col-span-12 sm:col-span-6 lg:col-span-3 lg:row-span-2 xl:col-span-4 xl:row-span-2">
+        <MusicCardTiny delay={0.5} className="hidden lg:block xl:hidden" />
+        <MusicCardAlt delay={0.5} className="lg:hidden xl:block" />
       </div>
-      <div className="order-5 col-span-6 row-span-3 h-full sm:order-4 sm:col-span-6 sm:row-span-1  lg:order-4 lg:col-span-3 lg:row-span-3 xl:col-span-2 xl:row-span-1">
+      <div className="order-5 col-span-6 row-span-3 h-full sm:order-4 sm:col-span-6 sm:row-span-1  lg:order-4 lg:col-span-3 lg:row-span-2 xl:col-span-2 xl:row-span-1">
         <LabCard />
       </div>
-      <div className="order-5 col-span-6 sm:row-span-2 lg:col-span-3 lg:row-span-1 xl:col-span-4 xl:row-span-2">
+      <div className="order-5 col-span-6 sm:row-span-2 lg:col-span-3 lg:row-span-2 xl:col-span-4">
         <StatisticsCard />
       </div>
       <div className="order-5 col-span-6 h-full md:col-span-6 lg:col-span-3 xl:col-span-4 ">

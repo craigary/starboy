@@ -14,18 +14,18 @@ const MusicCardTiny = async ({ delay, className }) => {
     <Card
       delay={delay}
       className={cn(
-        'relative aspect-square h-auto w-full rounded-lg p-3 grayscale transition-all hover:grayscale-0',
+        'relative h-full w-full rounded-lg p-3 grayscale transition-all hover:grayscale-0',
         className
       )}
     >
       <div
-        className="transation-all group relative z-20 flex h-full w-full gap-3 rounded-lg p-2 delay-75"
+        className="transation-all group relative z-20 flex aspect-square h-full w-full flex-col gap-3 rounded-lg p-2 delay-75"
         style={{
           color: '#' + recentPlayed.attributes.artwork.textColor3,
           backgroundColor: '#' + recentPlayed.attributes.artwork.bgColor
         }}
       >
-        <div className="relative aspect-square h-auto w-auto shrink-0 overflow-hidden rounded-lg">
+        <div className="relative aspect-square h-auto w-full shrink-0 overflow-hidden rounded-lg">
           <ArtworkImg
             artwork={recentPlayed.attributes.artwork}
             name={recentPlayed.attributes.name}

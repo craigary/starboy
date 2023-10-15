@@ -48,7 +48,7 @@ const BookItem = ({ book }) => {
         </div>
       </Dialog.Trigger>
 
-      <Dialog.Content style={{ maxWidth: 600 }} className="">
+      <Dialog.Content style={{ maxWidth: 600 }}>
         <Dialog.Title>{book.name}</Dialog.Title>
         <div className="flex h-full w-full items-center justify-between">
           <div className="flex h-full w-1/2 items-center justify-center gap-4 ">
