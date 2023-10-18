@@ -4,6 +4,8 @@ import Container from '@/components/container/Container'
 import { getBooksList } from '@/lib/notion-next/get-books-list'
 import { IconBook } from '@tabler/icons-react'
 
+export const runtime = 'edge'
+
 const BooksPage = async () => {
   const list = await getBooksList()
   return (

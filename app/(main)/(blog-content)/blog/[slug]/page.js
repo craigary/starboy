@@ -2,6 +2,7 @@ import Container from '@/components/container/Container'
 import PostWrapper from '@/components/post/PostWrapper'
 import { getBlogAllSlugs } from '@/lib/sanity/get-blog-posts'
 import { getPostDetails } from '@/lib/sanity/get-post-details'
+export const runtime = 'edge'
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
