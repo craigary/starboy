@@ -12,9 +12,9 @@ const MapCard = ({ delay, token, locationInfo }) => {
   const { resolvedTheme } = useTheme()
   const mapEl = useRef(null)
   const map = useRef(null)
-  const [zoom, setZoom] = useState(9)
+  const [zoom, setZoom] = useState(10)
 
-  const [lat,setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
+  const [lat, setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
   const [lng, setLng] = useState(Number(locationInfo.coordinate.split('&')[0]))
 
   useEffect(() => {
