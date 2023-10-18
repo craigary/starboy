@@ -142,7 +142,11 @@
   background-color: hsl(var(--primary)) !important;
 }
 
-/* Override Apple Map Style */
+/* Override Map Style */
+
+.mapboxgl-control-container {
+  display: none;
+}
 
 /* .apple-map-kit-js {
   --logo-width: 0 !important;
