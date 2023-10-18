@@ -20,7 +20,7 @@ import { IconButton, Tooltip } from '@radix-ui/themes'
 import Link from 'next/link'
 import styles from './style.module.css'
 
-export const runtime = 'edge'
+
 
 export const metadata = {
   title: 'About · Craig Hart'
