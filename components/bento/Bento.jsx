@@ -3,14 +3,14 @@ import CornerCard from '@/components/bento/corner/Corner'
 import LabCard from '@/components/bento/lab/Lab'
 import MapCard from '@/components/bento/map/MapCard'
 import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
-import MusicCardTiny from '@/components/bento/music/MusicCardTiny'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
 import PostsCard from '@/components/bento/post/Posts'
 import ProjectCard from '@/components/bento/project/Project'
-import QuoteCard from '@/components/bento/quote/Quote'
+import SocialAltCard from '@/components/bento/social/SocialAlt'
 import SocialLinkCard from '@/components/bento/social/SocialLinkCard'
 import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
+import TheBlockCard from '@/components/bento/the-block/TheBlock'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
 import { getMapToken } from '@/lib/get-mapkit-js-token'
 import { upstashClient } from '@/lib/upstash/client'
@@ -87,13 +87,13 @@ const Bento = async () => {
           </h2>
         </Card>
       </div>
-      <div className="col-span-12 sm:col-span-4 md:col-span-6 lg:col-span-4">
+      <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
         <ProjectCard delay={0.25} />
       </div>
-      <div className="col-span-12 sm:col-span-4 md:col-span-6 lg:col-span-4">
+      <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
         <PostsCard delay={0.25} />
       </div>
-      <div className="col-span-12 sm:col-span-4 md:col-span-6 lg:col-span-4">
+      <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
         <MapCard
           delay={0.25}
           token={mapToken}
@@ -103,32 +103,28 @@ const Bento = async () => {
       {/* <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:order-2 lg:col-span-6 xl:col-span-3">
         <SocialCard delay={0.5} />
       </div> */}
-      <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:order-1 lg:col-span-4">
-        {/* <div className="flex h-full flex-col">
-          <NotionCertified />
-          <ClockCard delay={0.25} />
-        </div> */}
-        <QuoteCard />
+      <div className="col-span-12 sm:order-2 sm:col-span-6 md:col-span-12 lg:col-span-4">
+        <div className="flex h-full flex-col">
+          <SocialAltCard />
+          <TheBlockCard />
+        </div>
       </div>
-      <div className="order-3 col-span-6 sm:col-span-3 md:col-span-8 lg:col-span-4">
-        <LabCard />
-      </div>
-
-      <div className="order-5 col-span-12 sm:col-span-6 lg:col-span-3 lg:row-span-2 xl:col-span-4 xl:row-span-2">
-        <MusicCardTiny delay={0.5} className="hidden lg:block xl:hidden" />
-        <MusicCardAlt delay={0.5} className="lg:hidden xl:block" />
-      </div>
-      <div className="order-5 col-span-6 row-span-3 h-full sm:order-4 sm:col-span-6 sm:row-span-1  lg:order-4 lg:col-span-3 lg:row-span-2 xl:col-span-4 xl:row-span-1">
-        {/* <LabCard /> */}
+      <div className="col-span-12 h-full sm:order-1 sm:col-span-6 lg:order-4 lg:col-span-4">
         <TechStackCard delay={0.625} />
       </div>
-      <div className="order-5 col-span-6 sm:row-span-2 lg:col-span-3 lg:row-span-2 xl:col-span-4">
+      <div className="col-span-12 sm:order-4 sm:col-span-6 md:order-3 md:col-span-6 lg:order-4 lg:col-span-4 lg:row-span-2">
+        <MusicCardAlt delay={0.5} />
+      </div>
+      <div className="col-span-6 sm:order-3 sm:col-span-6 md:order-3 md:col-span-6 lg:col-span-4">
+        <LabCard />
+      </div>
+      <div className="col-span-6 sm:order-3 md:order-4 md:row-span-2 lg:col-span-4">
         <StatisticsCard />
       </div>
-      <div className="order-5 col-span-6 h-full md:col-span-6 lg:col-span-3 xl:col-span-4 ">
+      <div className="col-span-6 h-full sm:order-4 md:col-span-6 lg:col-span-4">
         <SocialLinkCard />
       </div>
-      <div className="order-5 col-span-6 h-full md:col-span-6 lg:col-span-3 xl:col-span-4">
+      <div className="col-span-6 h-full sm:order-4 md:col-span-6 lg:col-span-4">
         <CornerCard />
       </div>
     </div>

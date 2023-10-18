@@ -57,7 +57,7 @@ const MapCard = ({ delay, token, locationInfo }) => {
   }, [locationInfo.coordinate, resolvedTheme, token])
 
   return (
-    <Card className="h-full p-3" delay={delay}>
+    <Card className="h-full min-h-[20rem] p-3" delay={delay}>
       <div className="group relative h-full w-full overflow-hidden rounded border">
         <div className="absolute bottom-3 left-3 z-30 flex items-center justify-center rounded-md border bg-background/60 px-2 py-1">
           <div className="mr-2 h-1.5 w-1.5 animate-pulse rounded-full bg-green-500"></div>
