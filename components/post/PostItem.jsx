@@ -23,7 +23,7 @@ const PostItem = ({ post, delay = 0 }) => {
           ))}
         </p>
         <p className="text-xs">
-          {post.publishedAt || post._createdAt}
+          {post.publishedAt ?? post._createdAt}
           {/* {format(post.publishedAt ?? post._createdAt, 'yyyy-MM-dd')} */}
         </p>
       </div>
