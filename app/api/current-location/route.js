@@ -1,6 +1,8 @@
 import { upstashClient } from '@/lib/upstash/client'
 import { NextResponse } from 'next/server'
 
+export const runtime = 'edge'
+
 export async function POST(req) {
   const authorization = req.headers.get('Authorization')
   const authCode = process.env.MAP_API_AUTH_CODE

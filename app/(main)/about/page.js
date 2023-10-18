@@ -20,6 +20,8 @@ import { IconButton, Tooltip } from '@radix-ui/themes'
 import Link from 'next/link'
 import styles from './style.module.css'
 
+export const runtime = 'edge'
+
 const AboutPage = async () => {
   const existingLocationInfo = await upstashClient.hgetall('current-location')
   const region = existingLocationInfo.region
