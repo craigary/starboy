@@ -12,12 +12,11 @@ const TechStackCard = async ({ delay }) => {
   ]
 
   return (
-    // shadow-[inset_0_4px_6px_0_hsl(var(--muted)/0.5)]
     <Card
       className="group relative h-full rounded-none p-3 transition-all"
       delay={delay}
     >
-      <div className="relative flex h-full shrink-0 flex-col rounded border border-border/50 bg-muted/20 transition-all hover:bg-muted/50">
+      <div className="relative flex h-full shrink-0 flex-col rounded-md border border-border shadow-none transition-shadow  hover:shadow-xl hover:shadow-muted/60">
         <div className="w-full grow">
           <div
             className="flex h-full w-full flex-col justify-around overflow-x-auto"
@@ -32,13 +31,13 @@ const TechStackCard = async ({ delay }) => {
               <div
                 key={index}
                 className={cn(
-                  'relative flex gap-[--gap] overflow-hidden [--gap:0.5rem] md:[--gap:0.5rem]'
+                  'relative flex gap-[--gap] overflow-hidden [--gap:0.5rem] first:mb-2 first:mt-4 last:mb-4 last:mt-2 md:[--gap:0.5rem]'
                 )}
               >
                 {Array.from({ length: 2 }).map((_, i) => (
                   <ul
                     className={cn(
-                      'animate-marquee flex min-w-full shrink-0 justify-around gap-[--gap] first:mb-2 first:mt-4 last:mb-4 last:mt-2',
+                      'flex min-w-full shrink-0 animate-marquee justify-around gap-[--gap] ',
                       index % 2 === 0 ? 'direction-normal' : 'direction-reverse'
                     )}
                     key={i}

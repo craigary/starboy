@@ -37,7 +37,7 @@
     "framer-motion": "^10.16.4",
     "highlight.js": "^11.9.0",
     "linkedom": "^0.15.6",
-    "next": "13.5.5-canary.13",
+    "next": "13.5.6-canary.1",
     "next-cloudinary": "^4.23.0",
     "next-sanity": "^5.5.4",
     "next-sanity-image": "^6.1.0",

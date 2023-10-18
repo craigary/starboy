@@ -17,7 +17,7 @@ const MusicCardAlt = async ({ delay, className }) => {
     <Card
       delay={delay}
       className={cn(
-        'relative aspect-[2/1] h-auto w-full rounded-lg p-3 transition-all sm:aspect-auto sm:h-full md:aspect-[2/1] md:h-auto lg:aspect-auto lg:h-full xl:aspect-[2/1] xl:h-auto',
+        'relative aspect-[2/1] h-auto w-full rounded-lg p-3 transition-all',
         className
       )}
     >
@@ -28,7 +28,7 @@ const MusicCardAlt = async ({ delay, className }) => {
           backgroundColor: '#' + recentPlayed.attributes.artwork.bgColor
         }}
       >
-        <div className="relative my-3 aspect-square h-auto w-auto shrink-0 overflow-hidden rounded-lg">
+        <div className="relative my-3 aspect-square h-auto w-auto shrink-0 overflow-hidden rounded-lg lg:hidden xl:block">
           <ArtworkImg
             artwork={recentPlayed.attributes.artwork}
             name={recentPlayed.attributes.name}

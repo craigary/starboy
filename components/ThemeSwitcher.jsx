@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
   }
   return (
     isClient && (
-      <div className="relative flex items-center rounded-full border border-border/50">
+      <div className="relative flex items-center rounded-full border border-border">
         {/* <div
           className="absolute -z-10 h-7 w-7 rounded-full bg-background shadow transition-all dark:shadow-muted"
           style={{

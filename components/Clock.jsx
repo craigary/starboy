@@ -27,7 +27,7 @@ const Clock = () => {
           size={24}
           value={value}
         />
-        <p className="ml-1">
+        <p className="ml-2">
           {value.getHours() > 9 ? value.getHours() : `0${value.getHours()}`}:
           {value.getMinutes() > 9
             ? value.getMinutes()
