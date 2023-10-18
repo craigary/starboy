@@ -5,7 +5,6 @@ import { getBooksList } from '@/lib/notion-next/get-books-list'
 import { IconBook } from '@tabler/icons-react'
 
 export const revalidate = 3600
-
 const BooksPage = async () => {
   const list = await getBooksList()
   return (
