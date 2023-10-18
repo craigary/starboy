@@ -1,60 +1,76 @@
 'use client'
 import Card from '@/components/bento/card/Card'
 import { useTheme } from 'next-themes'
-import { useEffect, useRef } from 'react'
-// import { upstashClient } from '@/lib/upstash/client'
+import { useEffect, useRef, useState } from 'react'
 
-const getMapKitAsync = async () => {
-  if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
-    await new Promise(resolve => {
-      window.initMapKit = resolve
-    })
-    delete window.initMapKit
-  }
-}
+import mapboxgl from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+
+// mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN
 
 const MapCard = ({ delay, token, locationInfo }) => {
   const { resolvedTheme } = useTheme()
   const mapEl = useRef(null)
+  const map = useRef(null)
+  const [zoom, setZoom] = useState(9)
 
-  const mapInstance = useRef(null)
+  const [lat,setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
+  const [lng, setLng] = useState(Number(locationInfo.coordinate.split('&')[0]))
 
   useEffect(() => {
-    ;(async () => {
-      await getMapKitAsync(token)
+    if (map.current) return // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapEl.current,
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [lng, lat],
+      zoom: zoom,
+      accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
+      compact: true
+    })
 
-      mapkit.init({
-        authorizationCallback: function (done) {
-          done(token)
-        },
-        language: 'en-US'
-      })
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4))
+      setLat(map.current.getCenter().lat.toFixed(4))
+      setZoom(map.current.getZoom().toFixed(2))
+    })
+  })
 
-      const lat = Number(locationInfo.coordinate.split('&')[1])
-      const long = Number(locationInfo.coordinate.split('&')[0])
-      mapInstance.current && mapInstance.current.destroy()
-      mapInstance.current = new mapkit.Map(mapEl.current, {
-        mapType:
-          resolvedTheme === 'dark'
-            ? mapkit.Map.MapTypes.MutedStandard
-            : mapkit.Map.MapTypes.Standard,
-        showsPointsOfInterest: false,
-        isRotationEnabled: false,
-        isZoomEnabled: true,
-        showsZoomControl: false,
-        showsScale: mapkit.FeatureVisibility.Hidden,
-        showsMapTypeControl: false,
-        region: new mapkit.CoordinateRegion(
-          new mapkit.Coordinate(lat, long),
-          new mapkit.CoordinateSpan(0.3, 0.3)
-        ),
-        colorScheme:
-          resolvedTheme === 'dark'
-            ? mapkit.Map.ColorSchemes.Dark
-            : mapkit.Map.ColorSchemes.Light
-      })
-    })()
-  }, [locationInfo.coordinate, resolvedTheme, token])
+  // useEffect(() => {
+  //   ;(async () => {
+  //     await getMapKitAsync(token)
+
+  //     mapkit.init({
+  //       authorizationCallback: function (done) {
+  //         done(token)
+  //       },
+  //       language: 'en-US'
+  //     })
+
+  //     const lat = Number(locationInfo.coordinate.split('&')[1])
+  //     const long = Number(locationInfo.coordinate.split('&')[0])
+  //     mapInstance.current && mapInstance.current.destroy()
+  //     mapInstance.current = new mapkit.Map(mapEl.current, {
+  //       mapType:
+  //         resolvedTheme === 'dark'
+  //           ? mapkit.Map.MapTypes.MutedStandard
+  //           : mapkit.Map.MapTypes.Standard,
+  //       showsPointsOfInterest: false,
+  //       isRotationEnabled: false,
+  //       isZoomEnabled: true,
+  //       showsZoomControl: false,
+  //       showsScale: mapkit.FeatureVisibility.Hidden,
+  //       showsMapTypeControl: false,
+  //       region: new mapkit.CoordinateRegion(
+  //         new mapkit.Coordinate(lat, long),
+  //         new mapkit.CoordinateSpan(0.3, 0.3)
+  //       ),
+  //       colorScheme:
+  //         resolvedTheme === 'dark'
+  //           ? mapkit.Map.ColorSchemes.Dark
+  //           : mapkit.Map.ColorSchemes.Light
+  //     })
+  //   })()
+  // }, [locationInfo.coordinate, resolvedTheme, token])
 
   return (
     <Card className="h-full min-h-[20rem] p-3" delay={delay}>
@@ -65,38 +81,8 @@ const MapCard = ({ delay, token, locationInfo }) => {
             {locationInfo.state}, {locationInfo.region}
           </p>
         </div>
-        <div
-          className="h-full w-full scale-125 grayscale transition-all group-hover:grayscale-0"
-          ref={mapEl}
-        ></div>
+        <div className="h-full w-full" ref={mapEl}></div>
       </div>
-      {/* <div className="group relative h-full w-full overflow-hidden rounded-lg border">
-        <div
-          className="absolute inset-0 z-10 from-transparent via-muted/40 to-blue-400/20"
-          style={{
-            backgroundImage: 'radial-gradient(circle, var(--tw-gradient-stops))'
-          }}
-        ></div>
-        <div className="absolute inset-0 left-1/2 top-1/2 z-20 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full drop-shadow">
-          <div className="relative z-10 h-full w-full rounded-full bg-background p-1">
-            <div className="h-full w-full rounded-full bg-blue-400"></div>
-            <div className="absolute inset-0 h-full w-full animate-ping rounded-full bg-blue-500"></div>
-          </div>
-        </div>
-        <div className="relative z-0 h-full w-full">
-          <MapImg
-            imageId={darkImageId}
-            className="hidden rounded-lg transition-all duration-500 group-hover:scale-125 dark:block"
-          />
-          <MapImg
-            imageId={lightImageId}
-            className="block rounded-lg opacity-50 transition-all duration-500 group-hover:scale-125 dark:hidden"
-          />
-          <div className="absolute bottom-3 left-3 z-30 rounded-md border bg-background/90 px-2 py-1">
-            {state}, {region}
-          </div>
-        </div>
-      </div> */}
     </Card>
   )
 }

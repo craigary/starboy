@@ -59,12 +59,6 @@ export default function RootLayout({ children, params }) {
         data-libraries="map"
       />
 
-      <Script
-        src="https://beamanalytics.b-cdn.net/beam.min.js"
-        data-token="c4da9747-a743-432d-a490-170857a281e2"
-        async
-      />
-
       <body
         className={`${manrope.variable} ${juventusFont.variable} ${playfairDisplay.variable}`}
       >

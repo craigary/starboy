@@ -53,7 +53,7 @@ const TechStackCard = async ({ delay }) => {
                               height={32}
                               width={32}
                               src={imgSrc}
-                              className="h-6 w-6 opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100 md:h-8 md:w-8"
+                              className=" opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
                             />
                           </div>
                         </li>
