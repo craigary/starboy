@@ -5,8 +5,6 @@ import { getAllWorks } from '@/lib/sanity/get-works'
 
 export const runtime = 'edge'
 
-export const revalidate = 3600
-
 const WorksPage = async () => {
   const works = await getAllWorks()
   return (
