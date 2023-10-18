@@ -1,7 +1,7 @@
 import { navigation } from '@/lib/get-navigation'
 import { getAllBlogPostsMetas } from '@/lib/sanity/get-blog-posts'
 
-export const revalidate = 600
+export const revalidate = 60
 export const runtime = 'edge'
 
 const getStaticRoutes = async () => {
