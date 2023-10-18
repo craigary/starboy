@@ -3,9 +3,6 @@ import Container from '@/components/container/Container'
 import MyServicesList from '@/components/uses/MyServiceList'
 import { getMyServices } from '@/lib/notion-next/get-my-services'
 
-export const runtime = 'edge'
-
-
 const UsePage = async () => {
   const data = await getMyServices()
 
