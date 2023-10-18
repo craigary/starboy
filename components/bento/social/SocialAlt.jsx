@@ -1,6 +1,8 @@
 import Card from '@/components/bento/card/Card'
 import { getLatestSocialPosts } from '@/lib/notion-next/get-latest-social-post'
 
+export const runtime = 'edge'
+
 const SocialAltCard = async ({ delay = 0 }) => {
   const post = await getLatestSocialPosts()
 

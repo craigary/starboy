@@ -21,6 +21,8 @@ import {
   IconSwords
 } from '@tabler/icons-react'
 
+export const runtime = 'edge'
+
 const Bento = async () => {
   // const mapToken = await getMapToken()
   const existingLocationInfo = await upstashClient.hgetall('current-location')
