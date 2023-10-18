@@ -24,7 +24,7 @@ const ProjectCard = ({ delay }) => {
           />
           <SiNotion
             size={'20%'}
-            className="pointer-events-none text-black opacity-10 transition-all group-hover:opacity-40"
+            className="pointer-events-none text-black opacity-10 transition-all group-hover:opacity-40 dark:text-white"
           />
           <SiFigma
             size={'25%'}

@@ -21,7 +21,10 @@ const MapCard = ({ delay, token, locationInfo }) => {
     if (map.current) return // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapEl.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
+      style:
+        resolvedTheme === 'dark'
+          ? 'mapbox://styles/mapbox/dark-v11'
+          : 'mapbox://styles/mapbox/streets-v12',
       center: [lng, lat],
       zoom: zoom,
       accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
@@ -34,6 +37,16 @@ const MapCard = ({ delay, token, locationInfo }) => {
       setZoom(map.current.getZoom().toFixed(2))
     })
   })
+
+  useEffect(() => {
+    if (!map.current) return
+    if (resolvedTheme === 'dark') {
+      map.current.setStyle('mapbox://styles/mapbox/dark-v11')
+    } else {
+      map.current.setStyle('mapbox://styles/mapbox/streets-v12')
+    }
+  }, [resolvedTheme])
+
 
   // useEffect(() => {
   //   ;(async () => {

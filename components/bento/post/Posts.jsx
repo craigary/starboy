@@ -7,7 +7,7 @@ const PostsCard = async ({ delay }) => {
 
   return (
     <Card className="h-full p-3" delay={delay}>
-      <div className="flex h-full flex-col rounded-md border bg-background shadow-none transition-all hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
+      <div className="flex h-full flex-col rounded-md border bg-background shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
         <div className="shrink-0 overflow-hidden pb-4">
           <div
             className="relative z-10 flex items-center justify-between rounded-t-md border-b bg-muted/30 p-3 shadow-sm
