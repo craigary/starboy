@@ -1,0 +1,4 @@
+User-Agent: *
+
+Host: https://craig.wf
+Sitemap: https://craig.wf/sitemap.xml
