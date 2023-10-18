@@ -3,6 +3,7 @@ import Container from '@/components/container/Container'
 import PostList from '@/components/post/PostList'
 import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
 import { IconWritingSign } from '@tabler/icons-react'
+
 export const runtime = 'edge'
 
 const BlogPage = async () => {
