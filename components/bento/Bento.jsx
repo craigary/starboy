@@ -88,13 +88,13 @@ const Bento = async () => {
         </Card>
       </div>
       <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
-        <ProjectCard delay={0.25} />
+        <ProjectCard delay={0} />
       </div>
       <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
-        <PostsCard delay={0.25} />
+        <PostsCard delay={0} />
       </div>
-       <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
-        <MapCard delay={0.25} locationInfo={existingLocationInfo} />
+      <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
+        <MapCard delay={0} locationInfo={existingLocationInfo} />
       </div>
       <div className="col-span-12 sm:order-2 sm:col-span-6 md:col-span-12 lg:col-span-4">
         <div className="flex h-full flex-col">
@@ -103,10 +103,10 @@ const Bento = async () => {
         </div>
       </div>
       <div className="col-span-12 h-full sm:order-1 sm:col-span-6 lg:order-4 lg:col-span-4">
-        <TechStackCard delay={0.625} />
+        <TechStackCard delay={0} />
       </div>
       <div className="col-span-12 sm:order-4 sm:col-span-6 md:order-3 md:col-span-6 lg:order-4 lg:col-span-4 lg:row-span-2">
-        <MusicCardAlt delay={0.5} />
+        <MusicCardAlt delay={0} />
       </div>
       <div className="col-span-6 sm:order-3 sm:col-span-6 md:order-3 md:col-span-6 lg:col-span-4">
         <LabCard />
