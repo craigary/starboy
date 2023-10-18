@@ -20,6 +20,9 @@ dependencies:
   '@portabletext/react':
     specifier: ^3.0.11
     version: 3.0.11(react@18.2.0)
+  '@portabletext/to-html':
+    specifier: ^2.0.5
+    version: 2.0.5
   '@radix-ui/react-dialog':
     specifier: ^1.0.5
     version: 1.0.5(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
@@ -80,6 +83,12 @@ dependencies:
   highlight.js:
     specifier: ^11.9.0
     version: 11.9.0
+  htm:
+    specifier: ^3.1.1
+    version: 3.1.1
+  jstoxml:
+    specifier: ^3.2.8
+    version: 3.2.8
   linkedom:
     specifier: ^0.15.6
     version: 0.15.6
@@ -146,6 +155,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.3.3)
+  vhtml:
+    specifier: ^2.2.0
+    version: 2.2.0
   word-counting:
     specifier: ^1.1.4
     version: 1.1.4
@@ -1488,6 +1500,14 @@ packages:
       '@portabletext/toolkit': 2.0.10
       '@portabletext/types': 2.0.8
       react: 18.2.0
+    dev: false
+
+  /@portabletext/to-html@2.0.5:
+    resolution: {integrity: sha512-KkUI6iBuKSzclyKYnwGLiE0asxvW1ZcFmZ7wBslW+nulw78qwpTl3wuK47zf+y0XX7g52d5gw5WlYBAhuSEjSg==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@portabletext/toolkit': 2.0.10
+      '@portabletext/types': 2.0.8
     dev: false
 
   /@portabletext/toolkit@2.0.10:
@@ -5652,6 +5672,10 @@ packages:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: false
 
+  /htm@3.1.1:
+    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
+    dev: false
+
   /html-encoding-sniffer@3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
     engines: {node: '>=12'}
@@ -6165,6 +6189,10 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
+    dev: false
+
+  /jstoxml@3.2.8:
+    resolution: {integrity: sha512-U/TYY7dFjfn6bvaix5WHLss4lSsZ0ER1LU6DqrQfCTkhwWADMuc4L5bKPTiXA2YzL58NcS8sRioQRPGR2p5J5g==}
     dev: false
 
   /jsx-ast-utils@3.3.5:
@@ -8821,6 +8849,10 @@ packages:
     dependencies:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
+    dev: false
+
+  /vhtml@2.2.0:
+    resolution: {integrity: sha512-TPXrXrxBOslRUVnlVkiAqhoXneiertIg86bdvzionrUYhEuiROvyPZNiiP6GIIJ2Q7oPNVyEtIx8gMAZZE9lCQ==}
     dev: false
 
   /vite@4.4.11:

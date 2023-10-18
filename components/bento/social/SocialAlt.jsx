@@ -6,10 +6,10 @@ const SocialAltCard = async ({ delay = 0 }) => {
 
   return (
     <Card className="h-full p-3" delay={delay}>
-      <div className="relative h-full w-full p-2 ">
-        <div className="mx-3 flex h-full items-center justify-center">
-          <div className="flex flex-col items-start justify-center">
-          <div className="rounded-xl rounded-bl-none border bg-background py-2 text-sm">
+      <div className="relative h-full w-full">
+        <div className="flex h-full items-center justify-center">
+          <div className="flex flex-col items-start justify-center gap-2">
+            <div className="rounded-xl rounded-bl-none border bg-background p-2 text-sm">
               {post.title}
             </div>
             <div className="h-8 w-8 shrink-0 rounded-full bg-cyan-200"></div>

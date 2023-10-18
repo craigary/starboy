@@ -16,7 +16,7 @@ const ProjectCard = ({ delay }) => {
       className="group relative h-full rounded-none p-3 transition-all"
       delay={delay}
     >
-      <div className="relative flex h-full shrink-0 flex-col rounded border border-border bg-background shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
+      <div className="relative flex h-full shrink-0 flex-col rounded-md border border-border bg-background shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
         <div className="flex w-full grow items-center justify-around">
           <SiVisualstudiocode
             size={'25%'}
