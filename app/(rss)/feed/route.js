@@ -4,6 +4,9 @@ import htm from 'htm'
 import { toXML } from 'jstoxml'
 import vhtml from 'vhtml'
 
+export const revalidate = 60
+export const runtime = 'edge'
+
 const html = htm.bind(vhtml)
 
 const myPortableTextComponents = {
