@@ -4,6 +4,8 @@ import { upstashClient } from '@/lib/upstash/client'
 import { SiNotion } from '@icons-pack/react-simple-icons'
 import Image from 'next/image'
 
+export const runtime = 'edge'
+
 const WelcomeCard = async ({ delay }) => {
   const existingLocationInfo = await upstashClient.hgetall('current-location')
 

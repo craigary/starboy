@@ -3,6 +3,8 @@ import Globe from '@/components/bento/statistics/Globe'
 import { Badge } from '@radix-ui/themes'
 import { client } from '@umami/api-client'
 
+export const runtime = 'edge'
+
 const StatisticsCard = async () => {
   const { ok, data, status, error } = await client.getWebsiteStats(
     process.env.UMAMI_WEBSITE_ID,

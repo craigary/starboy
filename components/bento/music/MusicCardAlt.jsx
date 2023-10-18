@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@radix-ui/themes'
 import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
 import Link from 'next/link'
+export const runtime = 'edge'
 
 const MusicCardAlt = async ({ delay, className }) => {
   const result = await getNowPlaying()
