@@ -1,18 +1,17 @@
 'use client'
 import Card from '@/components/bento/card/Card'
+import mapboxgl from 'mapbox-gl'
+// import 'mapbox-gl/dist/mapbox-gl.css'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
 
-import mapboxgl from 'mapbox-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
-
-// mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN
-
-const MapCard = ({ delay, token, locationInfo }) => {
+const MapCard = ({ delay, locationInfo }) => {
   const { resolvedTheme } = useTheme()
+  const accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+
   const mapEl = useRef(null)
   const map = useRef(null)
-  const [zoom, setZoom] = useState(10)
+  const [zoom, setZoom] = useState(11)
 
   const [lat, setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
   const [lng, setLng] = useState(Number(locationInfo.coordinate.split('&')[0]))
@@ -21,13 +20,9 @@ const MapCard = ({ delay, token, locationInfo }) => {
     if (map.current) return // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapEl.current,
-      style:
-        resolvedTheme === 'dark'
-          ? 'mapbox://styles/mapbox/dark-v11'
-          : 'mapbox://styles/mapbox/streets-v12',
       center: [lng, lat],
       zoom: zoom,
-      accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
+      accessToken,
       compact: true
     })
 
@@ -46,44 +41,6 @@ const MapCard = ({ delay, token, locationInfo }) => {
       map.current.setStyle('mapbox://styles/mapbox/streets-v12')
     }
   }, [resolvedTheme])
-
-
-  // useEffect(() => {
-  //   ;(async () => {
-  //     await getMapKitAsync(token)
-
-  //     mapkit.init({
-  //       authorizationCallback: function (done) {
-  //         done(token)
-  //       },
-  //       language: 'en-US'
-  //     })
-
-  //     const lat = Number(locationInfo.coordinate.split('&')[1])
-  //     const long = Number(locationInfo.coordinate.split('&')[0])
-  //     mapInstance.current && mapInstance.current.destroy()
-  //     mapInstance.current = new mapkit.Map(mapEl.current, {
-  //       mapType:
-  //         resolvedTheme === 'dark'
-  //           ? mapkit.Map.MapTypes.MutedStandard
-  //           : mapkit.Map.MapTypes.Standard,
-  //       showsPointsOfInterest: false,
-  //       isRotationEnabled: false,
-  //       isZoomEnabled: true,
-  //       showsZoomControl: false,
-  //       showsScale: mapkit.FeatureVisibility.Hidden,
-  //       showsMapTypeControl: false,
-  //       region: new mapkit.CoordinateRegion(
-  //         new mapkit.Coordinate(lat, long),
-  //         new mapkit.CoordinateSpan(0.3, 0.3)
-  //       ),
-  //       colorScheme:
-  //         resolvedTheme === 'dark'
-  //           ? mapkit.Map.ColorSchemes.Dark
-  //           : mapkit.Map.ColorSchemes.Light
-  //     })
-  //   })()
-  // }, [locationInfo.coordinate, resolvedTheme, token])
 
   return (
     <Card className="h-full min-h-[20rem] p-3" delay={delay}>

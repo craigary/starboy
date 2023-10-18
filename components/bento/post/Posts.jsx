@@ -2,7 +2,6 @@ import Card from '@/components/bento/card/Card'
 import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
 import { Button, IconButton } from '@radix-ui/themes'
 import { IconChevronRight, IconRss } from '@tabler/icons-react'
-export const runtime = 'edge'
 
 const PostsCard = async ({ delay }) => {
   const posts = await getBlogPosts(4)
