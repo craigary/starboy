@@ -4,7 +4,7 @@ import PodcastList from '@/components/podcast/PodcastList'
 import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
 import { SiApplepodcasts } from '@icons-pack/react-simple-icons'
 
-export const runtime = 'edge'
+export const revalidate = 3600
 
 const PodcastPage = async () => {
   const podcasts = await getPodcasts()
