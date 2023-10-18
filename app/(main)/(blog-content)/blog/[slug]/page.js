@@ -3,6 +3,8 @@ import PostWrapper from '@/components/post/PostWrapper'
 import { getBlogAllSlugs } from '@/lib/sanity/get-blog-posts'
 import { getPostDetails } from '@/lib/sanity/get-post-details'
 
+export const revalidate = 3600
+
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
   return await getBlogAllSlugs()

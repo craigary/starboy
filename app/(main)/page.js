@@ -1,8 +1,7 @@
 import Bento from '@/components/bento/Bento'
 import Container from '@/components/container/Container'
-export const metadata = {
-  referrer: 'no-referrer'
-}
+
+export const runtime = 'edge'
 
 export default async function Home() {
   return (

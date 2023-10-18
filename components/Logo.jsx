@@ -5,7 +5,7 @@ const Logo = ({ className, size = 18 }) => {
   return (
     <div
       className={cn(
-        'rounded flex items-center justify-center text-gray-12',
+        'text-gray-12 flex items-center justify-center rounded',
         className
       )}
       style={{ height: size + 'px', width: size + 'px' }}

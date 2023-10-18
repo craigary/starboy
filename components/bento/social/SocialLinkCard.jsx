@@ -1,5 +1,4 @@
 import Card from '@/components/bento/card/Card'
-import CardBg from '@/components/bento/card/CardBg'
 import { navigation } from '@/lib/get-navigation'
 import { IconButton, Tooltip } from '@radix-ui/themes'
 
@@ -7,8 +6,7 @@ const SocialLinkCard = () => {
   const { items: socialLinks } = navigation.find(item => item.id === 'social')
   return (
     <Card className={'h-full p-3'}>
-      <ul className="relative flex h-full w-full flex-wrap items-center justify-around rounded border border-border bg-muted/20 py-0.5 transition-all">
-        <CardBg />
+      <ul className="relative flex h-full w-full flex-wrap items-center justify-around rounded border border-border bg-muted/20 py-1">
         {socialLinks.map(item => {
           const Icon = item.icon
           return (

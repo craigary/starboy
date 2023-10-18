@@ -22,6 +22,10 @@ import styles from './style.module.css'
 
 export const runtime = 'edge'
 
+export const metadata = {
+  title: 'About · Craig Hart'
+}
+
 const AboutPage = async () => {
   const existingLocationInfo = await upstashClient.hgetall('current-location')
   const region = existingLocationInfo.region

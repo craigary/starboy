@@ -5,6 +5,10 @@ import {
   SiVisualstudiocode
 } from '@icons-pack/react-simple-icons'
 
+export const metadata = {
+  title: `Projects · Craig Hart`
+}
+
 const ProjectCard = ({ delay }) => {
   return (
     // shadow-[inset_0_4px_6px_0_hsl(var(--muted)/0.5)]

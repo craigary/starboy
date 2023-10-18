@@ -2,7 +2,6 @@ import Card from '@/components/bento/card/Card'
 import { getTechStack } from '@/lib/sanity/get-tech-stack'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-export const runtime = 'edge'
 
 const TechStackCard = async ({ delay }) => {
   const data = await getTechStack()
