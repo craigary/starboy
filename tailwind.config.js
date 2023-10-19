@@ -104,6 +104,20 @@ module.exports = {
         marquee: {
           '0%': { transform: 'translateX(calc(-100% - var(--gap)))' },
           '100%': { transform: 'translateX(0)' }
+        },
+        'marker-pulse': {
+          '0%': {
+            transform: 'translate(-50%,-50%) scale(1)',
+            opacity: 1
+          },
+          '35%': {
+            transform: 'translate(-50%,-50%) scale(8)',
+            opacity: 0
+          },
+          '100%': {
+            transform: 'translate(-50%,-50%) scale(8)',
+            opacity: 0
+          }
         }
       },
       animation: {

@@ -23,9 +23,9 @@ const Navbar = () => {
     <>
       <div className="mx-auto h-16 w-full max-w-3xl overflow-hidden pt-8 transition-all duration-300 md:h-0 md:pt-0">
         <div className="flex h-full w-full items-center justify-between opacity-100 transition-all duration-300 md:opacity-0">
-          <div className="flex items-center">
-            <Logo size={36} className="mr-2" />
-            <p className="text-lg font-bold">CRAiG.wf</p>
+          <div className="flex items-end">
+            <Logo size={36} className="mr-2 rounded border" />
+            <p className="text-lg font-extrabold">CRAiG.wf</p>
           </div>
           <IconButton variant="soft" onClick={() => setOpen(open => !open)}>
             <IconMenu2 />

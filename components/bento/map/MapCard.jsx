@@ -1,9 +1,30 @@
 'use client'
+
+import { LngLat, Map, Marker } from 'mapbox-gl'
+
 import Card from '@/components/bento/card/Card'
-import mapboxgl from 'mapbox-gl'
-// import 'mapbox-gl/dist/mapbox-gl.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 import { useTheme } from 'next-themes'
-import { useEffect, useRef, useState } from 'react'
+import { forwardRef, useEffect, useRef, useState } from 'react'
+
+const MarkerComponent = forwardRef(function MarkerComponent(props, ref) {
+  return (
+    <div
+      className="marker mapboxgl-marker mapboxgl-marker-anchor-center pointer-events-auto h-[28px] w-[28px] translate-x-1/2 translate-y-1/2 opacity-100"
+      aria-label="Map marker"
+      ref={ref}
+    >
+      <div className="relative h-full w-full">
+        <div className="absolute left-1/2 top-1/2 h-3 w-3 animate-[marker-pulse_4s_ease-out_infinite] rounded-full bg-[#679BFF] opacity-20"></div>
+        <div className="styles_marker__Mzm27 relative flex h-full w-full items-center justify-center rounded-full bg-white shadow-lg">
+          <div className="absolute inset-[3px] rounded-full bg-[#679BFF]"></div>
+          <div className="styles_marker-border__fxi6v absolute inset-[3px] rounded-full"></div>
+          <div className="absolute inset-[5px] rounded-full bg-[#679BFF]"></div>
+        </div>
+      </div>
+    </div>
+  )
+})
 
 const MapCard = ({ delay, locationInfo }) => {
   const { resolvedTheme } = useTheme()
@@ -11,6 +32,8 @@ const MapCard = ({ delay, locationInfo }) => {
 
   const mapEl = useRef(null)
   const map = useRef(null)
+  const markerRef = useRef(null)
+
   const [zoom, setZoom] = useState(11)
 
   const [lat, setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
@@ -18,13 +41,19 @@ const MapCard = ({ delay, locationInfo }) => {
 
   useEffect(() => {
     if (map.current) return // initialize map only once
-    map.current = new mapboxgl.Map({
+    map.current = new Map({
       container: mapEl.current,
       center: [lng, lat],
       zoom: zoom,
       accessToken,
       compact: true
     })
+
+    const el = document.createElement('div')
+    el.className = 'rounded-full'
+    const markerCoords = new LngLat(lng, lat)
+
+    new Marker(markerRef.current).setLngLat(markerCoords).addTo(map.current)
 
     map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4))
@@ -51,6 +80,7 @@ const MapCard = ({ delay, locationInfo }) => {
             {locationInfo.state}, {locationInfo.region}
           </p>
         </div>
+        <MarkerComponent ref={markerRef} />
         <div className="h-full w-full" ref={mapEl}></div>
       </div>
     </Card>
