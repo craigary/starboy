@@ -23,6 +23,8 @@ const PodcastItemWrapper = ({ podcast }) => {
             width={200}
             height={200}
             quality={100}
+            placeholder="blur"
+            blurDataURL={podcast.coverImgBlur}
             alt={podcast.title}
           />
         </div>
