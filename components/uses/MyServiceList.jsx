@@ -12,6 +12,8 @@ const MyServicesList = ({ myServicesList }) => {
     green: 'jade', // Teal Jade Green Grass
     default: 'gray' // Gray Mauve Slate Sage Olive  Sand
   }
+
+  console.log(typeof myServicesList[0].price)
   return (
     <div>
       <ul>
@@ -57,7 +59,11 @@ const MyServicesList = ({ myServicesList }) => {
                     </Flex>
                   </div>
                   <p className="hidden w-14 shrink-0 text-right text-sm md:block">
-                    ${item.price ?? '?'}
+                    {item.price === 0
+                      ? item.price
+                      : item.price
+                      ? item.price
+                      : 'free'}
                   </p>
                 </div>
               </div>
