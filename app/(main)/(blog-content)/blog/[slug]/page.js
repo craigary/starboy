@@ -14,7 +14,6 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { slug } = params
-
   const post = await getPostDetails(slug)
 
   return {
@@ -25,7 +24,6 @@ export async function generateMetadata({ params, searchParams }, parent) {
 const PostDetails = async ({ params }) => {
   const { slug } = params
   const post = await getPostDetails(slug)
-
   return (
     <Container className="max-w-2xl">
       <PostWrapper post={post} />
