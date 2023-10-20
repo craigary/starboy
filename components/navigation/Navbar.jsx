@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex h-full w-full items-center justify-between opacity-100 transition-all duration-300 md:opacity-0">
           <div className="flex items-center">
             <Logo size={36} className="mr-3" />
-            <p className="w-fit bg-gradient-to-l from-primary/60 to-primary bg-clip-text text-xl font-extrabold text-transparent">
+            <p className="w-fit bg-gradient-to-l from-primary/60 to-primary bg-clip-text text-xl font-bold text-transparent">
               CRAIG.<span className="text-sm">wf</span>
             </p>
           </div>
