@@ -33,7 +33,7 @@ const CmdkDialog = ({ open, setOpen }) => {
 
       const invert =
         theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
-
+      setOpen(open => !open)
       toast.success(`Use ${theme} theme.`, { invert })
     }
   }
@@ -58,6 +58,7 @@ const CmdkDialog = ({ open, setOpen }) => {
                         )
                       } else {
                         router.push(navItem.link)
+                        setOpen(open => !open)
                       }
                     }}
                   >
