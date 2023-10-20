@@ -5,13 +5,13 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import NavContent from '@/components/navigation/NavContent'
 import localFont from 'next/font/local'
 
+import ToastProvider from '@/app/(main)/ToastProvider'
 import StyledJsxProvider from '@/components/StyledJsxProvider'
 import CardBg from '@/components/bento/card/CardBg'
 import Navbar from '@/components/navigation/Navbar'
 import { cn } from '@/lib/utils'
 import { ScrollArea } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
-import { Toaster } from 'sonner'
 import './globals.css'
 import './theme-config.css'
 
@@ -58,9 +58,9 @@ export default function RootLayout({ children, params }) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <StyledJsxProvider>
-            <Toaster />
+            <ToastProvider />
             <main className="relative flex h-full min-h-screen w-full md:py-2">
-              <CardBg className={'z-10 opacity-50'} />
+              <CardBg className="z-10 opacity-50" />
               <div className="absolute inset-0 z-20 h-full w-full bg-background opacity-95"></div>
               <div
                 style={{ backgroundSize: '400% 400%' }}

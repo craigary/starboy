@@ -5,7 +5,7 @@ import { IconButton, Tooltip } from '@radix-ui/themes'
 const SocialLinkCard = () => {
   const { items: socialLinks } = navigation.find(item => item.id === 'social')
   return (
-    <Card className={'h-full p-3'}>
+    <Card className="h-full p-3">
       <ul className="relative flex h-full w-full flex-wrap items-center justify-around rounded-md border border-border bg-muted/20 py-1">
         {socialLinks.map(item => {
           const Icon = item.icon

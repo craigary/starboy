@@ -34,7 +34,7 @@ const Bento = async () => {
         <NavigationCard
           tiltColor="rgb(2 132 199)"
           href={'/books'}
-          className={'bg-secondary/20 transition-all hover:border-sky-600'}
+          className="bg-secondary/20 transition-all hover:border-sky-600"
         >
           <p className="font-serif text-sm font-semibold md:text-base lg:text-xl">
             Reading List
@@ -47,7 +47,7 @@ const Bento = async () => {
         <NavigationCard
           href={'/uses'}
           tiltColor="rgb(245 158 11)"
-          className={'bg-secondary/20 transition-all hover:border-amber-500'}
+          className="bg-secondary/20 transition-all hover:border-amber-500"
         >
           <p className="font-serif font-semibold md:text-base lg:text-xl">
             Tools & Craft
@@ -60,7 +60,7 @@ const Bento = async () => {
         <NavigationCard
           href={'/podcasts'}
           tiltColor="rgb(192 132 252)"
-          className={'bg-secondary/20 transition-all hover:border-purple-400'}
+          className="bg-secondary/20 transition-all hover:border-purple-400"
         >
           <p className="font-serif font-semibold md:text-base lg:text-xl">
             Podcasts
@@ -73,7 +73,7 @@ const Bento = async () => {
         <NavigationCard
           href={'/guestbook'}
           tiltColor="rgb(248 113 113)"
-          className={'bg-secondary/20 transition-all hover:border-red-400'}
+          className="bg-secondary/20 transition-all hover:border-red-400"
         >
           <p className="font-serif font-semibold md:text-base lg:text-xl">
             Guestbook
