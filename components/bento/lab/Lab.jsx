@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@radix-ui/themes'
 
 import localFont from 'next/font/local'
+import Link from 'next/link'
 
 // Font files can be colocated inside of `app`
 const labFont = localFont({
@@ -31,7 +32,9 @@ const LabCard = ({ delay = 0 }) => {
           highContrast
           color="gray"
         >
-          Go to the Lab
+          <Link href="/lab" target="_blank">
+            Visit the Lab
+          </Link>
         </Button>
       </div>
     </Card>
