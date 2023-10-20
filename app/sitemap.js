@@ -4,6 +4,8 @@ import { getAllBlogPostsMetas } from '@/lib/sanity/get-blog-posts'
 export const revalidate = 60
 export const runtime = 'edge'
 
+const websiteUrl = process.env.WEBSITE_URL
+
 const getStaticRoutes = async () => {
   const repo = 'craigary/starboy'
   const token = process.env.GITHUB_ACCESS_TOKEN
@@ -24,7 +26,7 @@ const getStaticRoutes = async () => {
       return [
         ...prev,
         ...curr.items.map(item => ({
-          url: `https://craig.wf${item.link}`,
+          url: `${websiteUrl}${item.link}`,
           lastModified: lastCommitDate,
           changeFrequency: item?.frequency ?? 'monthly'
         }))
@@ -39,7 +41,7 @@ const getStaticRoutes = async () => {
 const getDynamicRoutes = async () => {
   const res = await getAllBlogPostsMetas()
   const routes = res.map(item => ({
-    url: `https://craig.wf/blog/${item.slug}`,
+    url: `${websiteUrl}/blog/${item.slug}`,
     lastModified: new Date(item.publishedAt ?? item._createdAt),
     changeFrequency: 'weekly'
   }))

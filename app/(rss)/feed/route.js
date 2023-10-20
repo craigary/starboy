@@ -7,6 +7,8 @@ import vhtml from 'vhtml'
 export const revalidate = 60
 export const runtime = 'edge'
 
+const websiteUrl = process.env.WEBSITE_URL
+
 const html = htm.bind(vhtml)
 
 const myPortableTextComponents = {
@@ -33,7 +35,7 @@ export async function GET() {
       // ...item,
       title: item.title,
       description: item.summary,
-      link: 'https://craig.wf/blog/' + item.slug,
+      link: `${websiteUrl}/blog/${item.slug}`,
       guid: item._id,
       content: renderHtmlContent(item.content)
     }
