@@ -1,14 +1,18 @@
 import { cn } from '@/lib/utils'
 
 const Logo = ({ className, size = 18 }) => {
-  const iconSize = size
+  const iconSize = size * 0.8
   return (
     <div
       className={cn(
-        'text-gray-12 flex items-center justify-center rounded',
+        'flex items-center justify-center rounded-lg shadow-[0_0_4px] shadow-[--accent-7]',
         className
       )}
-      style={{ height: size + 'px', width: size + 'px' }}
+      style={{
+        height: size + 'px',
+        width: size + 'px'
+        // boxShadow: `0px 0px 3px blue, pink 0px 0px 0px inset`
+      }}
     >
       <svg
         width={iconSize}
@@ -17,8 +21,8 @@ const Logo = ({ className, size = 18 }) => {
         className="fill-current"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M764.138 667.5C775.685 667.5 782.902 655 777.128 645L512.99 187.5C507.217 177.5 492.783 177.5 487.01 187.5L359.27 408.751C356.591 413.392 356.591 419.11 359.27 423.751L495.669 660C498.348 664.641 503.3 667.5 508.659 667.5H764.138Z" />
-        <path d="M409.153 667.5C420.7 667.5 427.917 655 422.144 645L335.498 494.926C329.725 484.926 315.291 484.926 309.517 494.926L222.872 645C217.098 655 224.315 667.5 235.862 667.5H409.153Z" />
+        <path d="M800.32 688C811.289 688 818.145 676.126 812.661 666.626L512.341 146.379C506.857 136.878 493.143 136.878 487.659 146.379L341.612 399.377C339.067 403.786 339.067 409.217 341.612 413.626L495.885 680.874C498.43 685.284 503.135 688 508.226 688H800.32Z" />
+        <path d="M402.655 688C413.624 688 420.48 676.126 414.996 666.626L313.509 490.818C308.024 481.317 294.311 481.317 288.826 490.818L187.339 666.626C181.855 676.126 188.711 688 199.68 688H402.655Z" />
       </svg>
     </div>
   )
