@@ -14,6 +14,39 @@ import {
 const SocialCard = async () => {
   const post = await getLatestSocialPosts()
 
+  const socialMap = new Map()
+  socialMap.set('Mastodon', {
+    color: SiMastodonHex,
+    name: 'Craig Hart',
+    showName: true,
+    icon: SiMastodon
+  })
+  socialMap.set('Weibo', {
+    color: SiSinaweiboHex,
+    name: null,
+    showName: false,
+    icon: '',
+    icon: SiSinaweibo
+  })
+  socialMap.set('Jike', {
+    color: '#ffe411',
+    name: null,
+    showName: false,
+    icon: null
+  })
+  socialMap.set('X', {
+    color: '#000000',
+    name: 'Craig Hart',
+    showName: true,
+    icon: SiTwitter
+  })
+  socialMap.set('Threads', {
+    color: '#000000',
+    name: 'Craig Hart',
+    showName: true,
+    icon: SiThreads
+  })
+
   const socialRef = {
     Mastodon: {
       color: SiMastodonHex,
@@ -43,8 +76,8 @@ const SocialCard = async () => {
     }
   }
 
-  const Icon = socialRef[post.source].icon
-  const IconColor = socialRef[post.source].color
+  const Icon = socialMap.get(post.source).icon
+  const IconColor = socialMap.get(post.source).color
 
   return (
     <Card className="group relative h-full min-h-[16rem] rounded-none p-3 pb-10 shadow-[inset_0_4px_6px_0_hsl(var(--muted)/0.5)] transition-all">
@@ -63,10 +96,10 @@ const SocialCard = async () => {
           <div className="flex items-center">
             <div className="mr-2 h-8 w-8 rounded-full bg-amber-500"></div>
             <div className="leading-4">
-              {socialRef[post.source]?.showName ? (
+              {socialMap.get(post.source)?.showName ? (
                 <>
                   <p className="text-sm font-semibold leading-4">
-                    {socialRef[post.source].name}
+                    {socialMap.get(post.source).name}
                   </p>
                   <p className="text-xs leading-3 text-primary/30">
                     {post.handle}
