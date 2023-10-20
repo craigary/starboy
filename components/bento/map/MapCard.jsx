@@ -34,7 +34,7 @@ const MapCard = ({ delay, locationInfo }) => {
   const map = useRef(null)
   const markerRef = useRef(null)
 
-  const [zoom, setZoom] = useState(11)
+  const [zoom, setZoom] = useState(11.5)
 
   const [lat, setLat] = useState(Number(locationInfo.coordinate.split('&')[1]))
   const [lng, setLng] = useState(Number(locationInfo.coordinate.split('&')[0]))
