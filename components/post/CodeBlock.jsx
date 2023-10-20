@@ -9,7 +9,7 @@ const CodeBlock = ({ data }) => {
     <Lowlight
       language={value.language}
       value={value.code}
-      className={'px-0 text-sm leading-[1.125rem]'}
+      className={'whitespace-pre-wrap px-0 text-sm leading-[1.125rem]'}
     />
   )
 }

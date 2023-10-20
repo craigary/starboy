@@ -16,8 +16,8 @@ Lowlight.registerLanguage('js', javascript)
 
 const myPortableTextComponents = {
   types: {
-    image: ({ value }) => {
-      return <ImageBlock image={value} />
+    image: data => {
+      return <ImageBlock image={data.value} />
     },
     code: data => {
       return <CodeBlock data={data} />
@@ -29,7 +29,7 @@ const PostContent = ({ content, className }) => {
   return (
     <div
       className={cn(
-        'prose-sm mx-auto mt-4  dark:prose-invert md:mt-8',
+        'prose-sm relative mx-auto mt-4 max-w-none whitespace-normal dark:prose-invert md:mt-8',
         className
       )}
     >
