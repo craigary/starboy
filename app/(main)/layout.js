@@ -68,7 +68,7 @@ export default function RootLayout({ children, params }) {
               ></div>
 
               <div className="relative z-30 h-screen w-0 shrink-0 overflow-hidden transition-all md:h-[calc(100vh-16px)] md:w-64">
-                <NavContent showCmdBtn={true} delay={0.5} />
+                <NavContent showCmdBtn={true} />
               </div>
               <div className="relative z-30 h-screen w-full overflow-hidden overflow-y-scroll bg-gradient-to-t from-secondary/30 to-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
                 {/* <div
