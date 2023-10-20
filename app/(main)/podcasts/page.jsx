@@ -10,7 +10,7 @@ const PodcastPage = async () => {
   const podcasts = await getPodcasts()
   return (
     <WiderContainer>
-      <Heading title="Podcasts" className={'relative'}>
+      <Heading title="Podcasts" className="relative">
         <SiApplepodcasts
           className="absolute -right-[10%] top-0 opacity-5"
           size="80%"

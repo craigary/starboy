@@ -2,7 +2,6 @@ import Card from '@/components/bento/card/Card'
 import CircleBg from '@/components/bento/project/CircleBg'
 import { cn } from '@/lib/utils'
 import { Button } from '@radix-ui/themes'
-
 import localFont from 'next/font/local'
 import Link from 'next/link'
 
@@ -16,7 +15,7 @@ const LabCard = ({ delay = 0 }) => {
   return (
     <Card className="h-full min-h-[8rem] grow p-3" delay={delay}>
       <div className="relative z-10 flex h-full flex-col items-center justify-center overflow-hidden rounded-md border border-border bg-background shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
-        <CircleBg />
+        <CircleBg className="z-10" />
         <p
           className={cn(
             'z-10 mb-2 w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-5xl font-semibold text-transparent ',
@@ -31,6 +30,7 @@ const LabCard = ({ delay = 0 }) => {
           variant="surface"
           highContrast
           color="gray"
+          asChild
         >
           <Link href="/lab" target="_blank">
             Visit the Lab

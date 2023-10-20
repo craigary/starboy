@@ -1,7 +1,9 @@
-const CircleBg = () => {
+import { cn } from '@/lib/utils'
+
+const CircleBg = ({ className }) => {
   return (
     <div
-      className="absolute left-0 top-0 z-0 h-full w-full"
+      className={cn('absolute left-0 top-0 z-0 h-full w-full', className)}
       style={{
         WebkitMaskImage: 'radial-gradient(circle, transparent,  rgba(0,0,0,1))',
         maskImage: 'radial-gradient(circle, transparent,  rgba(0,0,0,1))'

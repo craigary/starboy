@@ -3,7 +3,11 @@ import Card from '@/components/bento/card/Card'
 const TheBlockCard = ({ delay }) => {
   return (
     <Card className="h-full p-3" delay={delay}>
-      <div className="relative flex h-full w-full items-center justify-center rounded-md border bg-background p-2 py-6 shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20 md:py-3">
+      <a
+        href="https://the-block.club"
+        target="_blank"
+        className="relative flex h-full w-full items-center justify-center rounded-md border bg-background p-2 py-6 shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20 md:py-3"
+      >
         <div className="mr-4 h-12 w-12 rounded-full md:h-16 md:w-16">
           <svg
             className="h-full w-full fill-primary/90"
@@ -17,7 +21,7 @@ const TheBlockCard = ({ delay }) => {
         <p className="w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-base font-bold text-transparent md:text-2xl">
           the Block
         </p>
-      </div>
+      </a>
     </Card>
   )
 }

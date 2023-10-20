@@ -14,16 +14,9 @@ const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
       viewport={{ once: true, margin: '36px' }}
       className="relative flex h-full flex-col"
     >
-      {/* <div className="flex shrink-0 items-center py-6 md:px-4">
-        <Logo size={36} className="mr-3" />
-        <p className="text-lg font-bold">CRAiG.wf</p>
-      </div> */}
       <div className="relative h-full overflow-y-auto">
         <div className="sticky top-0 flex h-[5.25rem] shrink-0 items-center backdrop-blur-sm md:px-4">
-          <Logo size={36} className="mr-3" />
-          <p className="w-fit bg-gradient-to-l from-primary/60 to-primary bg-clip-text text-xl font-bold text-transparent">
-            CRAIG.<span className="text-sm">wf</span>
-          </p>
+          <Logo size={36} />
         </div>
         <div className="space-y-4 md:px-4">
           {navigation.map(navSection => (

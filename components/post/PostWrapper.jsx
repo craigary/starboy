@@ -17,7 +17,7 @@ const PostWrapper = ({ post }) => {
         </h1>
         <div className="flex items-center justify-between">
           <p className="text-sm text-primary/60">{post.publishedAt}</p>
-          <p className={'text-sm text-primary/60'}>
+          <p className="text-sm text-primary/60">
             {post.estimatedReadingTime}{' '}
             {post.estimatedReadingTime > 1 ? 'mins' : 'min'} to read
           </p>

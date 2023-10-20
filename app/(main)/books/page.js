@@ -9,7 +9,7 @@ const BooksPage = async () => {
   const list = await getBooksList()
   return (
     <Container>
-      <Heading title="Books" className={'relative'}>
+      <Heading title="Books" className="relative">
         <IconBook
           className="absolute -right-[10%] top-0 opacity-5"
           size="80%"

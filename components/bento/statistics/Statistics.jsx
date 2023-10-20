@@ -15,7 +15,7 @@ const StatisticsCard = async () => {
   const data = await res.json()
 
   return (
-    <Card className={'h-full p-3'}>
+    <Card className="h-full p-3">
       <div className="group relative h-full w-full overflow-hidden rounded-md border bg-background/50 px-2 shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60 dark:bg-muted/20">
         <div className="mx-auto mt-5 w-fit font-semibold">
           <span className="font-normal">views:</span>
