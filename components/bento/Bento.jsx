@@ -33,6 +33,7 @@ const Bento = async () => {
       <div className="col-span-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 min-[960px]:grid-cols-4">
         <NavigationCard
           tiltColor="rgb(2 132 199)"
+          href={'/books'}
           className={'bg-secondary/20 transition-all hover:border-sky-600'}
         >
           <p className="font-serif text-sm font-semibold md:text-base lg:text-xl">
@@ -44,6 +45,7 @@ const Bento = async () => {
           />
         </NavigationCard>
         <NavigationCard
+          href={'/uses'}
           tiltColor="rgb(245 158 11)"
           className={'bg-secondary/20 transition-all hover:border-amber-500'}
         >
@@ -56,6 +58,7 @@ const Bento = async () => {
           />
         </NavigationCard>
         <NavigationCard
+          href={'/podcasts'}
           tiltColor="rgb(192 132 252)"
           className={'bg-secondary/20 transition-all hover:border-purple-400'}
         >
@@ -68,6 +71,7 @@ const Bento = async () => {
           />
         </NavigationCard>
         <NavigationCard
+          href={'/guestbook'}
           tiltColor="rgb(248 113 113)"
           className={'bg-secondary/20 transition-all hover:border-red-400'}
         >
