@@ -53,13 +53,6 @@ export default function RootLayout({ children, params }) {
         data-website-id="51da5491-5516-4d13-a72a-f2ede7a1f612"
       />
 
-      <Script
-        src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js"
-        async
-        data-callback="initMapKit"
-        data-libraries="map"
-      />
-
       <body
         className={`${manrope.variable} ${juventusFont.variable} ${playfairDisplay.variable}`}
       >

@@ -21,11 +21,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="mx-auto h-16 w-full max-w-3xl overflow-hidden pt-8 transition-all duration-300 md:h-0 md:pt-0">
+      <div className="-mx-3 h-24 max-w-3xl overflow-hidden px-3 pt-8 transition-all duration-300 md:h-0 md:pt-0">
         <div className="flex h-full w-full items-center justify-between opacity-100 transition-all duration-300 md:opacity-0">
-          <div className="flex items-end">
-            <Logo size={36} className="mr-2 rounded border" />
-            <p className="text-lg font-extrabold">CRAiG.wf</p>
+          <div className="flex items-center">
+            <Logo size={36} className="mr-3" />
+            <p className="w-fit bg-gradient-to-l from-primary/60 to-primary bg-clip-text text-xl font-extrabold text-transparent">
+              CRAIG.<span className="text-sm">wf</span>
+            </p>
           </div>
           <IconButton variant="soft" onClick={() => setOpen(open => !open)}>
             <IconMenu2 />
