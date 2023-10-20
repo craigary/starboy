@@ -53,7 +53,7 @@ const Card = ({ className, children, delay = 0, borderStyle }) => {
         }
       `}</style>
       <motion.div
-        initial={{ opacity: 0.1, translateY: 5 }}
+        initial={{ opacity: 0.05, translateY: 5 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         transition={{ ease: 'easeInOut', duration: 0.25, delay: delay }}
         viewport={{ once: true }}

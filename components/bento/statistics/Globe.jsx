@@ -60,7 +60,7 @@ const Globe = () => {
         height: '100%',
         aspectRatio: 1,
         contain: 'layout paint size',
-        opacity: 0.1,
+        opacity: 0.05,
         transition: 'opacity 1s ease'
       }}
     />

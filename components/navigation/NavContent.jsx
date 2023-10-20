@@ -1,13 +1,14 @@
 'use client'
 import Logo from '@/components/Logo'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 import CmdkButton from '@/components/cmdk/CmdkButton'
 import NavSection from '@/components/navigation/NavSection'
 import { navigation } from '@/lib/get-navigation'
 import { motion } from 'framer-motion'
-const NavContent = ({ showCmdBtn, delay = 1, setOpen }) => {
+const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
   return (
     <motion.aside
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.05 }}
       whileInView={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.3, delay }}
       viewport={{ once: true, margin: '36px' }}
@@ -35,12 +36,11 @@ const NavContent = ({ showCmdBtn, delay = 1, setOpen }) => {
             ></NavSection>
           ))}
         </div>
-      </div>
-      {showCmdBtn && (
-        <div className="absolute bottom-0 left-0 flex w-full justify-end p-4">
-          <CmdkButton />
+        <div className="sticky bottom-0 flex w-full justify-between p-4 backdrop-blur-sm">
+          <ThemeSwitcher />
+          {showCmdBtn && <CmdkButton />}
         </div>
-      )}
+      </div>
     </motion.aside>
   )
 }
