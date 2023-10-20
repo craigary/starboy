@@ -6,7 +6,7 @@ const PostWrapper = ({ post }) => {
   return (
     <>
       <div className="relative pb-8 pt-16 md:pb-12 md:pt-28">
-        <Link href="/blog">
+        <Link href="/blog" className="cursor-nw-resize">
           <p className="absolute left-0 top-4 inline-flex items-center text-sm text-primary/60 md:top-14">
             <IconArrowUpLeft size="14" className="mr-2" />
             Back
