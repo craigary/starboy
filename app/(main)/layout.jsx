@@ -9,9 +9,11 @@ import ToastProvider from '@/app/(main)/ToastProvider'
 import StyledJsxProvider from '@/components/StyledJsxProvider'
 import CardBg from '@/components/bento/card/CardBg'
 import Navbar from '@/components/navigation/Navbar'
+import { navigation } from '@/lib/get-navigation'
 import { cn } from '@/lib/utils'
 import { ScrollArea } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
+import { headers } from 'next/headers'
 import './globals.css'
 import './theme-config.css'
 
@@ -39,24 +41,33 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair-display'
 })
 
-export const metadata = {
-  title: 'Craig Hart',
-  generator: 'Next.js',
-  authors: { name: 'Craig Hart', url: process.env.WEBSITE_URL },
-  creator: 'Craig Hart',
-  metadataBase: new URL(process.env.WEBSITE_URL),
-  // title: post.title,
-  // description: post.summary,
-  openGraph: {
-    title: 'Craig Hart',
-    // description: post.summary,
-    // url: `${process.env.WEBSITE_URL}/blog/${slug}`,
-    siteName: 'Craig Hart',
-    locale: 'en_US',
-    type: 'website'
-  }
-}
+export async function generateMetadata() {
+  const url = new URL(headers().get('x-url'))
+  const pathName = url.pathname
+  const nav = navigation
+    .map(i => i.items)
+    .flat()
+    .find(item => item.link === pathName)
 
+  const title = nav?.name + ' · Craig Hart' || 'Craig Hart'
+  const desc = nav?.description
+
+  const metadata = {
+    title: title,
+    description: desc,
+    generator: 'Next.js',
+    authors: { name: 'Craig Hart', url: process.env.WEBSITE_URL },
+    creator: 'Craig Hart',
+    metadataBase: new URL(process.env.WEBSITE_URL),
+    openGraph: {
+      title: 'Craig Hart',
+      siteName: 'Craig Hart',
+      locale: 'en_US',
+      type: 'website'
+    }
+  }
+  return metadata
+}
 export default function RootLayout({ children, params }) {
   return (
     <html suppressHydrationWarning lang="en">

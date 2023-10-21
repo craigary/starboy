@@ -2,10 +2,6 @@ import Giscus from '@/components/Giscus'
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 
-export const metadata = {
-  title: `Guestbook · Craig Hart`
-}
-
 const GuestPage = () => {
   return (
     <Container>
@@ -14,7 +10,6 @@ const GuestPage = () => {
           Hey, feel free to leave a message below~
         </p>
       </Heading>
-
       <Giscus />
     </Container>
   )
