@@ -15,7 +15,11 @@ const Navbar = () => {
           <div className="flex items-center">
             <Logo size={36} />
           </div>
-          <IconButton variant="soft" onClick={() => setOpen(open => !open)}>
+          <IconButton
+            aria-label={'menu icon'}
+            variant="soft"
+            onClick={() => setOpen(open => !open)}
+          >
             <IconMenu2 />
           </IconButton>
         </div>

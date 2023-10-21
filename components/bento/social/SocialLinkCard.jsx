@@ -14,6 +14,7 @@ const SocialLinkCard = () => {
               <Tooltip content={item.name}>
                 <IconButton
                   size="1"
+                  aria-label={item.name + ' icon'}
                   variant="ghost"
                   color="gray"
                   highContrast
