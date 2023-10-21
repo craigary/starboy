@@ -48,6 +48,7 @@ const CmdkButton = () => {
         <IconButton
           variant="soft"
           size="2"
+          aria-label={'command palate icon'}
           onClick={() => setOpen(open => !open)}
         >
           <IconCommand size={18} stroke="1.5" />

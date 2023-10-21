@@ -20,6 +20,7 @@ const SocialAltCard = async ({ delay = 0 }) => {
                 alt="Craig Hart"
                 width={32}
                 src={avatar.src}
+                priority
                 className="shrink-0 rounded-full"
               />
               <p className="ml-2">{post.handle}</p>

@@ -22,6 +22,7 @@ const WelcomeCard = async ({ delay }) => {
           alt="Craig Hart"
           width={48}
           src={avatar.src}
+          priority
           className="rounded-full"
         />
 

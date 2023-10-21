@@ -178,6 +178,7 @@ const AboutPage = async () => {
                     <li key={item.id} className="z-10">
                       <Tooltip content={item.name}>
                         <IconButton
+                          aria-label={item.name + ' icon'}
                           size="1"
                           variant="ghost"
                           className="group"

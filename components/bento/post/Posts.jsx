@@ -17,7 +17,13 @@ const PostsCard = async ({ delay }) => {
           >
             <p className="z-10 font-medium uppercase text-primary/70">Posts</p>
             <div className="z-10 flex items-center">
-              <IconButton variant="ghost" size="1" color="orange" asChild>
+              <IconButton
+                variant="ghost"
+                size="1"
+                color="orange"
+                asChild
+                aria-label={'rss icon'}
+              >
                 <Link href={'/feed'} target="_blank">
                   <IconRss size={16} />
                 </Link>
@@ -30,7 +36,7 @@ const PostsCard = async ({ delay }) => {
                 asChild
               >
                 <Link href={'/blog'}>
-                  More
+                  All Posts
                   <IconChevronRight size={16} />
                 </Link>
               </Button>
