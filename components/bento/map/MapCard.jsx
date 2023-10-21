@@ -11,7 +11,7 @@ const MarkerComponent = forwardRef(function MarkerComponent(props, ref) {
   return (
     <div
       className="marker mapboxgl-marker mapboxgl-marker-anchor-center pointer-events-auto h-[28px] w-[28px] translate-x-1/2 translate-y-1/2 opacity-100"
-      aria-label="Map marker"
+      title="Map marker"
       ref={ref}
     >
       <div className="relative h-full w-full">
