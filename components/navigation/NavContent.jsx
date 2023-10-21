@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
   return (
     <motion.aside
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.05 }}
       whileInView={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.3, delay }}
       viewport={{ once: true, margin: '36px' }}
