@@ -1,7 +1,6 @@
 import MyServiceIcon from '@/components/uses/MyServiceIcon'
 import { Badge, Flex } from '@radix-ui/themes'
 import { IconArrowUpRight } from '@tabler/icons-react'
-import Link from 'next/link'
 
 const MyServicesList = ({ myServicesList }) => {
   const colorRef = {
@@ -27,7 +26,7 @@ const MyServicesList = ({ myServicesList }) => {
                 <div className="flex h-full items-center justify-between py-4">
                   <div className="group flex w-full grow items-center justify-between gap-8">
                     <div>
-                      <Link href={item.link} target="_blank">
+                      <a href={item.link} target="_blank">
                         <h3 className="mb-2 flex items-center text-lg font-medium">
                           {item.name}
                           <IconArrowUpRight
@@ -35,7 +34,7 @@ const MyServicesList = ({ myServicesList }) => {
                             className="ml-2 opacity-0 transition-all group-hover:opacity-80"
                           />
                         </h3>
-                      </Link>
+                      </a>
                       <p className="text-sm font-light leading-6">
                         {item.description}
                       </p>

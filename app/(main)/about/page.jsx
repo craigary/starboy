@@ -17,10 +17,7 @@ import ThingsIcon from '@/components/about/ThingsIcon'
 import Line from '@/components/annotations/Line'
 import { navigation } from '@/lib/get-navigation'
 import { IconButton, Tooltip } from '@radix-ui/themes'
-import Link from 'next/link'
 import styles from './style.module.css'
-
-
 
 export const metadata = {
   title: 'About · Craig Hart'
@@ -186,9 +183,9 @@ const AboutPage = async () => {
                           className="group"
                           asChild
                         >
-                          <Link href={item.link} target="_blank">
+                          <a href={item.link} target="_blank">
                             <Icon size="24" stroke="1.5" />
-                          </Link>
+                          </a>
                         </IconButton>
                       </Tooltip>
                     </li>

@@ -4,7 +4,6 @@ import { getNowPlaying } from '@/lib/apple-music/get-now-playing'
 import { cn } from '@/lib/utils'
 import { Button, IconButton } from '@radix-ui/themes'
 import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
-import Link from 'next/link'
 
 const MusicCard = async ({ delay, className }) => {
   const result = await getNowPlaying()
@@ -62,13 +61,13 @@ const MusicCard = async ({ delay, className }) => {
                 color: '#' + recentPlayed[0].attributes.artwork.textColor3
               }}
             >
-              <Link
+              <a
                 href={`https://music.apple.com${recentPlayed[0].href}`}
                 target="_blank"
               >
                 <IconPlayerPlayFilled size="14" />
                 Play
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -119,12 +118,12 @@ const MusicCard = async ({ delay, className }) => {
                       }}
                       asChild
                     >
-                      <Link
+                      <a
                         href={`https://music.apple.com${item.href}`}
                         target="_blank"
                       >
                         <IconPlayerPlayFilled size="14" />
-                      </Link>
+                      </a>
                     </IconButton>
                   </div>
                 </div>
