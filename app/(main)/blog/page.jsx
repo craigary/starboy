@@ -6,6 +6,10 @@ import { IconWritingSign } from '@tabler/icons-react'
 
 export const revalidate = 60
 
+export const metadata = {
+  title: 'Blog · Craig Hart'
+}
+
 const BlogPage = async () => {
   const data = await getBlogPosts()
   return (

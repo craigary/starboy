@@ -1,19 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/server'
-// App router includes @vercel/og.
-// No need to install it.
 
 export const runtime = 'edge'
 
 export async function GET(request) {
   try {
-    const { searchParams } = new URL(request.url)
-
-    // ?title=<title>
-    const hasTitle = searchParams.has('title')
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'https://craig.wf/'
-
     const imageData = await fetch(new URL('./og-bg.png', import.meta.url)).then(
       res => {
         return res.arrayBuffer()
@@ -25,6 +16,14 @@ export async function GET(request) {
     )
     const fontData = await fontRes.arrayBuffer()
 
+    const { searchParams } = new URL(request.url)
+    const hasTitle = searchParams.has('title')
+    const hasDesc = searchParams.has('desc')
+    const desc = hasDesc ? searchParams.get('desc')?.slice(0, 200) : ''
+    const title = hasTitle
+      ? searchParams.get('title')?.slice(0, 100)
+      : 'CRAIG.wf'
+
     return new ImageResponse(
       (
         <div
@@ -33,6 +32,7 @@ export async function GET(request) {
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: 'column',
             position: 'relative',
             alignItems: 'center',
             justifyContent: 'center'
@@ -53,37 +53,32 @@ export async function GET(request) {
             }}
             src={imageData}
           ></img>
-
-          <div
+          <h1
             style={{
-              width: '100%',
-              height: '100%',
-              display: 'flex',
               fontSize: 80,
               textAlign: 'center',
               fontFamily: '"Manrope"',
-              justifyContent: 'center',
-              textWrap: 'balanced',
-              alignItems: 'center',
-              padding: '50px 200px'
+
+              backgroundImage:
+                'linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8))',
+              backgroundClip: 'text',
+              '-webkit-background-clip': 'text',
+              color: 'transparent'
             }}
           >
+            {title}
+          </h1>
+          {hasDesc && (
             <p
               style={{
-                color: 'white',
-                textWrap: 'balance',
-                lineHeight: '6rem',
-                fontFamily: '"Manrope"',
-                backgroundImage:
-                  'linear-gradient(184deg, #FFF -51.59%, #E9A728 73.55%, #C85300 124.93%)',
-                backgroundClip: 'text',
-                '-webkit-background-clip': 'text',
-                color: 'transparent'
+                color: '#ffffff',
+                opacity: '0.5',
+                marginTop: '-1rem'
               }}
             >
-              {title}
+              {desc}
             </p>
-          </div>
+          )}
         </div>
       ),
       {
