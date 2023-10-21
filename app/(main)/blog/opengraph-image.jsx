@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { navigation } from '@/lib/get-navigation'
 import { ImageResponse } from 'next/server'
 // Route segment config
