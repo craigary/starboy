@@ -125,7 +125,7 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'flip-in': 'flip-in .25s ease-in',
         'flip-out': 'flip-out .25s ease-in',
-        gradient: 'gradient 2s ease infinite',
+        gradient: 'gradient 10s ease infinite',
         marquee: 'marquee 35s linear infinite'
       }
     }

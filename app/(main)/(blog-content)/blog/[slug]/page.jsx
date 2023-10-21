@@ -17,7 +17,18 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const post = await getPostDetails(slug)
 
   return {
-    title: post.title
+    metadataBase: new URL(process.env.WEBSITE_URL),
+    title: post.title,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      url: `${process.env.WEBSITE_URL}/blog/${slug}`,
+      siteName: 'Craig Hart',
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post._createdAt
+    }
   }
 }
 

@@ -3,8 +3,6 @@ import Container from '@/components/container/Container'
 import WorkItem from '@/components/work/WorkItem'
 import { getAllWorks } from '@/lib/sanity/get-works'
 
-
-
 const WorksPage = async () => {
   const works = await getAllWorks()
   return (
