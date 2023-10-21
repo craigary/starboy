@@ -5,7 +5,7 @@ import Link from 'next/link'
 const PostItem = ({ post, delay = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0.05, translateY: 5 }}
+      initial={{ opacity: 0, translateY: 5 }}
       whileInView={{ opacity: 1, translateY: 0 }}
       transition={{ ease: 'easeInOut', duration: 0.25, delay: delay }}
       viewport={{ once: true }}
