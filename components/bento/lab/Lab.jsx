@@ -3,7 +3,6 @@ import CircleBg from '@/components/bento/project/CircleBg'
 import { cn } from '@/lib/utils'
 import { Button } from '@radix-ui/themes'
 import localFont from 'next/font/local'
-import Link from 'next/link'
 
 // Font files can be colocated inside of `app`
 const labFont = localFont({
@@ -32,9 +31,9 @@ const LabCard = ({ delay = 0 }) => {
           color="gray"
           asChild
         >
-          <Link href="/lab" target="_blank">
+          <a href="/lab" target="_blank">
             Visit the Lab
-          </Link>
+          </a>
         </Button>
       </div>
     </Card>

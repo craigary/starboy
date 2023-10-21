@@ -13,15 +13,11 @@ import { navigation } from '@/lib/get-navigation'
 import { cn } from '@/lib/utils'
 import { ScrollArea } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 import { headers } from 'next/headers'
 import './globals.css'
 import './theme-config.css'
 
-// core styles shared by all of react-notion-x (required)
-// import 'react-notion-x/src/styles.css'
-
-// used for code syntax highlighting (optional)
-// import 'prismjs/themes/prism-tomorrow.css'
 
 const juventusFont = localFont({
   src: '../../assets/JuventusFans--bold.woff2',

@@ -24,9 +24,9 @@ const PostsCard = async ({ delay }) => {
                 asChild
                 aria-label={'rss icon'}
               >
-                <Link href={'/feed'} target="_blank">
+                <a href={'/feed'} target="_blank">
                   <IconRss size={16} />
-                </Link>
+                </a>
               </IconButton>
               <Button
                 variant="soft"

@@ -3,7 +3,6 @@
 import { LngLat, Map, Marker } from 'mapbox-gl'
 
 import Card from '@/components/bento/card/Card'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import { useTheme } from 'next-themes'
 import { forwardRef, useEffect, useRef, useState } from 'react'
 
