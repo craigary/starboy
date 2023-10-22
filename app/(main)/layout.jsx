@@ -5,7 +5,12 @@ import CardBg from '@/components/bento/card/CardBg'
 import NavContent from '@/components/navigation/NavContent'
 import Navbar from '@/components/navigation/Navbar'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { juventusFont, manrope, playfairDisplay, windsong } from '@/lib/fonts'
+import {
+  juventusFont,
+  playfairDisplay,
+  spaceGrotesk,
+  windsong
+} from '@/lib/fonts'
 import { navigation } from '@/lib/get-navigation'
 import { cn } from '@/lib/utils'
 import { createHmac } from 'crypto'
@@ -74,8 +79,11 @@ export default function RootLayout({ children, params }) {
           'font-sans antialiased',
           juventusFont.variable,
           playfairDisplay.variable,
-          manrope.variable
+          spaceGrotesk.variable
         )}
+        style={{
+          fontFeatureSettings: "'ss04' 1"
+        }}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <StyledJsxProvider>
