@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { navigation } from '@/lib/get-navigation'
 import { ImageResponse } from 'next/server'
 // Route segment config
@@ -66,7 +65,6 @@ export default async function Image() {
             fontSize: 80,
             textAlign: 'center',
             fontFamily: '"Manrope"',
-
             backgroundImage:
               'linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1))',
             backgroundClip: 'text',

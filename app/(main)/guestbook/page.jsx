@@ -2,6 +2,8 @@ import Giscus from '@/components/Giscus'
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 
+export const runtime = 'edge'
+
 const GuestPage = () => {
   return (
     <Container>
