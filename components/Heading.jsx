@@ -1,5 +1,5 @@
+import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import { Separator } from '@radix-ui/themes'
 
 const Heading = ({ title, children, className }) => {
   return (
@@ -10,7 +10,7 @@ const Heading = ({ title, children, className }) => {
         </h1>
         {children}
       </div>
-      <Separator orientation="horizontal" size="4" className="mb-6 md:mb-8" />
+      <Separator orientation="horizontal" className="mb-6 md:mb-8" />
     </>
   )
 }

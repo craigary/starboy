@@ -1,6 +1,6 @@
 'use client'
+import { Button } from '@/components/ui/button'
 import { getCalApi } from '@calcom/embed-react'
-import { Button } from '@radix-ui/themes'
 import { useEffect } from 'react'
 
 const BookAMeettingBtn = () => {
@@ -16,9 +16,10 @@ const BookAMeettingBtn = () => {
   }, [])
   return (
     <Button
-      variant="surface"
       data-cal-link="craigary/30min"
       data-cal-config='{"layout":"month_view"}'
+      size="sm"
+      variant="surface"
     >
       Book a meeting
     </Button>

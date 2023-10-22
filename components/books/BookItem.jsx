@@ -1,18 +1,47 @@
 'use client'
 import { notionImageLoader } from '@/lib/notion-next/notion-image-loader'
 import { cn } from '@/lib/utils'
-import { Badge, Dialog } from '@radix-ui/themes'
+
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+
+import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
 
 const BookItem = ({ book }) => {
   const bookImage = book.cover
 
+  const colorMap = new Map([
+    [
+      'pink',
+      'bg-[#f4008c16] text-[#b60074d6] dark:bg-[#fe37cc29] dark:text-[#ff8dcc]'
+    ],
+    [
+      'orange',
+      'bg-[#ff9c0029] text-[#cc4e00] dark:bg-[#fb6a0025] dark:text-[#ffa057]'
+    ],
+    [
+      'blue',
+      'bg-[#008ff519] text-[#006dcbf2] dark:bg-[#0077ff3a] dark:text-[#70b8ff]'
+    ],
+    [
+      'purple',
+      'bg-[#4400ee0f] text-[#1f0099af] dark:bg-[#8354fe36] dark:text-[#baa7ff]'
+    ],
+    [
+      'green',
+      'bg-[#00ae4819] text-[#007152df] dark:bg-[#02f99920] dark:text-[#21fec0d6]'
+    ],
+    [
+      'default',
+      'bg-[#0000000f] text-[#0000009b] dark:bg-[#ffffff12] dark:text-[#ffffffaf]'
+    ]
+  ])
   return (
-    <Dialog.Root>
-      <Dialog.Trigger>
+    <Dialog>
+      <DialogTrigger>
         <div
           className={cn(
-            'group flex aspect-square items-center justify-center rounded-sm bg-secondary/50 p-6 text-sm transition-all hover:bg-[--accent-a2] md:p-10'
+            'group flex aspect-square items-center justify-center rounded-sm bg-secondary/50 p-6 text-sm transition-all hover:bg-blue-400/10 md:p-10'
           )}
         >
           <div
@@ -39,10 +68,9 @@ const BookItem = ({ book }) => {
             ></Image>
           </div>
         </div>
-      </Dialog.Trigger>
+      </DialogTrigger>
 
-      <Dialog.Content style={{ maxWidth: 600 }}>
-        {/* <Dialog.Title>{book.name}</Dialog.Title> */}
+      <DialogContent style={{ maxWidth: 600 }}>
         <div className="flex h-full w-full flex-col items-stretch justify-between  md:flex-row">
           <div className="flex h-full w-full items-center justify-center gap-4 py-4 md:w-1/2 ">
             <div
@@ -74,12 +102,20 @@ const BookItem = ({ book }) => {
             <h3 className="my-4 font-serif font-bold md:text-xl">
               {book.name}
             </h3>
-            <Badge color={book.status.color}>{book.status.name}</Badge>
+            <Badge
+              variant="custom"
+              className={cn(
+                colorMap.get(book.status.color),
+                'rounded px-2 font-normal leading-none'
+              )}
+            >
+              {book.status.name}
+            </Badge>
             {book.note && <p className="mt-4">{book.note}</p>}
           </div>
         </div>
-      </Dialog.Content>
-    </Dialog.Root>
+      </DialogContent>
+    </Dialog>
   )
 }
 

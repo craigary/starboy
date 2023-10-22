@@ -1,8 +1,13 @@
 'use client'
 
 import CmdkDialog from '@/components/cmdk/CmdkDialog'
+import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
-import { IconButton, Tooltip } from '@radix-ui/themes'
 import { IconChevronUp, IconCommand } from '@tabler/icons-react'
 import { useEffect, useState } from 'react'
 
@@ -30,8 +35,17 @@ const CmdkButton = () => {
 
   return (
     <>
-      <Tooltip
-        content={
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            size="icon"
+            variant="soft"
+            onClick={() => setOpen(open => !open)}
+          >
+            <IconCommand size={18} stroke="1.5" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
           <p className="inline-flex items-center text-xs">
             Press
             <span className="ml-2 inline-flex items-center rounded bg-muted/10 p-1 font-mono text-xs tracking-tighter">
@@ -43,16 +57,7 @@ const CmdkButton = () => {
               + K
             </span>
           </p>
-        }
-      >
-        <IconButton
-          variant="soft"
-          size="2"
-          aria-label={'command palate icon'}
-          onClick={() => setOpen(open => !open)}
-        >
-          <IconCommand size={18} stroke="1.5" />
-        </IconButton>
+        </TooltipContent>
       </Tooltip>
       <CmdkDialog open={open} setOpen={setOpen} />
     </>
