@@ -4,7 +4,6 @@ import PostList from '@/components/post/PostList'
 import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
 import { IconWritingSign } from '@tabler/icons-react'
 
-export const runtime = 'edge'
 export const revalidate = 60
 
 const BlogPage = async () => {
