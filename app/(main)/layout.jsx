@@ -1,41 +1,21 @@
-import { Manrope, Playfair_Display, WindSong } from 'next/font/google'
 import Script from 'next/script'
 
 import { ThemeProvider } from '@/components/ThemeProvider'
 import NavContent from '@/components/navigation/NavContent'
-import localFont from 'next/font/local'
 
 import ToastProvider from '@/app/(main)/ToastProvider'
 import StyledJsxProvider from '@/components/StyledJsxProvider'
 import CardBg from '@/components/bento/card/CardBg'
 import Navbar from '@/components/navigation/Navbar'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { juventusFont, manrope, playfairDisplay, windsong } from '@/lib/fonts'
 import { navigation } from '@/lib/get-navigation'
 import { cn } from '@/lib/utils'
-import { ScrollArea } from '@radix-ui/themes'
-import '@radix-ui/themes/styles.css'
+// import '@radix-ui/themes/styles.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { headers } from 'next/headers'
 import './globals.css'
-import './theme-config.css'
-
-
-const juventusFont = localFont({
-  src: '../../assets/JuventusFans--bold.woff2',
-  display: 'swap',
-  variable: '--font-juventus-bold'
-})
-
-const manrope = Manrope({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-manrope'
-})
-
-const windsong = WindSong({ subsets: ['latin'], weight: ['500'] })
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair-display'
-})
+// import './theme-config.css'
 
 export async function generateMetadata() {
   const url = new URL(headers().get('x-url'))
@@ -74,7 +54,7 @@ export default function RootLayout({ children, params }) {
       />
 
       <body
-        className={`${manrope.variable} ${juventusFont.variable} ${playfairDisplay.variable}`}
+        className={`${juventusFont.variable} ${playfairDisplay.variable} ${manrope.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <StyledJsxProvider>
@@ -87,10 +67,10 @@ export default function RootLayout({ children, params }) {
                 className="absolute inset-0 z-0 h-full w-full animate-gradient bg-gradient-to-br from-blue-500 via-orange-400 to-purple-500"
               ></div>
 
-              <div className="relative z-30 h-screen w-0 shrink-0 overflow-hidden transition-all md:h-[calc(100vh-16px)] md:w-64">
+              <div className="relative z-30 h-screen w-0 shrink-0 transition-all md:h-[calc(100vh-16px)] md:w-64">
                 <NavContent showCmdBtn={true} />
               </div>
-              <div className="relative z-30 h-screen w-full overflow-hidden overflow-y-scroll bg-gradient-to-t from-secondary/20 to-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
+              <div className="relative z-30 h-screen w-full overflow-y-scroll bg-gradient-to-t from-secondary/20 to-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
                 {/* <div
                   className="pointer-events-none absolute top-1 z-30 h-14 w-[calc(100%-8px)] select-none opacity-95 backdrop-blur-[5px] after:absolute
                 after:left-0 after:top-0 after:bg-gradient-to-b after:from-background
@@ -108,6 +88,7 @@ export default function RootLayout({ children, params }) {
                   size="1"
                   type="hover"
                   scrollbars="vertical"
+                  scrollHideDelay={300}
                   className="h-full"
                 >
                   <div className="relative flex min-h-screen flex-col px-4 md:min-h-[calc(100vh-18px)] md:px-6">

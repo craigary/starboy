@@ -30,8 +30,6 @@ export default async function Image({ params }) {
   const desc = post?.desc?.slice(0, 200)
   const title = post?.title?.slice(0, 200)
 
-  console.log(desc)
-
   return new ImageResponse(
     (
       <div

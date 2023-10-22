@@ -1,8 +1,8 @@
 import Card from '@/components/bento/card/Card'
 import ArtworkImg from '@/components/bento/music/ArtworkImg'
+import { Button } from '@/components/ui/button'
 import { getNowPlaying } from '@/lib/apple-music/get-now-playing'
 import { cn } from '@/lib/utils'
-import { Button } from '@radix-ui/themes'
 import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
 
 const MusicCardAlt = async ({ delay, className }) => {
@@ -51,7 +51,7 @@ const MusicCardAlt = async ({ delay, className }) => {
             <p className="mb-2 text-xs font-light">
               {recentPlayed.attributes.artistName}
             </p>
-            <Button
+            {/* <Button
               size="1"
               color="gray"
               radius="full"
@@ -67,6 +67,26 @@ const MusicCardAlt = async ({ delay, className }) => {
                 target="_blank"
               >
                 <IconPlayerPlayFilled size="14" />
+                Play
+              </a>
+            </Button> */}
+
+            <Button
+              size="icon"
+              variant="custom"
+              style={{
+                backgroundColor:
+                  '#' + recentPlayed.attributes.artwork.textColor2 + '22',
+                color: '#' + recentPlayed.attributes.artwork.textColor3
+              }}
+              className="h-auto w-fit rounded-full p-1 px-2 text-xs leading-none"
+              asChild
+            >
+              <a
+                href={`https://music.apple.com${recentPlayed.href}`}
+                target="_blank"
+              >
+                <IconPlayerPlayFilled size="14" className="mr-1" />
                 Play
               </a>
             </Button>

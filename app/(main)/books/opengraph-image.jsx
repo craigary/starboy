@@ -29,8 +29,6 @@ export default async function Image() {
     .flat()
     .find(item => item.link === path)
 
-  console.log(nav)
-
   const title = nav?.name
   const desc = nav?.description
 

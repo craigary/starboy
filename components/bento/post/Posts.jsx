@@ -1,6 +1,7 @@
 import Card from '@/components/bento/card/Card'
+import { Button } from '@/components/ui/button'
 import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
-import { Button, IconButton } from '@radix-ui/themes'
+
 import { IconChevronRight, IconRss } from '@tabler/icons-react'
 import Link from 'next/link'
 
@@ -17,22 +18,19 @@ const PostsCard = async ({ delay }) => {
           >
             <p className="z-10 font-medium uppercase text-primary/70">Posts</p>
             <div className="z-10 flex items-center">
-              <IconButton
-                variant="ghost"
-                size="1"
-                color="orange"
+              <Button
+                size="icon"
+                variant="custom"
+                className="ml-2 h-auto w-auto rounded-sm p-1 text-xs leading-6 text-[#0005119e] hover:bg-[#f9900026]"
                 asChild
-                aria-label={'rss icon'}
               >
                 <a href={'/feed'} target="_blank">
-                  <IconRss size={16} />
+                  <IconRss size={16} color="#d14e00" />
                 </a>
-              </IconButton>
+              </Button>
               <Button
-                variant="soft"
-                size="1"
-                color="gray"
-                className="!ml-2"
+                variant="custom"
+                className="ml-2 h-auto rounded-full bg-[#ffffffcc] px-2 py-0 text-xs leading-6 text-[#0005119e] shadow-[inset_0_0_0_1px_#01073132] hover:bg-[#ffffffcc] hover:shadow-[inset_0_0_0_1px_#00082f46]"
                 asChild
               >
                 <Link href={'/blog'}>

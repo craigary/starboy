@@ -15,8 +15,13 @@ import EmailAddress from '@/components/about/EmailAddress'
 import EmailBtn from '@/components/about/EmailBtn'
 import ThingsIcon from '@/components/about/ThingsIcon'
 import Line from '@/components/annotations/Line'
+import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 import { navigation } from '@/lib/get-navigation'
-import { IconButton, Tooltip } from '@radix-ui/themes'
 import styles from './style.module.css'
 
 export const metadata = {
@@ -171,23 +176,39 @@ const AboutPage = async () => {
               </p>
             </div>
             <div>
-              <ul className="flex space-x-3">
+              <ul className="flex space-x-2">
                 {socialLinks.map(item => {
                   const Icon = item.icon
                   return (
                     <li key={item.id} className="z-10">
-                      <Tooltip content={item.name}>
-                        <IconButton
-                          aria-label={item.name + ' icon'}
-                          size="1"
-                          variant="ghost"
-                          className="group"
-                          asChild
-                        >
-                          <a href={item.link} target="_blank">
-                            <Icon size="24" stroke="1.5" />
-                          </a>
-                        </IconButton>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          {/* <IconButton
+                            aria-label={item.name + ' icon'}
+                            size="1"
+                            variant="ghost"
+                            className="group"
+                            asChild
+                          >
+                            <a href={item.link} target="_blank">
+                              <Icon size="24" stroke="1.5" />
+                            </a>
+                          </IconButton> */}
+
+                          <Button
+                            aria-label={item.name + ' icon'}
+                            asChild
+                            className="flex h-7 w-7 items-center justify-center bg-transparent p-0"
+                            variant="soft"
+                          >
+                            <a href={item.link} target="_blank">
+                              <Icon size="24" stroke="1.5" />
+                            </a>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{item.name}</p>
+                        </TooltipContent>
                       </Tooltip>
                     </li>
                   )

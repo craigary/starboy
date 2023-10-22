@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@radix-ui/themes'
+import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
 
 const EmailBtn = ({ initial, domain }) => {
@@ -21,16 +21,18 @@ const EmailBtn = ({ initial, domain }) => {
   return (
     <>
       <Button
-        variant="surface"
-        className="!rounded-r-none"
+        className="rounded-r-none"
         onClick={() => composeMail()}
+        size="sm"
+        variant="surface"
       >
         Compose
       </Button>
       <Button
-        variant="surface"
-        className="!-ml-px !rounded-l-none"
         onClick={() => copyEmailAddress()}
+        size="sm"
+        className="-ml-px rounded-l-none"
+        variant="surface"
       >
         Copy
       </Button>

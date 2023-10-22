@@ -1,6 +1,6 @@
 import Card from '@/components/bento/card/Card'
 import BookAMettingBtn from '@/components/bento/contact/BookAMettingBtn'
-import { Button } from '@radix-ui/themes'
+import { Button } from '@/components/ui/button'
 import { IconRipple } from '@tabler/icons-react'
 import Link from 'next/link'
 

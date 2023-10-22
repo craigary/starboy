@@ -1,7 +1,7 @@
 'use client'
 import Logo from '@/components/Logo'
 import NavSheet from '@/components/navigation/NavSheet'
-import { IconButton } from '@radix-ui/themes'
+import { Button } from '@/components/ui/button'
 import { IconMenu2 } from '@tabler/icons-react'
 import { useState } from 'react'
 
@@ -15,13 +15,32 @@ const Navbar = () => {
           <div className="flex items-center">
             <Logo size={36} />
           </div>
-          <IconButton
+          {/* <IconButton
             aria-label={'menu icon'}
             variant="soft"
             onClick={() => setOpen(open => !open)}
           >
             <IconMenu2 />
-          </IconButton>
+          </IconButton> */}
+
+          {/* <Button
+            size="icon"
+            aria-label={'menu icon'}
+            variant="soft"
+            onClick={() => setOpen(open => !open)}
+            asChild
+          >
+            <IconMenu2 size={16} stroke="1.5" />
+          </Button> */}
+
+          <Button
+            aria-label={'menu icon'}
+            size="icon"
+            variant="soft"
+            onClick={() => setOpen(open => !open)}
+          >
+            <IconMenu2 size={18} stroke="1.5" />
+          </Button>
         </div>
       </div>
       <NavSheet open={open} setOpen={setOpen} />

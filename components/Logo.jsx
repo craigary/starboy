@@ -1,6 +1,14 @@
 'use client'
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuTrigger
+} from '@/components/ui/context-menu'
 import { cn } from '@/lib/utils'
-import { ContextMenu } from '@radix-ui/themes'
+import { IconDownload, IconSvg, IconTriangle } from '@tabler/icons-react'
+
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { toast } from 'sonner'
@@ -55,12 +63,12 @@ const Logo = ({ className, showText = true, size = 18 }) => {
   }
 
   return (
-    <ContextMenu.Root>
-      <ContextMenu.Trigger>
+    <ContextMenu>
+      <ContextMenuTrigger>
         <Link href="/" className="flex cursor-nw-resize items-center">
           <div
             className={cn(
-              'flex items-center justify-center rounded-lg shadow-[0_0_4px] shadow-[--accent-7]',
+              'flex items-center justify-center rounded-lg shadow-[0_0_4px] shadow-blue-500/30',
               showText && 'mr-3',
               className
             )}
@@ -87,20 +95,21 @@ const Logo = ({ className, showText = true, size = 18 }) => {
             </p>
           )}
         </Link>
-      </ContextMenu.Trigger>
-      <ContextMenu.Content size="1" variant="soft">
-        <ContextMenu.Item onSelect={() => handleSelect('home')}>
-          Home
-        </ContextMenu.Item>
-        <ContextMenu.Separator />
-        <ContextMenu.Item onSelect={() => handleSelect('copySvg')}>
-          Copy logo SVG
-        </ContextMenu.Item>
-        <ContextMenu.Item onSelect={() => handleSelect('downloadImg')}>
-          Download logo type
-        </ContextMenu.Item>
-      </ContextMenu.Content>
-    </ContextMenu.Root>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem onSelect={() => handleSelect('home')}>
+          <IconTriangle stroke={1.5} className="mr-1" size={16} /> Home
+        </ContextMenuItem>
+        <ContextMenuItem onSelect={() => handleSelect('copySvg')}>
+          <IconSvg stroke={1.5} className="mr-1" size={16} /> Copy logo SVG
+        </ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem onSelect={() => handleSelect('downloadImg')}>
+          <IconDownload stroke={1.5} className="mr-1" size={16} /> Download logo
+          type
+        </ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
   )
 }
 

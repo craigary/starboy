@@ -1,6 +1,9 @@
 'use client'
-
-import { Tooltip } from '@radix-ui/themes'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
 const SocialIcon = ({ color, children, source }) => {
   return (
@@ -16,7 +19,12 @@ const SocialIcon = ({ color, children, source }) => {
           }
         `}
       </style>
-      <Tooltip content={source}>{children}</Tooltip>
+      <Tooltip>
+        <TooltipTrigger>{children}</TooltipTrigger>
+        <TooltipContent>
+          <p>{source}</p>
+        </TooltipContent>
+      </Tooltip>
     </div>
   )
 }

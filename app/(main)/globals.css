@@ -36,7 +36,10 @@
   }
 
   ::selection {
-    background: var(--select-color-1);
+    background: theme(colors.indigo.100);
+    color: theme(
+      colors.primary.DEFAULT
+    ); /* Make sure the gradient masked text is shown properly */
   }
 
   .dark {
@@ -142,12 +145,6 @@
 }
 
 /* Override Map Style */
-
 .mapboxgl-control-container {
   display: none;
 }
-
-/* .apple-map-kit-js {
-  --logo-width: 0 !important;
-  --logo-height: 0 !important;
-} */

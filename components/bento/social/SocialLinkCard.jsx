@@ -1,6 +1,11 @@
 import Card from '@/components/bento/card/Card'
+import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 import { navigation } from '@/lib/get-navigation'
-import { IconButton, Tooltip } from '@radix-ui/themes'
 
 const SocialLinkCard = () => {
   const { items: socialLinks } = navigation.find(item => item.id === 'social')
@@ -11,17 +16,34 @@ const SocialLinkCard = () => {
           const Icon = item.icon
           return (
             <li key={item.id} className="z-10">
-              <Tooltip content={item.name}>
-                <IconButton
-                  size="1"
-                  aria-label={item.name + ' icon'}
-                  variant="ghost"
-                  color="gray"
-                  highContrast
-                  className="group"
-                >
-                  <Icon size="22" stroke="1.5" />
-                </IconButton>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  {/* <IconButton
+                    size="1"
+                    aria-label={item.name + ' icon'}
+                    variant="ghost"
+                    color="gray"
+                    highContrast
+                    className="group"
+                  >
+                    <Icon size="22" stroke="1.5" />
+                  </IconButton> */}
+
+                  <Button
+                    size="icon"
+                    aria-label={item.name + ' icon'}
+                    variant="soft"
+                    className="bg-transparent"
+                    asChild
+                  >
+                    <a href={item.link} target="_blank">
+                      <Icon size="22" stroke="1.5" />
+                    </a>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{item.name}</p>
+                </TooltipContent>
               </Tooltip>
             </li>
           )
