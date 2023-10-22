@@ -54,7 +54,12 @@ export default function RootLayout({ children, params }) {
       />
 
       <body
-        className={`${juventusFont.variable} ${playfairDisplay.variable} ${manrope.variable}`}
+        className={cn(
+          'font-sans antialiased',
+          juventusFont.variable,
+          playfairDisplay.variable,
+          manrope.variable
+        )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <StyledJsxProvider>
