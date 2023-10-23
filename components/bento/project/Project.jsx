@@ -14,7 +14,7 @@ const ProjectCard = ({ delay }) => {
         <div className="group relative flex h-full shrink-0 flex-col overflow-hidden rounded-md border border-border shadow-none transition-shadow hover:shadow-xl hover:shadow-muted/60">
           <GitHubCard />
           <div className="relative flex shrink-0 flex-col bg-background p-4 dark:bg-muted/20">
-            <div className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full border border-primary/30 transition-all group-hover:border-primary group-hover:bg-primary">
+            <div className="absolute right-4 top-4 flex h-6 w-6 rotate-45 items-center justify-center rounded-full border border-primary/30 transition-all group-hover:rotate-0 group-hover:border-primary group-hover:bg-primary">
               <IconArrowUpRight
                 size="14"
                 className="transition-all group-hover:text-primary-foreground"
