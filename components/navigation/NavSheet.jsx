@@ -1,3 +1,4 @@
+'use client'
 import NavContent from '@/components/navigation/NavContent'
 import { Sheet, SheetContent } from '@/components/ui/sheet'
 

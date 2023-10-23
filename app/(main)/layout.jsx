@@ -3,7 +3,6 @@ import StyledJsxProvider from '@/components/StyledJsxProvider'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import CardBg from '@/components/bento/card/CardBg'
 import NavContent from '@/components/navigation/NavContent'
-import Navbar from '@/components/navigation/Navbar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { juventusFont, manrope, playfairDisplay, windsong } from '@/lib/fonts'
 import { navigation } from '@/lib/get-navigation'
@@ -13,6 +12,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { headers } from 'next/headers'
 import Script from 'next/script'
 import './globals.css'
+import Navbar from '@/components/navigation/Navbar'
 
 function getToken(title, desc) {
   const hmac = createHmac('sha256', process.env.OG_IMAGE_SECRET)

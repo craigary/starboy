@@ -47,7 +47,7 @@ const PostsCard = async ({ delay }) => {
               return (
                 <li
                   key={item._id}
-                  className="cursor-default truncate border-b border-border py-2 pl-4 pr-2 text-primary/70 last:border-b-0 hover:bg-muted/20"
+                  className="border-borde r cursor-default truncate border-b py-2 pl-4 pr-2 text-sm text-primary/70 last:border-b-0 hover:bg-muted/20"
                 >
                   <Link href={`/blog/${item.slug}`}>{item.title}</Link>
                 </li>

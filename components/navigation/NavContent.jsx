@@ -13,7 +13,7 @@ const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
       whileInView={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.3, delay }}
       viewport={{ once: true, margin: '36px' }}
-      className="relative flex h-full flex-col"
+      className="relative flex h-full flex-col overflow-hidden"
     >
       <div className="h-full">
         <ScrollArea
