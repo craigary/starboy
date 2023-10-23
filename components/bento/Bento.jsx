@@ -12,8 +12,8 @@ import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
 import TheBlockCard from '@/components/bento/the-block/TheBlock'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
-
 import { upstashClient } from '@/lib/upstash/client'
+
 import {
   IconBookmarks,
   IconBrandApplePodcast,
@@ -36,12 +36,12 @@ const Bento = async () => {
           href={'/books'}
           className="bg-secondary/20 transition-all hover:border-sky-600"
         >
-          <p className="font-serif text-sm font-semibold md:text-base lg:text-xl">
+          <p className="font-serif text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
             Reading List
           </p>
           <IconBookmarks
             stroke="1.5"
-            className="text-sky-600  opacity-60 md:text-base lg:text-xl"
+            className="text-sm  text-sky-600 opacity-60 md:text-base lg:text-xl"
           />
         </NavigationCard>
         <NavigationCard
@@ -49,12 +49,12 @@ const Bento = async () => {
           tiltColor="rgb(245 158 11)"
           className="bg-secondary/20 transition-all hover:border-amber-500"
         >
-          <p className="font-serif font-semibold md:text-base lg:text-xl">
+          <p className="font-serif text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
             Tools & Craft
           </p>
           <IconSwords
             stroke="1.5"
-            className="text-amber-600 opacity-60 md:text-base lg:text-xl"
+            className="text-sm text-amber-600 opacity-60 md:text-base lg:text-xl"
           />
         </NavigationCard>
         <NavigationCard
@@ -62,12 +62,12 @@ const Bento = async () => {
           tiltColor="rgb(192 132 252)"
           className="bg-secondary/20 transition-all hover:border-purple-400"
         >
-          <p className="font-serif font-semibold md:text-base lg:text-xl">
+          <p className="font-serif text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
             Podcasts
           </p>
           <IconBrandApplePodcast
             stroke="1.5"
-            className="text-purple-400 opacity-60 md:text-base lg:text-xl"
+            className="text-sm text-purple-400 opacity-60 md:text-base lg:text-xl"
           />
         </NavigationCard>
         <NavigationCard
@@ -75,12 +75,12 @@ const Bento = async () => {
           tiltColor="rgb(248 113 113)"
           className="bg-secondary/20 transition-all hover:border-red-400"
         >
-          <p className="font-serif font-semibold md:text-base lg:text-xl">
+          <p className="font-serif text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
             Guestbook
           </p>
           <IconMessage
             stroke="1.5"
-            className="text-red-600 opacity-60 md:text-base lg:text-xl"
+            className="text-sm text-red-600 opacity-60 md:text-base lg:text-xl"
           />
         </NavigationCard>
       </div>

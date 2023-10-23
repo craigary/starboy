@@ -6,7 +6,7 @@ import Tilt from 'react-parallax-tilt'
 
 const NavigationCard = ({ delay, children, className, tiltColor, href }) => {
   return (
-    <Card className="relative aspect-[2/1] h-full p-3" delay={delay}>
+    <Card className="relative h-full w-auto p-3" delay={delay}>
       <Link href={href}>
         <Tilt
           glareEnable
@@ -20,7 +20,7 @@ const NavigationCard = ({ delay, children, className, tiltColor, href }) => {
         >
           <div
             className={cn(
-              'relative z-10 flex h-full w-full items-center justify-between overflow-hidden rounded-md border bg-secondary/20 px-4 transition-all hover:shadow-md hover:shadow-muted/50',
+              'relative z-10 flex h-full w-full items-center justify-between overflow-hidden rounded-md border bg-secondary/20 px-4 py-4 transition-all hover:shadow-md hover:shadow-muted/50 md:py-8',
               className
             )}
           >

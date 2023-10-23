@@ -21,6 +21,7 @@ const PostsCard = async ({ delay }) => {
               <Button
                 size="icon"
                 variant="custom"
+                aria-label={'rss icon'}
                 className="ml-2 h-auto w-auto rounded-sm p-1 text-xs leading-6 text-[#0005119e] hover:bg-[#f9900026]"
                 asChild
               >
