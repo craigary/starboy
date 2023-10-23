@@ -1,8 +1,11 @@
+import Script from 'next/script'
+
+import { ThemeProvider } from '@/components/ThemeProvider'
+import NavContent from '@/components/navigation/NavContent'
+
 import ToastProvider from '@/app/(main)/ToastProvider'
 import StyledJsxProvider from '@/components/StyledJsxProvider'
-import { ThemeProvider } from '@/components/ThemeProvider'
 import CardBg from '@/components/bento/card/CardBg'
-import NavContent from '@/components/navigation/NavContent'
 import Navbar from '@/components/navigation/Navbar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import {
@@ -13,18 +16,11 @@ import {
 } from '@/lib/fonts'
 import { navigation } from '@/lib/get-navigation'
 import { cn } from '@/lib/utils'
-import { createHmac } from 'crypto'
+// import '@radix-ui/themes/styles.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { headers } from 'next/headers'
-import Script from 'next/script'
 import './globals.css'
-
-function getToken(title, desc) {
-  const hmac = createHmac('sha256', process.env.OG_IMAGE_SECRET)
-  hmac.update(JSON.stringify({ title, desc }))
-  const token = hmac.digest('hex')
-  return token
-}
+// import './theme-config.css'
 
 export async function generateMetadata() {
   const url = new URL(headers().get('x-url'))
@@ -37,10 +33,6 @@ export async function generateMetadata() {
   const title = nav?.name + ' · Craig Hart' || 'Craig Hart'
   const desc = nav?.description
 
-  const ogTitle = pathName === '/' ? 'CRAIG.wf' : nav?.name
-  const ogDesc = nav?.description ?? ''
-  const ogToken = getToken(ogTitle, ogDesc)
-
   const metadata = {
     title: title,
     description: desc,
@@ -49,18 +41,10 @@ export async function generateMetadata() {
     creator: 'Craig Hart',
     metadataBase: new URL(process.env.WEBSITE_URL),
     openGraph: {
-      title: title,
+      title: 'Craig Hart',
       siteName: 'Craig Hart',
       locale: 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: `${process.env.WEBSITE_URL}/api/og?title=${ogTitle}&desc=${ogDesc}&token=${ogToken}`,
-          width: 1200,
-          height: 630,
-          alt: title
-        }
-      ]
+      type: 'website'
     }
   }
   return metadata
