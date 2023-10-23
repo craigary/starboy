@@ -36,8 +36,10 @@ const ProjectCard = ({ delay }) => {
           />
         </div>
 
-        <div className="rounded-b p-4">
-          <p className="mb-2 text-primary/90 md:text-base">{'>_ '}Projects</p>
+        <div className="rounded-b p-4 ">
+          <p className="mb-2 font-medium text-primary/90 md:text-base">
+            {'>_ '}Projects
+          </p>
           <p className="text-sm text-primary/50">
             Lorem ipsum dolor sit, amet consectetur.
           </p>

@@ -87,7 +87,7 @@ const Bento = async () => {
       <div className="col-span-12">
         <Card className="p-3">
           <h2 className="w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-lg font-medium text-transparent">
-            More links...
+            {/* More links... */}
           </h2>
         </Card>
       </div>

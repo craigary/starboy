@@ -66,13 +66,14 @@ const TechStackCard = async ({ delay }) => {
           </div>
         </div>
 
-        <div className="rounded-b bg-background p-4 dark:bg-muted/20">
-          <p className="mb-2 text-primary/90 md:text-base">
+        <div className="rounded-b bg-background p-4  dark:bg-muted/20">
+          <p className="mb-2 text-base font-medium text-primary/90">
             {'>_ '}My Tech Stack
           </p>
           <p className="text-sm text-primary/50">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-            aperiam impedit exercitationem aspernatur odio cupiditate.
+            I usually prefer React/Next.js for my projects due to its
+            evergrowing ecosystem. I love to use Tailwind CSS and Radix UI for
+            styling.
           </p>
         </div>
       </div>
