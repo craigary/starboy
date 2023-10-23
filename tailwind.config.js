@@ -23,7 +23,7 @@ module.exports = {
           'var(--font-juventus-bold)',
           ...defaultTheme.fontFamily.sans
         ],
-        sans: ['var(--font-space-grotesk)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-manrope)', ...defaultTheme.fontFamily.sans],
         serif: [
           'var(--font-playfair-display)',
           ...defaultTheme.fontFamily.serif
