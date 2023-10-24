@@ -1,6 +1,5 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
-import { upstashClient } from '@/lib/upstash/client'
 import {
   SiApplemusic,
   SiApplemusicHex,
@@ -22,11 +21,14 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 import { navigation } from '@/lib/get-navigation'
+import { generateMetaData } from '@/lib/metadata'
+import { upstashClient } from '@/lib/upstash/client'
 import styles from './style.module.css'
 
-export const metadata = {
-  title: 'About · Craig Hart'
-}
+export const revalidate = 3600
+
+const pathName = '/about'
+export const metadata = generateMetaData(pathName)
 
 const AboutPage = async () => {
   const existingLocationInfo = await upstashClient.hgetall('current-location')
@@ -36,6 +38,9 @@ const AboutPage = async () => {
 
   const emailInitial = 'i'
   const emailDomain = 'Y3JhaWcud2Y=' // encode a string
+
+  // const region = 'China'
+  // const state = 'Hebei'
 
   return (
     <Container>
