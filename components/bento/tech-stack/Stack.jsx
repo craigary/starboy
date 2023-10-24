@@ -41,6 +41,7 @@ const TechStackCard = async ({ delay }) => {
                       index % 2 === 0 ? 'direction-normal' : 'direction-reverse'
                     )}
                     key={i}
+                    aria-hidden={i !== 0}
                   >
                     {stack.map(item => {
                       const encodedSvg = encodeURIComponent(item.icon.svg)
