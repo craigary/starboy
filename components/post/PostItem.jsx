@@ -17,11 +17,13 @@ const PostItem = ({ post, delay = 0 }) => {
         </h2>
       </Link>
       <div className="flex shrink-0 items-center justify-end gap-2 text-primary/30">
-        <p className="text-xs font-medium">
-          {post.tags.map((tag, index) => (
-            <span key={index}>#{tag.title} </span>
-          ))}
-        </p>
+        {post.tags && (
+          <p className="text-xs font-medium">
+            {post.tags.map((tag, index) => (
+              <span key={index}>#{tag.title} </span>
+            ))}
+          </p>
+        )}
         <p className="text-xs">
           {post.publishedAt ?? post._createdAt}
           {/* {format(post.publishedAt ?? post._createdAt, 'yyyy-MM-dd')} */}
