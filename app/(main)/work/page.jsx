@@ -1,10 +1,13 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 import WorkItem from '@/components/work/WorkItem'
+import { generateMetaData } from '@/lib/metadata'
 import { getAllWorks } from '@/lib/sanity/get-works'
 
-// export const runtime = 'edge'
 export const revalidate = 60
+
+const pathName = '/work'
+export const metadata = generateMetaData(pathName)
 
 const WorksPage = async () => {
   const works = await getAllWorks()

@@ -12,7 +12,6 @@ import StatisticsCard from '@/components/bento/statistics/Statistics'
 import TechStackCard from '@/components/bento/tech-stack/Stack'
 import TheBlockCard from '@/components/bento/the-block/TheBlock'
 import WelcomeCard from '@/components/bento/welcome/WelcomeCard'
-import { upstashClient } from '@/lib/upstash/client'
 
 import {
   IconBookmarks,
@@ -22,9 +21,6 @@ import {
 } from '@tabler/icons-react'
 
 const Bento = async () => {
-  // const mapToken = await getMapToken()
-  const existingLocationInfo = await upstashClient.hgetall('current-location')
-
   return (
     <div className="grid grid-cols-12 pt-14 md:mb-14 md:grid-cols-12 md:pt-20">
       <div className="col-span-12">
@@ -98,7 +94,7 @@ const Bento = async () => {
         <PostsCard delay={0.25} />
       </div>
       <div className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4">
-        <MapCard delay={0.25} locationInfo={existingLocationInfo} />
+        <MapCard delay={0.25} />
       </div>
       <div className="col-span-12 sm:order-2 sm:col-span-6 md:col-span-12 lg:col-span-4">
         <div className="flex h-full flex-col">

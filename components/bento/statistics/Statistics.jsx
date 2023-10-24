@@ -8,8 +8,7 @@ const StatisticsCard = async () => {
   const res = await fetch(url, {
     headers: {
       'x-umami-api-key': process.env.UMAMI_API_KEY
-    },
-    cache: 'no-store'
+    }
   })
   const ok = res.ok
   const data = await res.json()
