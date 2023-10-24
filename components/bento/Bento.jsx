@@ -22,7 +22,6 @@ import {
 } from '@tabler/icons-react'
 
 const Bento = async () => {
-  // const mapToken = await getMapToken()
   const existingLocationInfo = await upstashClient.hgetall('current-location')
 
   return (
