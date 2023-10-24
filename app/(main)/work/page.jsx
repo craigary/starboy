@@ -3,7 +3,6 @@ import Container from '@/components/container/Container'
 import WorkItem from '@/components/work/WorkItem'
 import { getAllWorks } from '@/lib/sanity/get-works'
 
-// export const runtime = 'edge'
 export const revalidate = 60
 
 const WorksPage = async () => {

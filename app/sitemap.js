@@ -2,7 +2,7 @@ import { navigation } from '@/lib/get-navigation'
 import { getAllBlogPostsMetas } from '@/lib/sanity/get-blog-posts'
 
 export const revalidate = 60
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 const websiteUrl = process.env.WEBSITE_URL
 
