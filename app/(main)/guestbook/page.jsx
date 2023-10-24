@@ -1,6 +1,7 @@
 import Giscus from '@/components/Giscus'
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
+export const dynamic = 'force-dynamic'
 
 const GuestPage = () => {
   return (
