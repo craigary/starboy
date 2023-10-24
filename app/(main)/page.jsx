@@ -4,7 +4,6 @@ import { generateMetaData } from '@/lib/metadata'
 
 export const revalidate = 60
 const pathName = '/'
-
 export const metadata = generateMetaData(pathName)
 
 export default function Home() {

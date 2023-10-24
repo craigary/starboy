@@ -1,8 +1,12 @@
 import Heading from '@/components/Heading'
 import WiderContainer from '@/components/container/WideContainer'
 import PodcastList from '@/components/podcast/PodcastList'
+import { generateMetaData } from '@/lib/metadata'
 import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
 import { SiApplepodcasts } from '@icons-pack/react-simple-icons'
+
+const pathName = '/podcasts'
+export const metadata = generateMetaData(pathName)
 
 export const revalidate = 3600
 

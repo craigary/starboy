@@ -1,7 +1,11 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 import MyServicesList from '@/components/uses/MyServiceList'
+import { generateMetaData } from '@/lib/metadata'
 import { getMyServices } from '@/lib/notion-next/get-my-services'
+
+const pathName = '/uses'
+export const metadata = generateMetaData(pathName)
 
 const UsePage = async () => {
   const data = await getMyServices()

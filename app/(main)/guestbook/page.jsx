@@ -1,6 +1,10 @@
 import Giscus from '@/components/Giscus'
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
+import { generateMetaData } from '@/lib/metadata'
+
+const pathName = '/guestbook'
+export const metadata = generateMetaData(pathName)
 
 const GuestPage = () => {
   return (

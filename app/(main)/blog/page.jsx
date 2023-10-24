@@ -1,8 +1,12 @@
 import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 import PostList from '@/components/post/PostList'
+import { generateMetaData } from '@/lib/metadata'
 import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
 import { IconWritingSign } from '@tabler/icons-react'
+
+const pathName = '/blog'
+export const metadata = generateMetaData(pathName)
 
 export const revalidate = 60
 

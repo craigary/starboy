@@ -28,6 +28,8 @@ import styles from './style.module.css'
 const pathName = '/about'
 export const metadata = generateMetaData(pathName)
 
+export const revalidate = 3600
+
 const AboutPage = async () => {
   const existingLocationInfo = await getLocationInfo()
   const region = existingLocationInfo.region
