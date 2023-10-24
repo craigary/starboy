@@ -20,28 +20,23 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
+import { getLocationInfo } from '@/lib/get-location'
 import { navigation } from '@/lib/get-navigation'
 import { generateMetaData } from '@/lib/metadata'
-import { upstashClient } from '@/lib/upstash/client'
 import styles from './style.module.css'
-
-export const revalidate = 3600
 
 const pathName = '/about'
 export const metadata = generateMetaData(pathName)
 
 const AboutPage = async () => {
-  const existingLocationInfo = await upstashClient.hgetall('current-location')
+  const existingLocationInfo = await getLocationInfo()
   const region = existingLocationInfo.region
   const state = existingLocationInfo.state
-  const { items: socialLinks } = navigation.find(item => item.id === 'social')
 
   const emailInitial = 'i'
   const emailDomain = 'Y3JhaWcud2Y=' // encode a string
 
-  // const region = 'China'
-  // const state = 'Hebei'
-
+  const { items: socialLinks } = navigation.find(item => item.id === 'social')
   return (
     <Container>
       <Heading title="About">
