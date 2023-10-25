@@ -20,7 +20,7 @@ import {
   IconSwords
 } from '@tabler/icons-react'
 
-const Bento = async () => {
+const Bento = () => {
   return (
     <div className="grid grid-cols-12 pt-14 md:mb-14 md:grid-cols-12 md:pt-20">
       <div className="col-span-12">
@@ -98,8 +98,8 @@ const Bento = async () => {
       </div>
       <div className="col-span-12 sm:order-2 sm:col-span-6 md:col-span-12 lg:col-span-4">
         <div className="flex h-full flex-col">
-          <SocialAltCard />
-          <TheBlockCard />
+          <SocialAltCard delay={0.25} />
+          <TheBlockCard delay={0.25} />
         </div>
       </div>
       <div className="col-span-12 h-full sm:order-1 sm:col-span-6 lg:order-4 lg:col-span-4">
@@ -109,16 +109,16 @@ const Bento = async () => {
         <MusicCardAlt delay={0.25} />
       </div>
       <div className="col-span-6 sm:order-3 sm:col-span-6 md:order-3 md:col-span-6 lg:col-span-4">
-        <LabCard />
+        <LabCard delay={0.25} />
       </div>
       <div className="col-span-6 sm:order-3 md:order-4 md:row-span-2 lg:col-span-4">
-        <StatisticsCard />
+        <StatisticsCard delay={0.25} />
       </div>
       <div className="col-span-6 h-full sm:order-4 md:col-span-6 lg:col-span-4">
-        <SocialLinkCard />
+        <SocialLinkCard delay={0.25} />
       </div>
       <div className="col-span-6 h-full sm:order-4 md:col-span-6 lg:col-span-4">
-        <CornerCard />
+        <CornerCard delay={0.25} />
       </div>
     </div>
   )

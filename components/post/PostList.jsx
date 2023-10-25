@@ -17,7 +17,7 @@ const PostList = ({ postList }) => {
         {item.year}
       </p>
       {item.posts.map((post, index) => (
-        <PostItem key={post._id} post={post} />
+        <PostItem key={post.id} post={post} />
       ))}
     </div>
   ))

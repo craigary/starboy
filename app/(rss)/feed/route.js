@@ -1,43 +1,19 @@
-import { getBlogRss } from '@/lib/sanity/get-blog-rss'
-import { toHTML } from '@portabletext/to-html'
-import htm from 'htm'
+import { getPostRss } from '@/lib/notion-next/get-post-rss'
 import { toXML } from 'jstoxml'
-import vhtml from 'vhtml'
 
 export const revalidate = 60
 export const runtime = 'edge'
-
 const websiteUrl = process.env.WEBSITE_URL
 
-const html = htm.bind(vhtml)
-
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }) => {
-      const htmlStr = '<img src="' + value.imageUrl + '" />'
-      return html`${htmlStr}`
-    },
-    code: ({ value }) => {
-      return html`<code>${value.code}</code>`
-    }
-  }
-}
-
-const renderHtmlContent = block => {
-  return toHTML(block, { components: myPortableTextComponents })
-}
-
 export async function GET() {
-  const rawData = await getBlogRss(10, true)
-
+  const rawData = await getPostRss()
   const modified = rawData.map(item => {
     return {
-      // ...item,
       title: item.title,
       description: item.summary,
       link: `${websiteUrl}/blog/${item.slug}`,
-      guid: item._id,
-      content: renderHtmlContent(item.content)
+      guid: item.id,
+      content: item.content
     }
   })
 

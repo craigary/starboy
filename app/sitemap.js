@@ -1,5 +1,5 @@
 import { navigation } from '@/lib/get-navigation'
-import { getAllBlogPostsMetas } from '@/lib/sanity/get-blog-posts'
+import { getBlogPostMeta } from '@/lib/notion-next/get-post-list'
 
 export const revalidate = 60
 export const runtime = 'edge'
@@ -7,21 +7,6 @@ export const runtime = 'edge'
 const websiteUrl = process.env.WEBSITE_URL
 
 const getStaticRoutes = async () => {
-  // const repo = 'craigary/starboy'
-  // const token = process.env.GITHUB_ACCESS_TOKEN
-
-  // const url = `https://api.github.com/repos/${repo}/commits`
-  // const data = await fetch(url, {
-  //   headers: {
-  //     Authorization: `Bearer ${token}`,
-  //     'X-GitHub-Api-Version': '2022-11-28'
-  //   }
-  // })
-
-  // const githubCommits = await data.json()
-  // console.log(githubCommits)
-  // const lastCommitDate = new Date(githubCommits[0].commit.author.date)
-
   const staticRoutes = navigation.reduce((prev, curr) => {
     if (curr.id !== 'social') {
       return [
@@ -39,10 +24,10 @@ const getStaticRoutes = async () => {
 }
 
 const getDynamicRoutes = async () => {
-  const res = await getAllBlogPostsMetas()
+  const res = await getBlogPostMeta()
   const routes = res.map(item => ({
     url: `${websiteUrl}/blog/${item.slug}`,
-    lastModified: new Date(item.publishedAt ?? item._createdAt),
+    lastModified: new Date(item.updatedAt),
     changeFrequency: 'weekly'
   }))
   return routes

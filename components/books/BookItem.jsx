@@ -1,10 +1,10 @@
 'use client'
-import { notionImageLoader } from '@/lib/notion-next/notion-image-loader'
 import { cn } from '@/lib/utils'
 
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 
 import { Badge } from '@/components/ui/badge'
+import { notionImageLoader } from '@/lib/image-loader/notion'
 import Image from 'next/image'
 
 const BookItem = ({ book }) => {

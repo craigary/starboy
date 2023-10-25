@@ -2,7 +2,7 @@ import Heading from '@/components/Heading'
 import Container from '@/components/container/Container'
 import PostList from '@/components/post/PostList'
 import { generateMetaData } from '@/lib/metadata'
-import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
+import { getPostList } from '@/lib/notion-next/get-post-list'
 import { IconWritingSign } from '@tabler/icons-react'
 
 const pathName = '/blog'
@@ -11,7 +11,7 @@ export const metadata = generateMetaData(pathName)
 export const revalidate = 60
 
 const BlogPage = async () => {
-  const data = await getBlogPosts()
+  const data = await getPostList()
   return (
     <Container>
       <Heading title="Blog" className="relative">

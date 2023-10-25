@@ -28,9 +28,7 @@ const SanityBlogSummary = ({ onChange, value }) => {
 
   const handleBtnClick = () => {
     const str = blocksToText(content ?? []).replace(/(\r\n|\n|\r)/gm, '')
-    console.log(str)
     str ? set(str) : unset()
-    console.log(333)
   }
   return (
     <Stack space={4}>

@@ -1,5 +1,5 @@
 'use client'
-import { notionImageLoader } from '@/lib/notion-next/notion-image-loader'
+import { notionImageLoader } from '@/lib/image-loader/notion'
 import Image from 'next/image'
 
 const MyServiceIcon = ({ item }) => {

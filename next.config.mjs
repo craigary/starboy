@@ -23,16 +23,6 @@ const nextConfig = {
     } catch {
       return []
     }
-  },
-
-  images: {
-    domains: [
-      'cdn.sanity.io',
-      's3.us-west-2.amazonaws.com',
-      'static.pocketcasts.com',
-      'images.unsplash.com',
-      'www.notion.so'
-    ]
   }
 }
 

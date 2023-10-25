@@ -1,12 +1,12 @@
 import Card from '@/components/bento/card/Card'
 import { Button } from '@/components/ui/button'
-import { getBlogPosts } from '@/lib/sanity/get-blog-posts'
-
+import { getBlogPostMeta } from '@/lib/notion-next/get-post-list'
 import { IconChevronRight, IconRss } from '@tabler/icons-react'
 import Link from 'next/link'
 
 const PostsCard = async ({ delay }) => {
-  const posts = await getBlogPosts(4)
+  const allPosts = await getBlogPostMeta()
+  const posts = allPosts.slice(0, 4)
 
   return (
     <Card className="h-full p-3" delay={delay}>
@@ -47,7 +47,7 @@ const PostsCard = async ({ delay }) => {
             {posts.map(item => {
               return (
                 <li
-                  key={item._id}
+                  key={item.id}
                   className="border-borde r cursor-default truncate border-b py-2 pl-4 pr-2 text-sm text-primary/70 last:border-b-0 hover:bg-muted/20"
                 >
                   <Link href={`/blog/${item.slug}`}>{item.title}</Link>
