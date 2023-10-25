@@ -1,14 +1,11 @@
 import Card from '@/components/bento/card/Card'
-import { getTechStack } from '@/lib/sanity/get-tech-stack'
+import { techStack } from '@/lib/get-tech-stack'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
 
 const TechStackCard = async ({ delay }) => {
-  const data = await getTechStack()
-
   const stackArray = [
-    data.slice(0, Math.floor(data.length / 2)),
-    data.slice(Math.floor(data.length / 2))
+    techStack.slice(0, Math.floor(techStack.length / 2)),
+    techStack.slice(Math.floor(techStack.length / 2))
   ]
 
   return (
@@ -44,17 +41,13 @@ const TechStackCard = async ({ delay }) => {
                     aria-hidden={i !== 0}
                   >
                     {stack.map(item => {
-                      const encodedSvg = encodeURIComponent(item.icon.svg)
-                      const imgSrc = `data:image/svg+xml,${encodedSvg}`
+                      const Icon = item.icon
                       return (
-                        <li key={item._id} className={cn('px-4')}>
+                        <li key={item.id} className="px-4">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg border bg-background p-2 shadow shadow-muted/50 md:h-12 md:w-12">
-                            <Image
-                              alt=""
-                              height={32}
-                              width={32}
-                              src={imgSrc}
-                              className=" opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
+                            <Icon
+                              size="28"
+                              className="opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
                             />
                           </div>
                         </li>
