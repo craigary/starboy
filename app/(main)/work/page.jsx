@@ -11,7 +11,6 @@ export const metadata = generateMetaData(pathName)
 
 const WorksPage = async () => {
   const works = await getWorkList()
-  console.log(works)
   return (
     <Container>
       <Heading title="Works">
