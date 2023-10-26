@@ -1,4 +1,5 @@
 'use client'
+import { pocketCastsLoaderImageLoader } from '@/lib/image-loader/pocket-casts'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt'
 
@@ -20,9 +21,10 @@ const PodcastItemWrapper = ({ podcast }) => {
         >
           <Image
             src={podcast.coverImgUrl}
-            width={200}
-            height={200}
+            width={480}
+            height={480}
             quality={100}
+            loader={pocketCastsLoaderImageLoader}
             placeholder="blur"
             blurDataURL={podcast.coverImgBlur}
             alt={podcast.title}

@@ -3,7 +3,6 @@ import Container from '@/components/container/Container'
 import WorkItem from '@/components/work/WorkItem'
 import { generateMetaData } from '@/lib/metadata'
 import { getWorkList } from '@/lib/notion-next/get-work-list'
-// import { getAllWorks } from '@/lib/sanity/get-works'
 
 export const revalidate = 60
 

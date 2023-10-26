@@ -1,4 +1,4 @@
-import { getPostDetails } from '@/lib/sanity/get-post-details'
+import { getBlogPostMeta } from '@/lib/notion-next/get-post-list'
 import { ImageResponse } from 'next/og'
 // Route segment config
 export const runtime = 'edge'
@@ -23,7 +23,7 @@ export default async function Image({ params }) {
   ).then(res => res.arrayBuffer())
 
   const { slug } = params
-  const postRes = getPostDetails(slug)
+  const postRes = getBlogPostMeta(slug)
 
   const [imageData, post] = await Promise.all([imageDataRes, postRes])
 
