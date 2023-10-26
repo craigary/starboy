@@ -21,7 +21,7 @@ const ProjectCard = ({ delay }) => {
               />
             </div>
             <p className="mb-2 font-medium text-primary/90 md:text-base">
-              {'>_ '}Projects
+              {'>_ '} Works
             </p>
             <p className="text-sm text-primary/50">some random projects...</p>
           </div>
