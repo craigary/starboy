@@ -31,7 +31,7 @@ const PostsCard = async ({ delay }) => {
               </Button>
               <Button
                 variant="custom"
-                className="ml-2 h-auto rounded-full bg-[#ffffffcc] px-2 py-0 text-xs leading-6 text-[#0005119e] shadow-[inset_0_0_0_1px_#01073132] hover:bg-[#ffffffcc] hover:shadow-[inset_0_0_0_1px_#00082f46]"
+                className="ml-2 h-auto rounded-full bg-secondary px-2 py-0 text-xs leading-6"
                 asChild
               >
                 <Link href={'/blog'}>

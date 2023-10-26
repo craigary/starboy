@@ -47,7 +47,7 @@ const TechStackCard = async ({ delay }) => {
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg border bg-background p-2 shadow shadow-muted/50 md:h-12 md:w-12">
                             <Icon
                               size="28"
-                              className="opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:invert dark:hover:opacity-100"
+                              className="opacity-70 transition-all hover:opacity-100 dark:opacity-90 dark:hover:opacity-100"
                             />
                           </div>
                         </li>
