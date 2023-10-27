@@ -82,10 +82,7 @@ const MusicCardAlt = async ({ delay, className }) => {
               className="h-auto w-fit rounded-full p-1 px-2 text-xs leading-none"
               asChild
             >
-              <a
-                href={`https://music.apple.com${recentPlayed.href}`}
-                target="_blank"
-              >
+              <a href={recentPlayed.attributes.url} target="_blank">
                 <IconPlayerPlayFilled size="14" className="mr-1" />
                 Play
               </a>
