@@ -61,7 +61,8 @@ const BookItem = ({ book }) => {
               alt={book.name}
               loader={notionImageLoader}
               placeholder="blur"
-              fill
+              width={400}
+              height={400 * bookImage.aspectRatio}
               src={bookImage.url}
               className="z-0 object-cover"
               blurDataURL={bookImage.blur}
@@ -91,7 +92,8 @@ const BookItem = ({ book }) => {
                 alt={book.name}
                 loader={notionImageLoader}
                 placeholder="blur"
-                fill
+                width={400}
+                height={400 * bookImage.aspectRatio}
                 src={bookImage.url}
                 className="z-0 object-cover"
                 blurDataURL={bookImage.blur}
