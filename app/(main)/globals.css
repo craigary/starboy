@@ -36,10 +36,14 @@
   }
 
   ::selection {
-    background: theme(colors.indigo.100);
+    background: #0044ff2d;
     color: theme(
       colors.primary.DEFAULT
     ); /* Make sure the gradient masked text is shown properly */
+  }
+
+  .dark ::selection {
+    background: #4171fd6b;
   }
 
   .dark {
