@@ -140,14 +140,14 @@ const AboutPage = async () => {
           </p>
 
           <p>
-            It's currently build with Next.js 14, although there's a possibility
-            of switching to Remix in the future. Some images are cached using
-            WordPress Jetpack CDN, for better accessing within the mainland
-            China,
+            It&apos;s currently build with Next.js 14, although there&apos;s a
+            possibility of switching to Remix in the future. Some images are
+            cached using WordPress Jetpack CDN, for better accessing within the
+            mainland China,
           </p>
           <p>
             Also, huge s/o to my friends Milanooo22 for providing suggestions
-            for this website from a designer's perspective.
+            for this website from a designer&apos;s perspective.
           </p>
         </div>
       </div>
