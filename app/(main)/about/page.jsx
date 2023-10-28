@@ -147,11 +147,27 @@ const AboutPage = async () => {
             </a>
             ,{' '}
             <a
+              href="https://rauchg.com"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Rauchg
+            </a>
+            ,{' '}
+            <a
               href="https://sj.land"
               target="_blank"
               className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
             >
               SJ.land
+            </a>
+            ,{' '}
+            <a
+              href="https://glenn.me"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Glenn
             </a>
             , and{' '}
             <a
@@ -176,8 +192,16 @@ const AboutPage = async () => {
             mainland China.
           </p>
           <p>
-            Also, huge s/o to my friends Milanooo22 for providing suggestions
-            for this website from a designer&apos;s perspective.
+            Also, huge s/o to my friends{' '}
+            <a
+              href="https://weibo.com/u/6604365050"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Milanooo22
+            </a>{' '}
+            for providing suggestions for this website from a designer&apos;s
+            perspective.
           </p>
         </div>
       </div>

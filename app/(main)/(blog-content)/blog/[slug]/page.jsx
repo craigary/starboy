@@ -88,7 +88,7 @@ const PostDetails = async ({ params }) => {
           </Suspense>
         </div>
       </div>
-      <div className="prose relative mx-auto mt-4 max-w-none whitespace-normal tracking-wide dark:prose-invert prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:whitespace-pre-wrap prose-pre:bg-transparent prose-pre:p-0 md:mt-8">
+      <div className="prose relative mx-auto mt-4 max-w-none whitespace-normal tracking-wide dark:prose-invert prose-a:decoration-1 prose-a:underline-offset-2 prose-a:after:content-['↗'] prose-a:hover:underline prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:whitespace-pre-wrap prose-pre:bg-transparent prose-pre:p-0 md:mt-8">
         <Suspense fallback={<>Loading...</>}>{content}</Suspense>
       </div>
     </Container>
