@@ -1,6 +1,10 @@
 import PostItem from '@/components/post/PostItem'
 
 const PostList = ({ postList }) => {
+  if (postList.length === 0) {
+    return <p className="relative pt-6">There are no posts yet.</p>
+  }
+
   return postList.map((item, sectionIndex) => (
     <div className="relative pt-6" key={item.year}>
       <p

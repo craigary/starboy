@@ -3,7 +3,7 @@ import Container from '@/components/container/Container'
 import PostList from '@/components/post/PostList'
 import { generateMetaData } from '@/lib/metadata'
 import { getPostList } from '@/lib/notion-next/get-post-list'
-import { IconWritingSign } from '@tabler/icons-react'
+import { IconSignature } from '@tabler/icons-react'
 
 const pathName = '/blog'
 export const metadata = generateMetaData(pathName)
@@ -15,7 +15,7 @@ const BlogPage = async () => {
   return (
     <Container>
       <Heading title="Blog" className="relative">
-        <IconWritingSign
+        <IconSignature
           className="absolute -right-[10%] top-0 opacity-5"
           size="80%"
           stroke={1}
