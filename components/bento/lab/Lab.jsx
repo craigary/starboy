@@ -42,7 +42,7 @@ const LabCard = ({ delay = 0 }) => {
           asChild
         >
           <a href="/lab" target="_blank">
-            Visit the Lab
+            Coming soon
           </a>
         </Button>
       </div>

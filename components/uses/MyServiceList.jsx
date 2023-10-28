@@ -73,13 +73,13 @@ const MyServicesList = ({ myServicesList }) => {
                       ))}
                     </div>
                   </div>
-                  <p className="hidden w-14 shrink-0 text-right text-sm md:block">
+                  {/* <p className="hidden w-14 shrink-0 text-right text-sm md:block">
                     {item.price === 0
                       ? item.price
                       : item.price
                       ? item.price
                       : 'free'}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

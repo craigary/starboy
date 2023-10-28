@@ -20,12 +20,11 @@ const BlogPage = async () => {
           size="80%"
           stroke={1}
         />
-        <p className="leading-6 md:w-3/4 md:leading-8">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-          magnam vero est aperiam dolores. Officia ab a, atque voluptatum odit
-          possimus exercitationem necessitatibus quam praesentium eligendi
-          dolorem ea! Quas, nesciunt?
-        </p>
+
+        <div className="space-y-3 leading-6 tracking-[0.015em] md:w-3/4 md:leading-8">
+          <p>This is the place where I put my long form hot takes 😈</p>
+          <p>I promise I will write more in the future.</p>
+        </div>
       </Heading>
       <PostList postList={data} />
     </Container>

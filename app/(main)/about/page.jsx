@@ -118,30 +118,36 @@ const AboutPage = async () => {
         <h2 className="mb-2 w-fit bg-gradient-to-r from-primary/60 to-primary bg-clip-text text-lg font-semibold text-transparent  md:mb-6 md:text-xl">
           About this site:
         </h2>
-        <div>
-          <p className="mb-6 tracking-[0.015em]">
+        {/* <div className="mb-6 tracking-[0.015em]"> */}
+
+        <div className="w-full space-y-3 leading-6 tracking-[0.015em]  md:leading-8">
+          {/* <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
             saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
             iure nihil voluptates nisi voluptate illum similique fugit est atque
             vero numquam.
+          </p> */}
+
+          <p>
+            The design of the website is heavily inspired by vercel, as well as
+            some indi blogs such as Leerob.io, Ding.one, SJ.land, and Paco.me.
+            The intent here is to bring simplicity minimal, full of details and
+            joy.
           </p>
-          <p className="mb-6 tracking-[0.015em]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
-            iure nihil voluptates nisi voluptate illum similique fugit est atque
-            vero numquam.
+          <p>
+            Notion serves as the headless CMS for this website. It remains the
+            best note-taking and PKM solution, by far.
           </p>
-          <p className="mb-6 tracking-[0.015em]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
-            iure nihil voluptates nisi voluptate illum similique fugit est atque
-            vero numquam.
+
+          <p>
+            It's currently build with Next.js 14, although there's a possibility
+            of switching to Remix in the future. Some images are cached using
+            WordPress Jetpack CDN, for better accessing within the mainland
+            China,
           </p>
-          <p className="mb-6 tracking-[0.015em]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
-            iure nihil voluptates nisi voluptate illum similique fugit est atque
-            vero numquam.
+          <p>
+            Also, huge s/o to my friends Milanooo22 for providing suggestions
+            for this website from a designer's perspective.
           </p>
         </div>
       </div>

@@ -33,7 +33,7 @@ const Bento = () => {
           className="bg-secondary/20 transition-all hover:border-sky-600"
         >
           <p className="font-serif text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
-            Reading List
+            Books
           </p>
           <IconBookmarks
             stroke="1.5"

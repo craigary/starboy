@@ -14,12 +14,14 @@ const WorksPage = async () => {
   return (
     <Container>
       <Heading title="Works">
-        <p className="leading-6 md:w-3/4 md:leading-8">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-          magnam vero est aperiam dolores. Officia ab a, atque voluptatum odit
-          possimus exercitationem necessitatibus quam praesentium eligendi
-          dolorem ea! Quas, nesciunt?
-        </p>
+        <div className="space-y-3 leading-6 tracking-[0.015em] md:w-3/4 md:leading-8">
+          <p>
+            The project pages are currently being organized. The content shown
+            currently contains a mix of work projects, open source projects,
+            designs, and other items.
+          </p>
+          <p>More detailed information will be added later.</p>
+        </div>
       </Heading>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
         {works.map(item => (
