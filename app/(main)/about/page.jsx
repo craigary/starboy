@@ -106,11 +106,17 @@ const AboutPage = async () => {
                 />
               </span>
             </div>{' '}
-            as well as reading mystery fiction novels.
+            as well as reading reading crime fictions.
           </div>
           <div>
             I am also a proud
-            <span className={styles.juventus_label}>Juventino</span>.
+            <span
+              className={styles.juventus_label}
+              title="That's why I don't use inter for my website font lol"
+            >
+              Juventino
+            </span>
+            .
           </div>
         </div>
       </Heading>
@@ -121,18 +127,42 @@ const AboutPage = async () => {
         {/* <div className="mb-6 tracking-[0.015em]"> */}
 
         <div className="w-full space-y-3 leading-6 tracking-[0.015em]  md:leading-8">
-          {/* <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            saepe enim pariatur, harum quae nulla necessitatibus cum nostrum
-            iure nihil voluptates nisi voluptate illum similique fugit est atque
-            vero numquam.
-          </p> */}
-
           <p>
             The design of the website is heavily inspired by vercel, as well as
-            some indi blogs such as Leerob.io, Ding.one, SJ.land, and Paco.me.
-            The intent here is to bring simplicity minimal, full of details and
-            joy.
+            some indi blogs such as{' '}
+            <a
+              href="https://leerob.io"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Leerob.io
+            </a>
+            ,{' '}
+            <a
+              href="https://ding.one"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Ding.one
+            </a>
+            ,{' '}
+            <a
+              href="https://sj.land"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              SJ.land
+            </a>
+            , and{' '}
+            <a
+              href="https://paco.me"
+              target="_blank"
+              className='decoration-1 underline-offset-2 after:content-["↗"] hover:underline'
+            >
+              Paco.me
+            </a>
+            . The intent here is to bring simplicity minimal, full of details
+            and joy.
           </p>
           <p>
             Notion serves as the headless CMS for this website. It remains the
@@ -143,7 +173,7 @@ const AboutPage = async () => {
             It&apos;s currently build with Next.js 14, although there&apos;s a
             possibility of switching to Remix in the future. Some images are
             cached using WordPress Jetpack CDN, for better accessing within the
-            mainland China,
+            mainland China.
           </p>
           <p>
             Also, huge s/o to my friends Milanooo22 for providing suggestions

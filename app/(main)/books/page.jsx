@@ -19,10 +19,10 @@ const BooksPage = async () => {
         <div className="space-y-3 leading-6 tracking-[0.015em] md:w-3/4 md:leading-8">
           <p>
             I don&apos;t consider myself someone who reads consistently, but I
-            do enjoy picking up my Kindle and reading the occasional mystery
-            novel. Productivity related books don&apos;t make up a large part of
-            my reading list - I prefer to treat reading as a leisurely activity.
-            Additionally, tech related books are not listed here.
+            do enjoy picking up my Kindle occasionally and reading crime
+            fictions. Productivity related books don&apos;t make up a large part
+            of my reading list - I prefer to treat reading as a leisurely
+            activity. Additionally, tech related books are not listed here.
           </p>
           <p>
             I will try to keep this page updated to motivate myself to keep my
