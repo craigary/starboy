@@ -16,7 +16,7 @@ const PostImageComponent = async props => {
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <ImageBlock {...res} type={type} src={url} alt={props.title} />
+      <ImageBlock {...res} type={type} src={url} alt={props.title ?? ''} />
     </Suspense>
   )
 }
