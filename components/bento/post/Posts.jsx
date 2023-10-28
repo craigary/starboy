@@ -44,16 +44,22 @@ const PostsCard = async ({ delay }) => {
         </div>
         <div className="relative w-full grow rounded-b-md bg-background after:absolute after:bottom-0 after:left-4 after:h-[calc(100%+1rem)] after:w-2  after:border-x after:border-border/70 after:content-[''] ">
           <ul className="flex h-full w-full flex-col justify-center px-2">
-            {posts.map(item => {
-              return (
-                <li
-                  key={item.id}
-                  className="border-borde r cursor-default truncate border-b py-2 pl-4 pr-2 text-sm text-primary/70 last:border-b-0 hover:bg-muted/20"
-                >
-                  <Link href={`/blog/${item.slug}`}>{item.title}</Link>
-                </li>
-              )
-            })}
+            {posts.length ? (
+              posts.map(item => {
+                return (
+                  <li
+                    key={item.id}
+                    className="border-borde r cursor-default truncate border-b py-2 pl-4 pr-2 text-sm text-primary/70 last:border-b-0 hover:bg-muted/20"
+                  >
+                    <Link href={`/blog/${item.slug}`}>{item.title}</Link>
+                  </li>
+                )
+              })
+            ) : (
+              <li className="text-center text-sm text-primary/70">
+                There are no posts yet.
+              </li>
+            )}
           </ul>
         </div>
       </div>
