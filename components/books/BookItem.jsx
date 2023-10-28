@@ -64,7 +64,7 @@ const BookItem = ({ book }) => {
               width={400}
               height={400 * bookImage.aspectRatio}
               src={bookImage.url}
-              className="z-0 object-cover"
+              className="absolute inset-0 z-0 object-cover"
               blurDataURL={bookImage.blur}
             ></Image>
           </div>
@@ -95,7 +95,7 @@ const BookItem = ({ book }) => {
                 width={400}
                 height={400 * bookImage.aspectRatio}
                 src={bookImage.url}
-                className="z-0 object-cover"
+                className="absolute inset-0 z-0 object-cover"
                 blurDataURL={bookImage.blur}
               ></Image>
             </div>
