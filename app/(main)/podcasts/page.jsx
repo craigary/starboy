@@ -1,6 +1,6 @@
 import Heading from '@/components/Heading'
 import Line from '@/components/annotations/Line'
-import WiderContainer from '@/components/container/WideContainer'
+import Container from '@/components/container/Container'
 import PodcastList from '@/components/podcast/PodcastList'
 import { generateMetaData } from '@/lib/metadata'
 import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
@@ -18,7 +18,7 @@ export const revalidate = 3600
 const PodcastPage = async () => {
   const podcasts = await getPodcasts()
   return (
-    <WiderContainer>
+    <Container>
       <Heading title="Podcasts" className="relative">
         <IconBrandApplePodcast
           className="absolute -right-[10%] top-0 opacity-5"
@@ -53,7 +53,7 @@ const PodcastPage = async () => {
         </div>
       </Heading>
       <PodcastList podcasts={podcasts} />
-    </WiderContainer>
+    </Container>
   )
 }
 
