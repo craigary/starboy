@@ -30,7 +30,7 @@ export async function POST(req) {
     // Get region and state
 
     const response = await fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?access_token=${process.env.MAPBOX_ACCESS_TOKEN}`
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}`
     )
 
     const locationData = await response.json()
