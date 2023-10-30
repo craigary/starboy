@@ -5,6 +5,8 @@ import { generateMetaData } from '@/lib/metadata'
 import { getMyServices } from '@/lib/notion-next/get-my-services'
 import { IconTools } from '@tabler/icons-react'
 
+export const revalidate = 60
+
 const pathName = '/uses'
 export const metadata = generateMetaData(pathName)
 
