@@ -1,13 +1,13 @@
 import avatar from '@/assets/avatar.png'
 import Card from '@/components/bento/card/Card'
-import { upstashClient } from '@/lib/upstash/client'
+import { getLocationInfo } from '@/lib/get-location'
 import Image from 'next/image'
 
 const WelcomeCard = async ({ delay }) => {
-  const existingLocationInfo = await upstashClient.hgetall('current-location')
+  const existingLocationInfo = await getLocationInfo()
 
-  const region = existingLocationInfo.region
-  const state = existingLocationInfo.state
+  const region = existingLocationInfo?.region ?? ''
+  const state = existingLocationInfo?.state ?? ''
 
   return (
     <Card

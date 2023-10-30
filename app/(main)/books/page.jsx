@@ -8,6 +8,7 @@ import { Suspense } from 'react'
 export const revalidate = 3600
 const BooksPage = async () => {
   const list = await getBooksList()
+  // console.log(list)
   return (
     <Container>
       <Heading title="Books" className="relative">

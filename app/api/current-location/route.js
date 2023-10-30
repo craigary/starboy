@@ -1,4 +1,4 @@
-import { upstashClient } from '@/lib/upstash/client'
+import { workersClient } from '@/lib/workers-kv/client'
 import { NextResponse } from 'next/server'
 
 export const runtime = 'edge'
@@ -54,8 +54,7 @@ export async function POST(req) {
       }
     })
 
-    // Update location info
-    await upstashClient.hset('current-location', {
+    await workersClient.write('current-location', {
       coordinate: centerCoordinate.join('&'),
       region,
       state
