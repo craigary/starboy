@@ -1,5 +1,4 @@
 'use client'
-import { wordpressImageLoader } from '@/lib/image-loader/wp'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt'
 
@@ -13,19 +12,20 @@ const PodcastItemWrapper = ({ podcast }) => {
         glareMaxOpacity={0.8}
         glareColor="white"
         glarePosition="all"
+        glareBorderRadius="0.25rem"
       >
         <div
           className="flex aspect-square h-full w-full scale-100 cursor-pointer overflow-hidden rounded border shadow-sm transition-all duration-150 active:scale-[93%]"
           title={podcast.description}
-          onClick={() => window.open(podcast.url, '_blank')}
+          onClick={() => window.open(podcast.link, '_blank')}
         >
           <Image
-            src={podcast.coverImgUrl}
+            src={podcast.image}
             width={480}
             height={480}
             quality={100}
-            loader={wordpressImageLoader}
             placeholder="blur"
+            loader={({ src }) => src}
             blurDataURL={podcast.coverImgBlur}
             alt={podcast.title}
           />

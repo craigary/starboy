@@ -35,6 +35,7 @@
     "framer-motion": "^10.16.4",
     "highlight.js": "^11.9.0",
     "jstoxml": "^3.2.8",
+    "linkedom": "^0.16.8",
     "mapbox-gl": "^2.15.0",
     "marked": "^9.1.2",
     "next": "14.0.0",

@@ -3,7 +3,8 @@ import Line from '@/components/annotations/Line'
 import Container from '@/components/container/Container'
 import PodcastList from '@/components/podcast/PodcastList'
 import { generateMetaData } from '@/lib/metadata'
-import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
+// import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
+import { getPodcasts } from '@/lib/podcast'
 import {
   SiPocketcasts,
   SiPodcastindexHex
@@ -16,6 +17,7 @@ export const metadata = generateMetaData(pathName)
 export const revalidate = 3600
 
 const PodcastPage = async () => {
+  // const podcasts = await getPodcasts()
   const podcasts = await getPodcasts()
   return (
     <Container>
