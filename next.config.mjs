@@ -23,6 +23,16 @@ const nextConfig = {
     } catch {
       return []
     }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'public.overcast-cdn.com',
+        port: '',
+        pathname: '/art/**'
+      }
+    ]
   }
 }
 

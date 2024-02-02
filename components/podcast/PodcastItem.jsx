@@ -20,12 +20,11 @@ const PodcastItemWrapper = ({ podcast }) => {
           onClick={() => window.open(podcast.link, '_blank')}
         >
           <Image
-            src={podcast.image}
+            src={podcast.coverImageUrl}
             width={480}
             height={480}
             quality={100}
             placeholder="blur"
-            loader={({ src }) => src}
             blurDataURL={podcast.coverImgBlur}
             alt={podcast.title}
           />

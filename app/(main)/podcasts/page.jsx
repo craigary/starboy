@@ -5,10 +5,7 @@ import PodcastList from '@/components/podcast/PodcastList'
 import { generateMetaData } from '@/lib/metadata'
 // import { getPodcasts } from '@/lib/pocket-casts/get-podcasts'
 import { getPodcasts } from '@/lib/podcast'
-import {
-  SiPocketcasts,
-  SiPodcastindexHex
-} from '@icons-pack/react-simple-icons'
+import { SiOvercast, SiOvercastHex } from '@icons-pack/react-simple-icons'
 import { IconBrandApplePodcast } from '@tabler/icons-react'
 
 const pathName = '/podcasts'
@@ -42,13 +39,13 @@ const PodcastPage = async () => {
           <div>
             Here are all the podcasts I have subscribed through{' '}
             <div className="group inline-flex cursor-default items-center align-bottom">
-              <SiPocketcasts
+              <SiOvercast
                 className="mr-1 inline-block h-5 w-5"
-                color={SiPodcastindexHex}
+                color={SiOvercastHex}
               />
               <span className="relative">
-                Pocket Casts
-                <Line className="absolute bottom-1 left-0 -z-10 h-2/5 w-full scale-105 bg-[#F43E37] opacity-50 transition-all group-hover:h-3/4 " />
+                Overcast
+                <Line className="absolute bottom-1 left-0 -z-10 h-2/5 w-full scale-105 bg-[#FC7E0F] opacity-50 transition-all group-hover:h-3/4 " />
               </span>
             </div>
           </div>
