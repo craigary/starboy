@@ -2,7 +2,7 @@ import Card from '@/components/bento/card/Card'
 import CornerCard from '@/components/bento/corner/Corner'
 import LabCard from '@/components/bento/lab/Lab'
 import MapCard from '@/components/bento/map/MapCard'
-import MusicCardAlt from '@/components/bento/music/MusicCardAlt'
+import MusicCard from '@/components/bento/music/MusicCard'
 import NavigationCard from '@/components/bento/navigation-card/NavigationCard'
 import PostsCard from '@/components/bento/post/Posts'
 import ProjectCard from '@/components/bento/project/Project'
@@ -106,7 +106,7 @@ const Bento = () => {
         <TechStackCard delay={0.25} />
       </div>
       <div className="col-span-12 sm:order-4 sm:col-span-6 md:order-3 md:col-span-6 lg:order-4 lg:col-span-4 lg:row-span-2">
-        <MusicCardAlt delay={0.25} />
+        <MusicCard delay={0.25} />
       </div>
       <div className="col-span-6 sm:order-3 sm:col-span-6 md:order-3 md:col-span-6 lg:col-span-4">
         <LabCard delay={0.25} />

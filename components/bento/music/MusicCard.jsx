@@ -7,150 +7,92 @@ import { IconMusic, IconPlayerPlayFilled } from '@tabler/icons-react'
 
 const MusicCard = async ({ delay, className }) => {
   const result = await getNowPlaying()
-  const recentPlayed = []
+
+  let recentPlayed = null
   if (result.status === 'success') {
-    recentPlayed.push(...result.data.data.slice(0, 4))
+    recentPlayed = result.data.data[0]
   }
 
   return (
     <Card
       delay={delay}
       className={cn(
-        'relative aspect-square h-auto w-full rounded-lg p-3 grayscale transition-all hover:grayscale-0',
+        'relative aspect-[2/1] h-auto w-full rounded-lg p-3 transition-all',
         className
       )}
     >
-      <div className="group relative z-20 flex h-full w-full flex-col">
-        <IconMusic
-          size="14"
-          className="absolute right-3 top-3"
-          style={{
-            color: '#' + recentPlayed[0].attributes.artwork.textColor3
-          }}
-        />
+      {recentPlayed && (
         <div
-          className="transation-all flex h-2/5 w-full gap-3 rounded-t-lg p-3 opacity-50 delay-75 group-hover:opacity-100"
+          className="transation-all group relative z-20 flex h-full w-full gap-3 rounded-lg px-3 delay-75"
           style={{
-            color: '#' + recentPlayed[0].attributes.artwork.textColor3,
-            backgroundColor: '#' + recentPlayed[0].attributes.artwork.bgColor
+            color: '#' + recentPlayed.attributes.artwork.textColor3,
+            backgroundColor: '#' + recentPlayed.attributes.artwork.bgColor
           }}
         >
-          <div className="relative aspect-square h-full w-auto overflow-hidden rounded">
+          <div className="relative my-3 aspect-square h-auto w-auto shrink-0 overflow-hidden rounded-lg lg:hidden xl:block">
             <ArtworkImg
-              artwork={recentPlayed[0].attributes.artwork}
-              name={recentPlayed[0].attributes.name}
+              artwork={recentPlayed.attributes.artwork}
+              name={recentPlayed.attributes.name}
             />
           </div>
-          <div>
-            <p className="origin-left scale-75 text-xs uppercase">
-              Now Playing
-            </p>
-            <p className="text-sm font-medium">
-              {recentPlayed[0].attributes.name}
-            </p>
-            <p className="mb-2 text-xs font-light">
-              {recentPlayed[0].attributes.artistName}
-            </p>
-            {/* <Button
+          <div className="flex grow flex-col items-end justify-between py-3">
+            <IconMusic
+              size="14"
+              style={{
+                color: '#' + recentPlayed.attributes.artwork.textColor3
+              }}
+            />
+            <div className="flex w-full flex-col">
+              <p className="origin-left scale-75 text-xs uppercase">
+                Now Playing
+              </p>
+              <p className="text-sm font-medium">
+                {recentPlayed.attributes.name}
+                {recentPlayed.attributes?.contentRating === 'explicit' && ' 🅴'}
+              </p>
+              <p className="mb-2 text-xs font-light">
+                {recentPlayed.attributes.artistName}
+              </p>
+              {/* <Button
               size="1"
               color="gray"
               radius="full"
               variant="soft"
               asChild
+              className="w-fit"
               style={{
-                color: '#' + recentPlayed[0].attributes.artwork.textColor3
+                color: '#' + recentPlayed.attributes.artwork.textColor3
               }}
             >
               <a
-                href={`https://music.apple.com${recentPlayed[0].href}`}
+                href={`https://music.apple.com${recentPlayed.href}`}
                 target="_blank"
               >
                 <IconPlayerPlayFilled size="14" />
                 Play
               </a>
             </Button> */}
-            <Button
-              size="icon"
-              variant="custom"
-              style={{
-                backgroundColor:
-                  '#' + recentPlayed[0].attributes.artwork.textColor2 + '22',
-                color: '#' + recentPlayed[0].attributes.artwork.textColor3
-              }}
-              className="h-auto w-fit rounded-full p-1 px-2 text-xs leading-none"
-              asChild
-            >
-              <a
-                href={`https://music.apple.com${recentPlayed.href}`}
-                target="_blank"
+
+              <Button
+                size="icon"
+                variant="custom"
+                style={{
+                  backgroundColor:
+                    '#' + recentPlayed.attributes.artwork.textColor2 + '22',
+                  color: '#' + recentPlayed.attributes.artwork.textColor3
+                }}
+                className="h-auto w-fit rounded-full p-1 px-2 text-xs leading-none"
+                asChild
               >
-                <IconPlayerPlayFilled size="14" className="mr-1" />
-                Play
-              </a>
-            </Button>
+                <a href={recentPlayed.attributes.url} target="_blank">
+                  <IconPlayerPlayFilled size="14" className="mr-1" />
+                  Play
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
-        <div
-          className="flex h-3/5 w-full flex-col gap-y-2 rounded-b-lg p-3 opacity-50 transition-all group-hover:opacity-100"
-          style={{
-            color: '#' + recentPlayed[0].attributes.artwork.textColor3,
-            backgroundColor:
-              '#' + recentPlayed[0].attributes.artwork.bgColor + 'ee'
-          }}
-        >
-          <p className="origin-top-left scale-75 text-xs uppercase">
-            Recently Played
-          </p>
-          <div className="flex grow flex-col gap-2">
-            {recentPlayed.slice(1).map(item => {
-              return (
-                <div
-                  key={item.id}
-                  className="flex h-1/3 w-full items-center gap-x-2"
-                >
-                  <div className="relative aspect-square h-full shrink-0 overflow-hidden rounded">
-                    <ArtworkImg
-                      artwork={item.attributes.artwork}
-                      name={item.attributes.name}
-                    />
-                  </div>
-                  <div className="flex w-full grow items-center justify-between">
-                    <div>
-                      <p className="max-w-[24ch] truncate text-xs font-medium">
-                        {item.attributes.name}
-                      </p>
-                      {item.attributes?.artistName && (
-                        <p className="max-w-[24ch] truncate text-xs font-light">
-                          {item.attributes.artistName}
-                        </p>
-                      )}
-                    </div>
-                    {/* <IconButton
-                      size="1"
-                      color="gray"
-                      radius="full"
-                      variant="soft"
-                      style={{
-                        color:
-                          '#' + recentPlayed[0].attributes.artwork.textColor3,
-                        flexShrink: 0
-                      }}
-                      asChild
-                    >
-                      <a
-                        href={`https://music.apple.com${item.href}`}
-                        target="_blank"
-                      >
-                        <IconPlayerPlayFilled size="14" />
-                      </a>
-                    </IconButton> */}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </div>
+      )}
     </Card>
   )
 }
