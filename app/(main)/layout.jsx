@@ -32,7 +32,10 @@ export default function RootLayout({ children, params }) {
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ToastProvider />
-          <main className="relative flex h-full min-h-screen w-full md:py-2">
+          <main
+            className="relative flex h-full min-h-screen w-full md:py-2"
+            vaul-drawer-wrapper=""
+          >
             <CardBg className="z-10 opacity-50" />
             <div className="absolute inset-0 z-20 h-full w-full bg-background opacity-95"></div>
             <div

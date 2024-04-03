@@ -24,10 +24,10 @@ const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
           className="h-full"
         >
           <div className="flex flex-col">
-            <div className="sticky top-0 flex h-[5.25rem] shrink-0 items-center p-1 backdrop-blur-sm md:px-5">
+            <div className="sticky top-0 flex h-[5.25rem] shrink-0 items-center p-1 px-5 backdrop-blur-sm">
               <Logo size={36} className="" />
             </div>
-            <div className="space-y-4 md:px-4">
+            <div className="space-y-4 px-4">
               {navigation.map(navSection => (
                 <NavSection
                   key={navSection.id}
@@ -41,7 +41,7 @@ const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
             <div className="h-[66px]"></div>
           </div>
         </ScrollArea>
-        <div className="absolute bottom-0 flex w-[calc(100%-8px)] justify-between px-0 py-4 backdrop-blur-sm md:px-4">
+        <div className="absolute bottom-0 flex w-full justify-between px-4 py-4 backdrop-blur-sm">
           <ThemeSwitcher />
           {showCmdBtn && <CmdkButton />}
         </div>
