@@ -7,18 +7,10 @@ import {
 
 const SocialIcon = ({ color, children, source }) => {
   return (
-    <div className="icon absolute bottom-3 right-2 opacity-100 transition-all hover:opacity-100">
-      <style jsx>
-        {`
-          .icon {
-            color: ${color};
-            {/* color: hsl(var(--primary)); */}
-          }
-          .icon:hover {
-            color: ${color};
-          }
-        `}
-      </style>
+    <div
+      className="icon absolute bottom-3 right-2 opacity-100 transition-all hover:opacity-100"
+      style={{ color: color }}
+    >
       <Tooltip>
         <TooltipTrigger>{children}</TooltipTrigger>
         <TooltipContent>

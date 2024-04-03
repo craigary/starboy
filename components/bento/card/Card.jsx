@@ -1,6 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import styles from './styles.module.css'
 
 const Card = ({ className, children, delay = 0, borderStyle }) => {
   return (
@@ -12,46 +13,33 @@ const Card = ({ className, children, delay = 0, borderStyle }) => {
     // >
     <div className={cn('relative rounded-lg p-4', className)}>
       <div
-        className="grid-line absolute -top-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/20  [--dir:to_right] [--dot-size:5px_1px]"
+        className={cn(
+          styles.grid_line,
+          'absolute -top-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-[length:5px_1px] [--dir:to_right]'
+        )}
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -bottom-[0.5px] left-[-8px] h-px w-[calc(100%+16px)] bg-border/20  [--dir:to_right] [--dot-size:5px_1px]"
+        className={cn(
+          styles.grid_line,
+          'absolute -bottom-[0.5px] left-[-8px] h-px w-[calc(100%+16px)]  bg-[length:5px_1px] [--dir:to_right]'
+        )}
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -left-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/20  [--dir:to_bottom] [--dot-size:1px_5px]"
+        className={cn(
+          styles.grid_line,
+          'absolute -left-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px  bg-[length:1px_5px] [--dir:to_bottom]'
+        )}
         style={borderStyle}
       ></div>
       <div
-        className="grid-line absolute -right-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px bg-border/20  [--dir:to_bottom] [--dot-size:1px_5px]"
+        className={cn(
+          styles.grid_line,
+          'absolute -right-[0.5px] top-[-8px] h-[calc(100%+16px)] w-px  bg-[length:1px_5px] [--dir:to_bottom]'
+        )}
         style={borderStyle}
       ></div>
-      {/* <div className="grid-line absolute left-[-8px] top-0 h-px w-[calc(100%+16px)] opacity-40 [--dir:to_right] [--dot-size:5px_1px]"></div>
-      <div className="grid-line absolute bottom-0 left-[-8px] h-px w-[calc(100%+16px)] opacity-4x0 [--dir:to_right] [--dot-size:5px_1px]"></div>
-      <div className="grid-line absolute left-0 top-[-8px] h-[calc(100%+16px)] w-px  opacity-40 [--dir:to_bottom] [--dot-size:1px_5px]"></div>
-      <div className="grid-line absolute right-0 top-[-8px] h-[calc(100%+16px)] w-px  opacity-40 [--dir:to_bottom] [--dot-size:1px_5px]"></div> */}
-
-      <style jsx>{`
-        .grid-line {
-          {/* background: linear-gradient(
-            var(--dir),
-            hsl(var(--border)),
-            hsl(var(--border)) 50%,
-            transparent 0,
-            transparent
-          ); */}
-
-          background-size: var(--dot-size);
-          -webkit-mask: linear-gradient(
-            var(--dir),
-           transparent,
-            #333 5%,
-            #333 95%,
-           transparent
-          );
-        }
-      `}</style>
       <motion.div
         initial={{ opacity: 0.05, translateY: 5 }}
         whileInView={{ opacity: 1, translateY: 0 }}

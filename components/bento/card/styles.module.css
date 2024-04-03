@@ -1,0 +1,17 @@
+.grid_line {
+  background-color: hsl(var(--border) / 0.2);
+  mask: linear-gradient(
+    var(--dir),
+    transparent,
+    #333 5%,
+    #333 95%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    var(--dir),
+    transparent,
+    #333 5%,
+    #333 95%,
+    transparent
+  );
+}
