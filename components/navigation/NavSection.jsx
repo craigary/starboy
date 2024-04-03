@@ -1,6 +1,6 @@
 'use client'
-import { Badge } from '@/components/ui/badge'
 import { cn, isActivePath } from '@/lib/utils'
+import { Badge } from '@radix-ui/themes'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

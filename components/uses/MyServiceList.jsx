@@ -1,37 +1,8 @@
-import { Badge } from '@/components/ui/badge'
 import MyServiceIcon from '@/components/uses/MyServiceIcon'
-import { cn } from '@/lib/utils'
+import { Badge } from '@radix-ui/themes'
 import { IconArrowUpRight } from '@tabler/icons-react'
 
 const MyServicesList = ({ myServicesList }) => {
-  // Use Map instead.
-  const colorMap = new Map([
-    [
-      'pink',
-      'bg-[#f4008c16] text-[#b60074d6] dark:bg-[#fe37cc29] dark:text-[#ff8dcc]'
-    ],
-    [
-      'orange',
-      'bg-[#ff9c0029] text-[#cc4e00] dark:bg-[#fb6a0025] dark:text-[#ffa057]'
-    ],
-    [
-      'blue',
-      'bg-[#008ff519] text-[#006dcbf2] dark:bg-[#0077ff3a] dark:text-[#70b8ff]'
-    ],
-    [
-      'purple',
-      'bg-[#4400ee0f] text-[#1f0099af] dark:bg-[#8354fe36] dark:text-[#baa7ff]'
-    ],
-    [
-      'green',
-      'bg-[#00ae4819] text-[#007152df] dark:bg-[#02f99920] dark:text-[#21fec0d6]'
-    ],
-    [
-      'default',
-      'bg-[#0000000f] text-[#0000009b] dark:bg-[#ffffff12] dark:text-[#ffffffaf]'
-    ]
-  ])
-
   return (
     <div>
       <ul>
@@ -61,11 +32,9 @@ const MyServicesList = ({ myServicesList }) => {
                     <div className="hidden w-1/3 shrink-0 flex-wrap justify-end gap-2 md:flex ">
                       {item.platform.map(item => (
                         <Badge
-                          variant="custom"
-                          className={cn(
-                            colorMap.get(item.color),
-                            'rounded px-2 font-normal leading-none'
-                          )}
+                          color={item.color}
+                          variant="soft"
+                          radius="medium"
                           key={item.id}
                         >
                           {item.name}
