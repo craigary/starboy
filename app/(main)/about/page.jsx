@@ -15,14 +15,10 @@ import EmailBtn from '@/components/about/EmailBtn'
 import ThingsIcon from '@/components/about/ThingsIcon'
 import Line from '@/components/annotations/Line'
 import { Button } from '@/components/ui/button'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
 import { getLocationInfo } from '@/lib/get-location'
 import { navigation } from '@/lib/get-navigation'
 import { generateMetaData } from '@/lib/metadata'
+import { Tooltip } from '@radix-ui/themes'
 import styles from './style.module.css'
 
 const pathName = '/about'
@@ -223,7 +219,7 @@ const AboutPage = async () => {
             <div>
               <p>Book a time</p>
               <p className="text-sm text-primary/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Are you sure about this?
               </p>
             </div>
             <div>
@@ -243,34 +239,17 @@ const AboutPage = async () => {
                   const Icon = item.icon
                   return (
                     <li key={item.id} className="z-10">
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          {/* <IconButton
-                            aria-label={item.name + ' icon'}
-                            size="1"
-                            variant="ghost"
-                            className="group"
-                            asChild
-                          >
-                            <a href={item.link} target="_blank">
-                              <Icon size="24" stroke="1.5" />
-                            </a>
-                          </IconButton> */}
-
-                          <Button
-                            aria-label={item.name + ' icon'}
-                            asChild
-                            className="flex h-7 w-7 items-center justify-center bg-transparent p-0"
-                            variant="soft"
-                          >
-                            <a href={item.link} target="_blank">
-                              <Icon size="24" stroke="1.5" />
-                            </a>
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>{item.name}</p>
-                        </TooltipContent>
+                      <Tooltip content={item.name}>
+                        <Button
+                          aria-label={item.name + ' icon'}
+                          asChild
+                          className="flex h-7 w-7 items-center justify-center bg-transparent p-0"
+                          variant="soft"
+                        >
+                          <a href={item.link} target="_blank">
+                            <Icon size="24" stroke="1.5" />
+                          </a>
+                        </Button>
                       </Tooltip>
                     </li>
                   )
