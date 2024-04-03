@@ -3,8 +3,8 @@ import Logo from '@/components/Logo'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import CmdkButton from '@/components/cmdk/CmdkButton'
 import NavSection from '@/components/navigation/NavSection'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { navigation } from '@/lib/get-navigation'
+import { ScrollArea } from '@radix-ui/themes'
 import { motion } from 'framer-motion'
 const NavContent = ({ showCmdBtn, delay = 0, setOpen }) => {
   return (

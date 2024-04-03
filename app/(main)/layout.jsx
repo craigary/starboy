@@ -3,11 +3,11 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import CardBg from '@/components/bento/card/CardBg'
 import NavContent from '@/components/navigation/NavContent'
 import Navbar from '@/components/navigation/Navbar'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { juventusFont, manrope, playfairDisplay, windsong } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import Script from 'next/script'
 
+import { ScrollArea } from '@radix-ui/themes'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import './globals.css'
 
