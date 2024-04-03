@@ -47,34 +47,34 @@ const SocialCard = async () => {
     icon: SiThreads
   })
 
-  const socialRef = {
-    Mastodon: {
-      color: SiMastodonHex,
-      name: 'Craig Hart',
-      showName: true,
-      icon: SiMastodon
-    },
-    Weibo: {
-      color: SiSinaweiboHex,
-      name: null,
-      showName: false,
-      icon: '',
-      icon: SiSinaweibo
-    },
-    Jike: { color: '#ffe411', name: null, showName: false, icon: null },
-    X: {
-      color: '#000000',
-      name: 'Craig Hart',
-      showName: true,
-      icon: SiTwitter
-    },
-    Threads: {
-      color: '#000000',
-      name: 'Craig Hart',
-      showName: true,
-      icon: SiThreads
-    }
-  }
+  // const socialRef = {
+  //   Mastodon: {
+  //     color: SiMastodonHex,
+  //     name: 'Craig Hart',
+  //     showName: true,
+  //     icon: SiMastodon
+  //   },
+  //   Weibo: {
+  //     color: SiSinaweiboHex,
+  //     name: null,
+  //     showName: false,
+  //     icon: '',
+  //     icon: SiSinaweibo
+  //   },
+  //   Jike: { color: '#ffe411', name: null, showName: false, icon: null },
+  //   X: {
+  //     color: '#000000',
+  //     name: 'Craig Hart',
+  //     showName: true,
+  //     icon: SiTwitter
+  //   },
+  //   Threads: {
+  //     color: '#000000',
+  //     name: 'Craig Hart',
+  //     showName: true,
+  //     icon: SiThreads
+  //   }
+  // }
 
   const Icon = socialMap.get(post.source).icon
   const IconColor = socialMap.get(post.source).color
