@@ -20,9 +20,6 @@ dependencies:
   '@plaiceholder/next':
     specifier: ^3.0.0
     version: 3.0.0(next@14.2.0-canary.55)(plaiceholder@3.0.0)(sharp@0.32.6)
-  '@radix-ui/react-context-menu':
-    specifier: ^2.1.5
-    version: 2.1.5(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-dialog':
     specifier: ^1.0.5
     version: 1.0.5(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
@@ -32,15 +29,9 @@ dependencies:
   '@radix-ui/react-scroll-area':
     specifier: ^1.0.5
     version: 1.0.5(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-separator':
-    specifier: ^1.0.3
-    version: 1.0.3(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.29)(react@18.2.0)
-  '@radix-ui/react-tooltip':
-    specifier: ^1.0.7
-    version: 1.0.7(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/themes':
     specifier: ^3.0.1
     version: 3.0.1(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
@@ -96,7 +87,7 @@ dependencies:
     specifier: ^9.1.2
     version: 9.1.2
   next:
-    specifier: 14.2.0-canary.55
+    specifier: ^14.2.0-canary.55
     version: 14.2.0-canary.55(react-dom@18.2.0)(react@18.2.0)
   next-mdx-remote:
     specifier: ^4.4.1
@@ -1497,26 +1488,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-remove-scroll: 2.5.5(@types/react@18.2.29)(react@18.2.0)
-    dev: false
-
-  /@radix-ui/react-separator@1.0.3(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-itYmTy/kokS21aiV5+Z56MZB54KrhPgn6eHDKkFeOLR34HMN2s8PaN47qZZAGnvupcjxHaFZnW4pQEh0BvvVuw==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.23.2
-      '@radix-ui/react-primitive': 1.0.3(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
-      '@types/react': 18.2.29
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@radix-ui/react-slider@1.1.2(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0):
