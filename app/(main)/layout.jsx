@@ -5,6 +5,7 @@ import NavContent from '@/components/navigation/NavContent'
 import Navbar from '@/components/navigation/Navbar'
 import { juventusFont, manrope, playfairDisplay, windsong } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
+import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 
 import { ScrollArea } from '@radix-ui/themes'
@@ -47,19 +48,6 @@ export default function RootLayout({ children, params }) {
               <NavContent showCmdBtn={true} />
             </div>
             <div className="relative z-30 h-screen w-full overflow-y-auto bg-gradient-to-t from-secondary/20 to-background md:h-[calc(100vh-16px)] md:rounded-l-lg md:border-y md:border-l">
-              {/* <div
-                  className="pointer-events-none absolute top-1 z-30 h-14 w-[calc(100%-8px)] select-none opacity-95 backdrop-blur-[5px] after:absolute
-                after:left-0 after:top-0 after:bg-gradient-to-b after:from-background
-                after:to-transparent after:content-[''] first:top-0
-                first:-mb-14 md:sticky md:h-20 md:rounded-tl-lg first:md:-mb-20
-                "
-                  style={{
-                    WebkitMaskImage:
-                      'linear-gradient(to bottom, rgba(0,0,0,1) 25%, transparent)',
-                    maskImage:
-                      'linear-gradient(to bottom, rgba(0,0,0,1) 25%, transparent)'
-                  }}
-                ></div> */}
               <ScrollArea
                 size="1"
                 type="hover"
@@ -81,6 +69,7 @@ export default function RootLayout({ children, params }) {
             </div>
           </main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
